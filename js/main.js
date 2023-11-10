@@ -1,94 +1,92 @@
-(function ($) {
-    "use strict";
-
-    // Spinner
-    var spinner = function () {
-        setTimeout(function () {
-            if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
-            }
-        }, 1);
-    };
-    spinner();
-    
-    
-    // Initiate the wowjs
-    new WOW().init();
+/* =================================
+------------------------------------
+	Cryptocurrency - Landing Page Template
+	Version: 1.0
+ ------------------------------------ 
+ ====================================*/
 
 
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
-        } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
+'use strict';
+
+
+$(window).on('load', function() {
+	/*------------------
+		Preloder
+	--------------------*/
+	$(".loader").fadeOut(); 
+	$("#preloder").delay(400).fadeOut("slow");
+
+});
+
+(function($) {
+
+	/*------------------
+		Navigation
+	--------------------*/
+	$('.responsive-bar').on('click', function(event) {
+		$('.main-menu').slideToggle(400);
+		event.preventDefault();
+	});
+
+
+	/*------------------
+		Background set
+	--------------------*/
+	$('.set-bg').each(function() {
+		var bg = $(this).data('setbg');
+		$(this).css('background-image', 'url(' + bg + ')');
+	});
+
+	
+	/*------------------
+		Review
+	--------------------*/
+	var review_meta = $(".review-meta-slider");
+    var review_text = $(".review-text-slider");
+
+
+    review_text.on('changed.owl.carousel', function(event) {
+		review_meta.trigger('next.owl.carousel');
+	});
+
+	review_meta.owlCarousel({
+		loop: true,
+		nav: false,
+		dots: true,
+		items: 3,
+		center: true,
+		margin: 20,
+		autoplay: true,
+		mouseDrag: false,
+	});
+
+
+	review_text.owlCarousel({
+		loop: true,
+		nav: true,
+		dots: false,
+		items: 1,
+		margin: 20,
+		autoplay: true,
+		navText: ['<i class="ti-angle-left"><i>', '<i class="ti-angle-right"><i>'],
+		animateOut: 'fadeOutDown',
+    	animateIn: 'fadeInDown',
+	});
+
+
+
+	 /*------------------
+		Contact Form
+	--------------------*/
+    $(".check-form").focus(function () {
+        $(this).next("span").addClass("active");
+    });
+    $(".check-form").blur(function () {
+        if ($(this).val() === "") {
+            $(this).next("span").removeClass("active");
         }
     });
-    
-    
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
 
 
-    // Skills
-    $('.skill').waypoint(function () {
-        $('.progress .progress-bar').each(function () {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
-        });
-    }, {offset: '80%'});
-
-
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
-    });
-
-
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        margin: 25,
-        dots: false,
-        loop: true,
-        nav : true,
-        navText : [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ],
-        responsive: {
-            0:{
-                items:1
-            },
-            992:{
-                items:2
-            }
-        }
-    });
-
-
-    // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('active');
-        $(this).addClass('active');
-
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
-    
 })(jQuery);
 
