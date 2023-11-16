@@ -199,9 +199,9 @@ ol {
 .comment-form label {
 	/* FF3.6-15 */
 	/* Chrome10-25,Safari5.1-6 */
-	background: -webkit-gradient(linear, left top, right top, from(#3e2bce), color-stop(100%, #2dd3aa), color-stop(100%, #2dd3aa), to(#2dd3aa));
-	background: -o-linear-gradient(left, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%);
-	background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%);
+	background: -webkit-gradient(linear, left top, right top, from(#0557C4), color-stop(100%, #0557C4), color-stop(100%, #0557C4), to(#0557C4));
+	background: -o-linear-gradient(left, #0557C4 0%, #0557C4 100%, #0557C4 100%, #0557C4 100%);
+	background: linear-gradient(to right, #0557C4 0%, #0557C4 100%, #0557C4 100%, #0557C4 100%);
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e2bce', endColorstr='#2dd3aa', GradientType=1);
 	/* IE6-9 */
