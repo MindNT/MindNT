@@ -337,6 +337,18 @@ ol {
 /*---------------------
 	Hero Section
 -----------------------*/
+.hero-section-about {
+	height: 900px;
+	padding-top: 260px;
+	display: block;
+	background-image: url("../img/hero-bg-about.png");
+	background-size: cover;
+	background-color: #f3f7f9;
+	background-position: right top;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+}
 
 .hero-section {
 	height: 900px;
