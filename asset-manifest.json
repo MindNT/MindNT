@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/MindNT/static/css/main.82231558.css",
+    "main.js": "/MindNT/static/js/main.f0774386.js",
+    "static/media/chat.mov": "/MindNT/static/media/chat.dd7d50f46a9f3a2c261f.mov",
+    "static/media/views.svg": "/MindNT/static/media/views.775386c08a60bcac71f5c2956d1801a6.svg",
+    "static/media/view1.svg": "/MindNT/static/media/view1.1cf47049125de454f66f07ccc1ccee22.svg",
+    "static/media/view2.svg": "/MindNT/static/media/view2.ce622071fe5bfe9df45923c250d24ef0.svg",
+    "static/media/view3.svg": "/MindNT/static/media/view3.f6db90a37f08df2a2fca4033c2bb0171.svg",
+    "static/media/codereact.svg": "/MindNT/static/media/codereact.6b14339121ceaf554660b5c8af594919.svg",
+    "static/media/codehtml.svg": "/MindNT/static/media/codehtml.a3c02de8abfb9e823e74e8fcb9b295a3.svg",
+    "static/media/nexxus1-banner.svg": "/MindNT/static/media/nexxus1-banner.a62f4698d68bbde745aa7a9a5e4d6494.svg",
+    "static/media/platform-image.png": "/MindNT/static/media/platform-image.0603688939cca9d65cae.png",
+    "static/media/chat.png": "/MindNT/static/media/chat.5fedcde9d06b7ab3b715.png",
+    "static/media/Nexxus-logo.svg": "/MindNT/static/media/Nexxus-logo.abc9616e50d984302d0d9d5ed057627e.svg",
+    "static/media/nexxus2-banner.svg": "/MindNT/static/media/nexxus2-banner.397a4d7916e3d63f579d669c24a3e4ae.svg",
+    "static/media/comments-banner.svg": "/MindNT/static/media/comments-banner.b61e6de45f7756e00f5758347cca0a9d.svg",
+    "static/media/email-banner.svg": "/MindNT/static/media/email-banner.1cb777ee3e7ced6d1898affdcbc6bcd1.svg",
+    "static/media/avion-banner.svg": "/MindNT/static/media/avion-banner.48ae18ce18844fae848a4b40e0458097.svg",
+    "static/media/Mindnt-logo.png": "/MindNT/static/media/Mindnt-logo.85336cf8a9e7d304894f.png",
+    "static/media/documento-banner.svg": "/MindNT/static/media/documento-banner.7ee7c5d0d738b095ac40eab72cd9ef9a.svg",
+    "static/media/restaurant-icon.svg": "/MindNT/static/media/restaurant-icon.f7ed0b85e6780c19dfc036c49bc056ad.svg",
+    "static/media/escuela-icon.svg": "/MindNT/static/media/escuela-icon.8024c7bf27ae7559b74ac07f49bb76bb.svg",
+    "static/media/hospital-icon.svg": "/MindNT/static/media/hospital-icon.66d01dcf45b0457bd400de1ba1fdd61b.svg",
+    "static/media/flotilla-icon.svg": "/MindNT/static/media/flotilla-icon.64c3d471d54e2c61ac4575e881508272.svg",
+    "static/media/items-icon.svg": "/MindNT/static/media/items-icon.48bb0b030bcbbad9916d2d73f9bfcae8.svg",
+    "static/media/slick.svg": "/MindNT/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/MindNT/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/MindNT/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/MindNT/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/MindNT/index.html",
+    "main.82231558.css.map": "/MindNT/static/css/main.82231558.css.map",
+    "main.f0774386.js.map": "/MindNT/static/js/main.f0774386.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82231558.css",
+    "static/js/main.f0774386.js"
+  ]
+}
