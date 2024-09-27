@@ -1,0 +1,170 @@
+.card {
+  width: 400px;
+  height: 350px;
+  --blue-dark: #0045A7;  /* Azul oscuro */
+  --blue-medium: #007AFF; /* Azul medio */
+  --blue-light: #5AC8FA;  /* Azul claro */
+  --gray-dark: #4F4F4F;   /* Gris oscuro */
+  --gray-medium: #AFAFAF; /* Gris medio */
+  --gray-light: #F2F2F2;  /* Gris claro */
+  font-family: 'Inter', sans-serif;
+  align-self: center;
+  margin: 0 auto; /* Centrar la tarjeta */
+}
+
+.wrapper {
+  margin: 2rem auto;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 250px; /* Ancho máximo */
+  font-size: small;
+}
+
+.title {
+  text-align: center;
+  color: #0045A7; /* Azul oscuro */
+}
+
+.heading {
+  font-weight: bold;
+  letter-spacing: 7px;
+  font-size: 1.5rem;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.heading::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #e8e8e8;
+  z-index: -1;
+  filter: blur(50px);
+  height: 50px;
+}
+
+.color {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hex {
+  text-align: end;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+/* Bloques de colores con la nueva paleta de azules y grises */
+.black {
+  background: var(--blue-dark);  /* Azul oscuro */
+  color: #ffffff;  /* Texto blanco */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.eerie-black {
+  background: var(--blue-medium); /* Azul medio */
+  color: #ffffff;  /* Texto blanco */
+}
+
+.chinese-black {
+  background: var(--blue-light);  /* Azul claro */
+  color: #ffffff;  /* Texto blanco */
+}
+
+.night-rider {
+  background: var(--gray-dark);  /* Gris oscuro */
+  color: #ffffff;  /* Texto blanco */
+}
+
+.chinese-white {
+  background: var(--gray-medium); /* Gris medio */
+  color: #333333;  /* Texto negro carbón */
+}
+
+.anti-flash-white {
+  background: var(--gray-light);  /* Gris claro */
+  color: #333333;  /* Texto negro carbón */
+}
+
+.white {
+  background: #FFFFFF;  /* Blanco puro */
+  color: #333333;  /* Texto negro carbón */
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.border {
+  color: #999999;  /* Negro carbón */
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.border span {
+  border-radius: 5px;
+  color: #0045A7;  /* Texto blanco */
+  padding: 2px 4px;
+  background-color: #D9E9FF;  /* Azul oscuro */
+  font-size: 12px;
+}
+
+/* === Media Queries para Responsividad === */
+
+/* Ajustes para tablets y dispositivos medianos */
+@media (max-width: 768px) {
+  .card {
+      width: 90%; /* La tarjeta ocupa el 90% del ancho del viewport */
+      height: auto; /* Altura automática para ajustar al contenido */
+  }
+
+  .wrapper {
+      width: 100%; /* Ocupa todo el ancho disponible */
+      max-width: none; /* Sin ancho máximo */
+      margin: 1rem auto;
+  }
+
+  .heading {
+      font-size: 1.2rem;
+      letter-spacing: 5px;
+  }
+
+  .color {
+      padding: 8px 10px;
+  }
+
+  .hex {
+      font-size: 0.9rem;
+  }
+}
+
+/* Ajustes para móviles y dispositivos pequeños */
+@media (max-width: 480px) {
+  .card {
+      width: 95%; /* La tarjeta ocupa el 95% del ancho del viewport */
+  }
+
+  .heading {
+      font-size: 1rem;
+      letter-spacing: 3px;
+  }
+
+  .color {
+      flex-direction: column; /* Apila los elementos verticalmente */
+      align-items: flex-start;
+  }
+
+  .hex {
+      text-align: left;
+      margin-top: 5px; /* Añade espacio entre los elementos */
+  }
+
+  .border {
+      padding: 8px 5px;
+  }
+
+  .border span {
+      font-size: 0.9rem;
+      padding: 2px 6px;
+  }
+}

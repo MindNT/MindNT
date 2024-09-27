@@ -1,0 +1,355 @@
+/* Importar los estilos de slick */
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+/* ======= Página de Integraciones ======= */
+
+.integraciones-container {
+    max-width: 1600px; /* Limita el ancho del contenido */
+    margin: 0 auto;    /* Centraliza el contenido */
+    padding: 0 5%;   /* Añade un pequeño padding para evitar que el contenido toque los bordes */
+}
+
+/* Título y Subtítulo */
+.integraciones-title h1 {
+    font-size: 32px;
+    color: #999999;  /* Color de texto del subtítulo */
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-align: left;  /* Alinea el texto principal a la izquierda */
+}
+
+.integraciones-title .highlight {
+    color: #1473FB;  /* Color azul para el texto destacado */
+    font-weight: bold;  /* Negrita para el texto destacado */
+    font-family: 'Inter', sans-serif;
+}
+
+.integraciones-subtitle {
+    font-size: 25px;
+    color: #0045A7;  /* Azul para el subtítulo */
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-align: center;  /* Subtítulo centrado */
+    margin-top: 5%;
+}
+
+.integraciones-subtitle-grey {
+    font-size: 20px;
+    color: #999999;  /* Gris claro para el subtítulo */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    text-align: center;  /* Subtítulo centrado */
+    margin-top: 0%;
+}
+
+/* Carrusel */
+.integraciones-carousel .slick-slide {
+    padding: 10px; /* Añade padding alrededor de cada slide */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+.slick-dots {
+    bottom: -30px; /* Ajusta la posición de los puntos de navegación */
+}
+
+/* Tarjetas */
+.integracion-box {
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 15px;
+    height: 350px; /* Altura fija para las tarjetas */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra para las cajas */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.integracion-box:hover {
+    transform: translateY(-10px);
+}
+
+/* Imagen del Producto */
+.producto-imagen img, .integracion-box img {
+    max-width: 75%; /* Ajusta el tamaño si es necesario */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.producto-frase {
+    font-size: 16px;
+    color: #999999;  /* Gris claro para el subtítulo */
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* Ajustes en diferentes tamaños de pantalla */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1200px) {
+    .integraciones-title h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .integraciones-title .highlight {
+        font-size: 28px;
+    }
+
+    .integraciones-subtitle,
+    .integraciones-subtitle-grey {
+        font-size: 22px;
+    }
+
+    .integracion-box {
+        height: 300px; /* Ajusta la altura cuando el viewport es más pequeño */
+    }
+}
+
+/* Móviles y pantallas pequeñas */
+@media (max-width: 768px) {
+    .integraciones-title h1 {
+        font-size: 24px;
+    }
+
+    .integraciones-title .highlight {
+        font-size: 24px;
+    }
+
+    .integraciones-subtitle,
+    .integraciones-subtitle-grey {
+        font-size: 20px;
+    }
+
+    .integracion-box {
+        height: 260px; /* Ajusta la altura cuando el viewport es aún más pequeño */
+    }
+
+    .integraciones-carousel .slick-slide {
+        padding: 5px; /* Reduce el padding para pantallas pequeñas */
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+    .integraciones-title h1 {
+        font-size: 20px;
+    }
+
+    .integraciones-title .highlight {
+        font-size: 20px;
+    }
+
+    .integraciones-subtitle,
+    .integraciones-subtitle-grey {
+        font-size: 18px;
+    }
+
+    .integracion-box {
+        height: auto; /* Altura automática en móviles muy pequeños */
+        padding: 15px;
+    }
+
+    .integracion-box p {
+        font-size: 14px; /* Reduce el tamaño de fuente en móviles */
+    }
+}
+
+/* Ajustes para el carrusel en pantallas pequeñas */
+@media (max-width: 600px) {
+    .integracion-box {
+        width: 100%; /* Para pantallas pequeñas, las tarjetas ocupan todo el ancho */
+        height: auto; /* Altura automática en móviles */
+        margin: 0 0 20px 0; /* Separación entre las tarjetas en móviles */
+    }
+
+    .integraciones-carousel .slick-slide {
+        padding: 0 10px; /* Ajusta el padding en pantallas pequeñas */
+    }
+
+    .slick-dots {
+        bottom: -25px; /* Ajusta la posición de los puntos de navegación */
+    }
+}
+
+
+/* ======= Segunda sección de Integraciones ======= */
+.integraciones-second-section {
+    margin-top: 5%;
+    padding: 20px 0;
+    background-color: #fff; /* Fondo blanco */
+    text-align: center;
+  }
+  
+  /* Título de la sección */
+  .second-section-title {
+    font-size: 20px;
+    color: #999999;  /* Gris claro para el subtítulo */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    text-align: center;  /* Subtítulo centrado */
+    margin-top: 0%;
+    margin-bottom: 2%;
+  }
+  
+  /* Subtítulo de la sección */
+  .second-section-subtitle {
+    font-size: 20px;
+    color: #999999;  /* Gris claro para el subtítulo */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+  
+  /* Contenedor principal */
+  .second-section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  
+  /* Columna Izquierda */
+  .left-column {
+    width: 45%;
+    text-align: center;
+  }
+  
+  /* Columna Derecha */
+  .right-column {
+    width: 45%;
+    text-align: center;
+  }
+  
+  /* Estilos para los componentes SVG */
+  .left-column svg,
+  .right-column svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Media Queries para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .second-section-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .left-column,
+    .right-column {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+
+/* ======= Tercera sección de Integraciones ======= */
+.integraciones-third-section {
+    margin-top: 2%;
+    padding: 50px 0;
+    background-color: #fff; /* Fondo blanco */
+    text-align: center;
+  }
+  
+  /* Título y subtítulo */
+  .third-section-title {
+    font-size: 25px;
+    color: #0045A7;  /* Azul para el subtítulo */
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .third-section-subtitle {
+    font-size: 20px;
+    color: #1473FB;  /* Gris claro para el subtítulo */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+  
+  /* Contenedor de cada bloque */
+  .feature-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho máximo para centrado */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Padding horizontal para espacio en los lados */
+  }
+  
+  /* Estilos para la imagen y el texto */
+  .feature-svg {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .feature-svg img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .feature-text {
+    flex: 1;
+    font-size: 18px;
+    color: #999999; /* Gris claro */
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    padding: 0 20px;
+  }
+  
+  .feature-text .highlight {
+    color: #1473FB; /* Azul para el texto destacado */
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  /* Invertir el orden en el bloque con clase 'reverse' */
+  .feature-block.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  @media (max-width: 768px) {
+    .feature-block {
+      flex-direction: column;
+    }
+  
+    .feature-block.reverse {
+      flex-direction: column;
+    }
+  
+    .feature-svg,
+    .feature-text {
+      flex: unset;
+      width: 100%;
+      text-align: center;
+      padding: 0;
+    }
+  
+    .feature-text {
+      margin-top: 20px;
+    }
+  }
+  
+  /* Frase final */
+  .final-phrase {
+    font-size: 25px;
+    color: #999999; /* Gris claro */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    margin-top: 50px;
+  }
+  
+  .final-phrase .highlight {
+    color: #1473FB; /* Azul para el texto destacado */
+    font-size: 25px;
+  }

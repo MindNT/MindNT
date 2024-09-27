@@ -1,0 +1,240 @@
+/* Estilos del Header (global) */
+.header {
+  max-width: 1600px;
+  margin: 0 auto; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: white;
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: semibold;
+  font-family: 'Inter', sans-serif;
+  color: #999999;
+}
+
+.btn-contact {
+  background-color: #1473FB;
+  color: white;
+  border: none;
+  padding: 8px 50px;
+  font-size: 16px;
+  font-weight: lighter;
+  font-family: 'Inter', sans-serif;
+  border-radius: 15px;
+  margin-left: 40px;
+}
+
+/* ========= Footer ============== */
+.footer {
+  background-color: #ffffff;  /* Fondo blanco */
+  padding: 40px 5%;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+  max-width: 1600px;  /* Limitar ancho máximo del contenido */
+  margin: 0 auto;  /* Alinear el footer con el resto de la página */
+}
+
+.footer-item {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.footer-item h4 {
+  font-size: 18px;
+  color: #1473FB;
+  margin-bottom: 10px;
+}
+
+.footer-item p {
+  display: flex; /* Alinea el ícono y el texto en la misma fila */
+  align-items: center; /* Alinea verticalmente el ícono y el texto */
+  font-size: 14px;
+  color: #1473FB;
+  margin: 0;
+}
+
+.footer-item p svg {
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-top: 10px;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.social-list li svg {
+  fill: none;
+  stroke: #1473FB;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;  /* Espacio entre el icono y el texto */
+}
+
+.social-list li span {
+  font-size: 14px;
+  color: #1473FB;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  color: #1473FB;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ========== Media Queries para Responsividad ========== */
+
+/* Ajustes para tablets y dispositivos medianos */
+@media (max-width: 1024px) {
+  /* Header */
+  .header {
+      flex-wrap: wrap;
+      padding: 15px 5%;
+  }
+
+  .nav-links {
+      gap: 20px;
+  }
+
+  .btn-contact {
+      margin-left: 20px;
+      padding: 8px 30px;
+  }
+
+  /* Footer */
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-item {
+      max-width: none;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+  }
+
+  .social-list {
+      flex-direction: row;
+      justify-content: center;
+  }
+}
+
+/* Ajustes para móviles y dispositivos pequeños */
+@media (max-width: 768px) {
+  /* Header */
+  .header {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+  }
+
+  .btn-contact {
+      margin-left: 0;
+      margin-top: 10px;
+      padding: 8px 30px;
+  }
+
+  .nav-links a {
+      font-size: 14px;
+  }
+
+  /* Footer */
+  .footer-item p {
+      justify-content: center;
+  }
+
+  .social-list {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .social-list li {
+      margin-bottom: 5px;
+  }
+}
+
+/* Ajustes para dispositivos muy pequeños */
+@media (max-width: 480px) {
+  /* Header */
+  .logo img {
+      max-height: 40px;
+  }
+
+  .nav-links a {
+      font-size: 12px;
+  }
+
+  .btn-contact {
+      padding: 8px 20px;
+      font-size: 14px;
+  }
+
+  /* Footer */
+  .footer-item h4 {
+      font-size: 16px;
+  }
+
+  .footer-item p {
+      font-size: 12px;
+  }
+
+  .footer-bottom p {
+      font-size: 12px;
+  }
+}
