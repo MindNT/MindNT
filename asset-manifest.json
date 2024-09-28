@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MindNT/static/css/main.82231558.css",
-    "main.js": "/MindNT/static/js/main.9677c543.js",
+    "main.css": "/MindNT/static/css/main.b27b1ed1.css",
+    "main.js": "/MindNT/static/js/main.b45a1772.js",
     "static/media/chat.mov": "/MindNT/static/media/chat.dd7d50f46a9f3a2c261f.mov",
     "static/media/views.svg": "/MindNT/static/media/views.775386c08a60bcac71f5c2956d1801a6.svg",
     "static/media/view1.svg": "/MindNT/static/media/view1.1cf47049125de454f66f07ccc1ccee22.svg",
@@ -18,6 +18,7 @@
     "static/media/email-banner.svg": "/MindNT/static/media/email-banner.1cb777ee3e7ced6d1898affdcbc6bcd1.svg",
     "static/media/avion-banner.svg": "/MindNT/static/media/avion-banner.48ae18ce18844fae848a4b40e0458097.svg",
     "static/media/Mindnt-logo.png": "/MindNT/static/media/Mindnt-logo.85336cf8a9e7d304894f.png",
+    "static/media/notificacion.svg": "/MindNT/static/media/notificacion.a166db207709aa0d94a62676352d9793.svg",
     "static/media/documento-banner.svg": "/MindNT/static/media/documento-banner.7ee7c5d0d738b095ac40eab72cd9ef9a.svg",
     "static/media/restaurant-icon.svg": "/MindNT/static/media/restaurant-icon.f7ed0b85e6780c19dfc036c49bc056ad.svg",
     "static/media/escuela-icon.svg": "/MindNT/static/media/escuela-icon.8024c7bf27ae7559b74ac07f49bb76bb.svg",
@@ -29,11 +30,11 @@
     "static/media/slick.ttf": "/MindNT/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/MindNT/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/MindNT/index.html",
-    "main.82231558.css.map": "/MindNT/static/css/main.82231558.css.map",
-    "main.9677c543.js.map": "/MindNT/static/js/main.9677c543.js.map"
+    "main.b27b1ed1.css.map": "/MindNT/static/css/main.b27b1ed1.css.map",
+    "main.b45a1772.js.map": "/MindNT/static/js/main.b45a1772.js.map"
   },
   "entrypoints": [
-    "static/css/main.82231558.css",
-    "static/js/main.9677c543.js"
+    "static/css/main.b27b1ed1.css",
+    "static/js/main.b45a1772.js"
   ]
 }
