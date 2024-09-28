@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MindNT/static/css/main.70b9f950.css",
-    "main.js": "/MindNT/static/js/main.c2b8f519.js",
-    "static/media/chat.mov": "/MindNT/static/media/chat.dd7d50f46a9f3a2c261f.mov",
+    "main.js": "/MindNT/static/js/main.3a6e77e5.js",
+    "static/media/chat.mov": "/MindNT/static/media/chat.65e485257a80e8d606c2.mov",
     "static/media/views.svg": "/MindNT/static/media/views.775386c08a60bcac71f5c2956d1801a6.svg",
     "static/media/view1.svg": "/MindNT/static/media/view1.1cf47049125de454f66f07ccc1ccee22.svg",
     "static/media/view2.svg": "/MindNT/static/media/view2.ce622071fe5bfe9df45923c250d24ef0.svg",
@@ -31,10 +31,10 @@
     "static/media/slick.woff": "/MindNT/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/MindNT/index.html",
     "main.70b9f950.css.map": "/MindNT/static/css/main.70b9f950.css.map",
-    "main.c2b8f519.js.map": "/MindNT/static/js/main.c2b8f519.js.map"
+    "main.3a6e77e5.js.map": "/MindNT/static/js/main.3a6e77e5.js.map"
   },
   "entrypoints": [
     "static/css/main.70b9f950.css",
-    "static/js/main.c2b8f519.js"
+    "static/js/main.3a6e77e5.js"
   ]
 }
