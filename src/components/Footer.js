@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/global.css';
-import mindntLogo from '../assets/logos/Mindnt-logo.png';
+import mindntLogo from '../assets/logos/Mindnt-logo-v2.png';
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-item">
           <h4>Sobre Nosotros</h4>
           <p>MindNT es una empresa dedicada a ofrecer soluciones tecnológicas innovadoras para empresas de todos los tamaños.</p>
-          <img src={mindntLogo} alt="MindNT Logo" className="footer-logo" />
+          
         </div>
         <div className="footer-item">
           <h4>Contacto</h4>

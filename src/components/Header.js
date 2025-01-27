@@ -1,5 +1,5 @@
 import React from 'react';
-import mindntLogo from '../assets/logos/Mindnt-logo.png';
+import mindntLogo from '../assets/logos/Mindnt-logo-v2.svg';
 import '../styles/global.css';  // Usa los estilos globales aquí
 
 const Header = () => {
@@ -11,11 +11,13 @@ const Header = () => {
       <nav className="nav">
         <ul className="nav-links">
           <li><a href="/">Inicio</a></li>
-          <li><a href="/integraciones">Integraciones</a></li>
+          <li><a href="/Desarrollo Web">Desarrollo Web</a></li>
+          <li><a href="/Marketing">Marketing</a></li>
+          <li><a href="/Plataforma">Plataformas</a></li>
           {/*<li><a href="/plataforma">plataforma</a></li>*/}
           {/*<li><a href="/blog">Blog</a></li>*/}
         </ul>
-        <button className="btn-contact" onClick={() => window.location.href='https://tu-url.com'}>Plataforma</button>
+        <button className="btn-contact" onClick={() => window.location.href='https://tu-url.com'}>Contacto</button>
       </nav>
     </header>
   );

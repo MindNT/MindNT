@@ -1,540 +1,564 @@
+
 /* Contenedor general para alinear el contenido */
 .container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 5%;
-}
-
-/* Sección Hero */
-.hero {
-  max-width: 1600px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 100px 0;
-  background-color: white;
-}
-
-.text-content {
-  flex: 1;
-  padding-right: 50px;
-}
-
-.text-content h1 {
-  font-size: 64px;
-  color: #0045A7;
-  font-weight: bold;
-  font-family: 'Inter', sans-serif;
-}
-
-.text-content p {
-  font-size: 20px;
-  font-weight: medium;
-  color: #AFAFAF;
-  font-family: 'Inter', sans-serif;
-  margin-top: 20px;
-}
-
-.btn-visitanos {
-  background-color: #007AFF;
-  color: white;
-  border: none;
-  padding: 8px 50px;
-  font-size: 14px;
-  font-weight: medium;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.btn-visitanos:hover {
-  background-color: #005FCC;
-}
-
-/* Placeholder para el GIF */
-.gif-space {
-  flex: 1;
-  display: flex;
-  justify-content: right;
-}
-
-.gif-placeholder {
-  width: 300px;
-  height: 300px;
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #bbb;
-}
-
-/* Sección Features */
-.features {
-  background-color: #ffffff;
-  padding: 50px 0;
-}
-
-.features .container {
-  display: flex;
-  justify-content: space-between;
-  gap: 0px;
-}
-
-.feature {
-  text-align: center;
-  background-color: #EEECEC;
-  padding: 12px;
-  border-radius: 15px;
-  font-size: 14px;
-  font-weight: medium;
-  color: #1473FB;
-  font-family: 'Inter', sans-serif;
-  flex: 1;
-  margin: 0 0px;
-  max-width: 100px;
-}
-
-/* Sección Nexxus */
-.nexxus-section {
-  padding: 60px 0;
-  text-align: center;
-  background-color: #ffffff;
-  max-width: 1600px;
-}
-
-.nexxus-title h2 {
-  font-size: 25px;
-  color: #0045A7;
-  font-weight: bold;
-  font-family: 'Inter', sans-serif;
-}
-
-.nexxus-title p {
-  font-size: 25px;
-  color: #AFAFAF;
-  font-family: 'Inter', sans-serif;
-}
-
-.nexxus-title .highlight {
-  color: #1473FB;
-  font-size: 25px;
-}
-
-.nexxus-content {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px 0;
-}
-
-.nexxus-column {
-  flex: 1;
-  text-align: center;
-}
-
-.nexxus-column.left {
-  margin-top: 3%;
-}
-
-.nexxus-column.left p {
-  color: #999999;
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-}
-
-.nexxus-column.center .nexxus-video {
-  max-width: 300px;
-  border-radius: 10px;
-}
-
-.nexxus-column.right {
-  margin-top: 3%;
-}
-
-.nexxus-column.right .nexxus-list {
-  list-style: none;
-  padding: 0;
-  font-size: 16px;
-  color: #999999;
-  font-family: 'Inter', sans-serif;
-  text-align: left;
-}
-
-.nexxus-column.right .nexxus-list li {
-  margin: 10px 0;
-  padding-left: 30px;
-  position: relative;
-}
-
-.nexxus-column.right .nexxus-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background-image: url('../assets/images/icon.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-/* Botón de integrar */
-.nexxus-button {
-  margin-top: 40px;
-}
-
-.nexxus-button .btn-integrar {
-  background-color: #007AFF;
-  color: white;
-  border: none;
-  padding: 8px 50px;
-  font-size: 16px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  font-weight: lighter;
-}
-
-.nexxus-button .btn-integrar:hover {
-  background-color: #005FCC;
-}
-
-/* Centrar el iframe con diseño limpio */
-iframe {
-  width: 350px;
-  height: 500px;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Sección Escudería MindNT */
-.escuderia-section {
-  padding: 60px 0;
-  text-align: center;
-  background-color: #ffffff;
-  max-width: 1600px;
-}
-
-.escuderia-title {
-  font-size: 25px;
-  color: #0045A7;
-  font-weight: bold;
-  font-family: 'Inter', sans-serif;
-}
-
-.escuderia-subtitle {
-  font-size: 25px;
-  color: #AFAFAF;
-  font-family: 'Inter', sans-serif;
-  margin-bottom: 40px;
-}
-
-.escuderia-icons {
-  margin-top: 6%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.icon-item {
-  text-align: center;
-  flex: 1;
-  margin: 20px;
-}
-
-.icon-item img {
-  max-width: 80px;
-  margin-bottom: 10px;
-}
-
-.icon-item p {
-  font-size: 16px;
-  color: #AFAFAF;
-  font-family: 'Inter', sans-serif;
-}
-
-.escuderia-footer {
-  padding-top: 5%;
-  font-size: 25px;
-  color: #1473FB;
-  font-family: 'Inter', sans-serif;
-}
-
-.escuderia-footer strong {
-  color: #0045A7;
-}
-
-/* Sección CTA GIF */
-.cta-section {
-  padding: 0% 0;
-  text-align: center;
-  background-color: #fff;
-  max-width: 1600px;
-}
-
-.cta-content {
-  margin-bottom: 40px;
-}
-
-.cta-gif {
-  max-width: 400px;
-  margin: 0 auto 20px;
-}
-
-.cta-subtitle {
-  font-size: 24px;
-  color: #AFAFAF;
-  font-family: 'Inter', sans-serif;
-  margin-bottom: 20px;
-}
-
-.btn-plataforma {
-  background-color: #007AFF;
-  color: white;
-  border: none;
-  padding: 8px 50px;
-  font-size: 16px;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.btn-plataforma:hover {
-  background-color: #005FCC;
-}
-
-/* Limpieza del estilo del contenedor y del iframe */
-.iframe-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 400px;
-  height: 100vh;
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  z-index: 999;
-}
-
-.iframe-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  box-shadow: none;
-  overflow: hidden;
-}
-
-/* Media Queries para dispositivos medianos */
-@media (max-width: 1024px) {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+  
+  /* Sección Hero */
   .hero {
-    flex-direction: column;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+    background-color: white;
+  }
+  
+  .text-content {
+    flex: 1;
+    padding-right: 50px;
+  }
+  
+  .text-content h1 {
+    font-size: 64px;
+    color: #0045A7;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-content p {
+    font-size: 20px;
+    font-weight: medium;
+    color: #AFAFAF;
+    font-family: 'Inter', sans-serif;
+    margin-top: 20px;
+  }
+  
+  .btn-visitanos {
+    background-color: #007AFF;
+    color: white;
+    border: none;
+    padding: 8px 50px;
+    font-size: 14px;
+    font-weight: medium;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+
+  .btn-presencia_Digital {
+    background-color: #33343A;
+    color: white;
+    border: none;
+    padding: 8px 50px;
+    font-size: 14px;
+    font-weight: medium;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
+   
+
+
+
+  /* Margen derecho solo para el botón "Plataformas" */
+ button:first-of-type {
+    margin-right: 20px; /* Ajusta el valor según la separación que necesites */
+  }
+
+  .btn-visitanos:hover {
+    background-color: #005FCC;
+  }
+  
+  /* Placeholder para el GIF */
+  .gif-space {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+  }
+  
+  .gif-placeholder {
+    width: 300px;
+    height: 300px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bbb;
+  }
+  
+  /* Sección Features */
+  .features {
+    background-color: #ffffff;
     padding: 50px 0;
   }
-
-  .text-content {
-    padding-right: 0;
+  
+  .features .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px;
+  }
+  
+  .feature {
+    text-align: center;
+    background-color: #EEECEC;
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: medium;
+    color: #1473FB;
+    font-family: 'Inter', sans-serif;
+    flex: 1;
+    margin: 0 0px;
+    max-width: 100px;
+  }
+  
+  /* Sección Nexxus */
+  .nexxus-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #ffffff;
+    max-width: 1600px;
+  }
+  
+  .nexxus-title h2 {
+    font-size: 36px;
+    color: #0045A7;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .nexxus-title p {
+    font-size: 30px;
+    color: #AFAFAF;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .nexxus-title .highlight {
+    color: #1473FB;
+    font-size: 25px;
+  }
+  
+  .nexxus-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+  }
+  
+  .nexxus-column {
+    flex: 1;
     text-align: center;
   }
-
-  .text-content h1 {
-    font-size: 48px;
+  
+  .nexxus-column.left {
+    margin-top: 3%;
   }
-
-  .gif-space {
-    margin-top: 30px;
+  
+  .nexxus-column.left p {
+    color: #999999;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
   }
-
-  .gif-placeholder {
-    width: 250px;
-    height: 250px;
+  
+  .nexxus-column.center .nexxus-video {
+    max-width: 300px;
+    border-radius: 10px;
   }
-
-  .features .container {
-    flex-direction: column;
-    align-items: center;
+  
+  .nexxus-column.right {
+    margin-top: 3%;
   }
-
-  .feature {
-    width: 80%;
+  
+  .nexxus-column.right .nexxus-list {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+    color: #999999;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+  }
+  
+  .nexxus-column.right .nexxus-list li {
+    margin: 10px 0;
+    padding-left: 30px;
+    position: relative;
+  }
+  
+  .nexxus-column.right .nexxus-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/images/icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  /* Botón de integrar */
+  .nexxus-button {
+    margin-top: 40px;
+  }
+  
+  .nexxus-button .btn-integrar {
+    background-color: #007AFF;
+    color: white;
+    border: none;
+    padding: 8px 50px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: lighter;
+  }
+  
+  .nexxus-button .btn-integrar:hover {
+    background-color: #005FCC;
+  }
+  
+  /* Centrar el iframe con diseño limpio */
+  iframe {
+    width: 350px;
+    height: 500px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sección Escudería MindNT */
+  .escuderia-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #ffffff;
+    max-width: 1600px;
+  }
+  
+  .escuderia-title {
+    font-size: 25px;
+    color: #0045A7;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .escuderia-subtitle {
+    font-size: 25px;
+    color: #AFAFAF;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 40px;
+  }
+  
+  .escuderia-icons {
+    margin-top: 6%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .icon-item {
+    text-align: center;
+    flex: 1;
+    margin: 30px;
+  }
+  
+  .icon-item img {
+    max-width: 80px;
+    margin-bottom: 10px;
+  }
+  
+  .icon-item p {
+    font-size: 16px;
+    color: #AFAFAF;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .escuderia-footer {
+    padding-top: 5%;
+    font-size: 25px;
+    color: #1473FB;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .escuderia-footer strong {
+    color: #0045A7;
+  }
+  
+  /* Sección CTA GIF */
+  .cta-section {
+    padding: 0% 0;
+    text-align: center;
+    background-color: #fff;
+    max-width: 1600px;
+  }
+  
+  .cta-content {
+    margin-bottom: 40px;
+  }
+  
+  .cta-gif {
+    max-width: 400px;
+    margin: 0 auto 20px;
+  }
+  
+  .cta-subtitle {
+    font-size: 24px;
+    color: #AFAFAF;
+    font-family: 'Inter', sans-serif;
     margin-bottom: 20px;
   }
-
-  .nexxus-content {
+  
+  .btn-plataforma {
+    background-color: #007AFF;
+    color: white;
+    border: none;
+    padding: 8px 50px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .btn-plataforma:hover {
+    background-color: #005FCC;
+  }
+  
+  /* Limpieza del estilo del contenedor y del iframe */
+  .iframe-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    z-index: 999;
+  }
+  
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+  }
+  
+  /* Media Queries para dispositivos medianos */
+  @media (max-width: 1024px) {
+    .hero {
+      flex-direction: column;
+      padding: 50px 0;
+    }
+  
+    .text-content {
+      padding-right: 0;
+      text-align: center;
+    }
+  
+    .text-content h1 {
+      font-size: 48px;
+    }
+  
+    .gif-space {
+      margin-top: 30px;
+    }
+  
+    .gif-placeholder {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .features .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .feature {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  
+    .nexxus-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nexxus-column {
+      margin-bottom: 30px;
+    }
+  
+    .escuderia-icons {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .icon-item {
+      flex: 0 0 45%;
+      margin: 10px;
+    }
+  
+    .cta-gif {
+      max-width: 300px;
+    }
+  }
+  
+  /* Media Queries para dispositivos pequeños */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 30px 0;
+    }
+  
+    .text-content h1 {
+      font-size: 36px;
+    }
+  
+    .text-content p {
+      font-size: 16px;
+    }
+  
+    .btn-visitanos {
+      padding: 8px 30px;
+      font-size: 14px;
+    }
+  
+    .gif-placeholder {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .feature {
+      width: 90%;
+    }
+  
+    .nexxus-title h2,
+    .nexxus-title p {
+      font-size: 20px;
+    }
+  
+    .nexxus-column.left p,
+    .nexxus-column.right .nexxus-list li {
+      font-size: 14px;
+    }
+  
+    .icon-item {
+      flex: 0 0 100%;
+      margin: 10px 0;
+    }
+  
+    .cta-subtitle {
+      font-size: 18px;
+    }
+  
+    .btn-plataforma {
+      padding: 8px 30px;
+      font-size: 14px;
+    }
+  
+    .iframe-container {
+      display: none;
+    }
+  }
+  
+  /* Media Queries para dispositivos muy pequeños */
+  @media (max-width: 480px) {
+    .text-content h1 {
+      font-size: 28px;
+    }
+  
+    .text-content p {
+      font-size: 14px;
+    }
+  
+    .btn-visitanos {
+      padding: 8px 20px;
+      font-size: 12px;
+    }
+  
+    .gif-placeholder {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .cta-gif {
+      max-width: 250px;
+    }
+  
+    .cta-subtitle {
+      font-size: 16px;
+    }
+  
+    .btn-plataforma {
+      padding: 8px 20px;
+      font-size: 12px;
+    }
+  }
+  
+  /* Estilos para el formulario de suscripción */
+  .nexxus-subscription {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 0%;
   }
-
-  .nexxus-column {
-    margin-bottom: 30px;
-  }
-
-  .escuderia-icons {
-    flex-direction: row;
-    flex-wrap: wrap;
+  
+  .subscription-form {
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
-
-  .icon-item {
-    flex: 0 0 45%;
-    margin: 10px;
-  }
-
-  .cta-gif {
-    max-width: 300px;
-  }
-}
-
-/* Media Queries para dispositivos pequeños */
-@media (max-width: 768px) {
-  .hero {
-    padding: 30px 0;
-  }
-
-  .text-content h1 {
-    font-size: 36px;
-  }
-
-  .text-content p {
-    font-size: 16px;
-  }
-
-  .btn-visitanos {
-    padding: 8px 30px;
-    font-size: 14px;
-  }
-
-  .gif-placeholder {
-    width: 200px;
-    height: 200px;
-  }
-
-  .feature {
-    width: 90%;
-  }
-
-  .nexxus-title h2,
-  .nexxus-title p {
-    font-size: 20px;
-  }
-
-  .nexxus-column.left p,
-  .nexxus-column.right .nexxus-list li {
-    font-size: 14px;
-  }
-
-  .icon-item {
-    flex: 0 0 100%;
-    margin: 10px 0;
-  }
-
-  .cta-subtitle {
-    font-size: 18px;
-  }
-
-  .btn-plataforma {
-    padding: 8px 30px;
-    font-size: 14px;
-  }
-
-  .iframe-container {
-    display: none;
-  }
-}
-
-/* Media Queries para dispositivos muy pequeños */
-@media (max-width: 480px) {
-  .text-content h1 {
-    font-size: 28px;
-  }
-
-  .text-content p {
-    font-size: 14px;
-  }
-
-  .btn-visitanos {
-    padding: 8px 20px;
-    font-size: 12px;
-  }
-
-  .gif-placeholder {
-    width: 150px;
-    height: 150px;
-  }
-
-  .cta-gif {
-    max-width: 250px;
-  }
-
-  .cta-subtitle {
-    font-size: 16px;
-  }
-
-  .btn-plataforma {
-    padding: 8px 20px;
-    font-size: 12px;
-  }
-}
-
-/* Estilos para el formulario de suscripción */
-.nexxus-subscription {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0%;
-}
-
-.subscription-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.subscription-input {
-  width: 300px;
-  padding: 10px 15px;
-  padding-right: 40px;
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  border: 1px solid #ECECEC;
-  border-radius: 15px;
-  margin-right: 10px;
-}
-
-.subscription-input:focus {
-  outline: none;
-  border-color: #1473FB;
-}
-
-.btn-integrar {
-  background-color: #1473FB;
-  color: white;
-  border: none;
-  padding: 10px 30px;
-  font-size: 16px;
-  font-family: 'Inter', sans-serif;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.btn-integrar:hover {
-  background-color: #0e5bb5;
-}
-
-@media (max-width: 480px) {
-  .subscription-form {
-    flex-direction: column;
-  }
-
+  
   .subscription-input {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 15px;
+    width: 300px;
+    padding: 10px 15px;
+    padding-right: 40px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #ECECEC;
+    border-radius: 15px;
+    margin-right: 10px;
+  }
+  
+  .subscription-input:focus {
+    outline: none;
+    border-color: #1473FB;
+  }
+  
+  .btn-integrar {
+    background-color: #1473FB;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .btn-integrar:hover {
+    background-color: #0e5bb5;
+  }
+  
+  @media (max-width: 480px) {
+    .subscription-form {
+      flex-direction: column;
+    }
+  
+    .subscription-input {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  
+    .btn-integrar {
+      width: 100%;
+      padding: 10px;
+    }
   }
 
-  .btn-integrar {
-    width: 100%;
-    padding: 10px;
-  }
-}
+  
