@@ -14,7 +14,7 @@ const Header = () => {
           <li><a href="/Desarrollo Web">Desarrollo Web</a></li>
           <li><a href="/Marketing">Marketing</a></li>
           <li><a href="/Plataforma">Plataformas</a></li>
-          <li><a href="/Plataforma">Hola</a></li>
+          <li><a href="/Plataforma">New option</a></li>
           {/*<li><a href="/plataforma">plataforma</a></li>*/}
           {/*<li><a href="/blog">Blog</a></li>*/}
         </ul>
