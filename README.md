@@ -72,15 +72,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### changes
 ~~~
+# Check that you already deleted "node_modules" & "build" folders
+sudo rm -r "folder"
+
 # Check git status and add changes
-git status
 git add .
-git commit -m "Update: Latest changes for deployment"
+git commit -m "comment"
 
 # Push changes to your branch
-git push origin your-branch-name
+git push origin master
 
 # Build and deploy to GitHub Pages
-npm run build
+npm run predeploy
 npm run deploy
+
+# If you want to test locally 
+npm install
+npm start
 ~~~
