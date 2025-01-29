@@ -60,6 +60,17 @@
     cursor: pointer;
   }
 
+  .btn-Desarrollo {
+    background-color: #33343A;
+    color: white;
+    border: none;
+    padding: 8px 50px;
+    font-size: 14px;
+    font-weight: medium;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+
    
 
 
@@ -116,6 +127,36 @@
     margin: 0 0px;
     max-width: 100px;
   }
+
+  .feature_2 {
+    text-align: center;
+    background-color: #1473FB;
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: medium;
+    color: #EEECEC;
+    font-family: 'Inter', sans-serif;
+    flex: 1;
+    margin: 0 0px;
+    max-width: 110px;
+    margin-left: 120px; /* Mueve el botón hacia la derecha */
+  }
+
+  .feature_2_1 {
+    text-align: center;
+    background-color: #33343A;
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: medium;
+    color: #EEECEC;
+    font-family: 'Inter', sans-serif;
+    flex: 1;
+    margin: 0 0px;
+    max-width: 110px;
+    margin-left: 120px; /* Mueve el botón hacia la derecha */
+  }
   
   /* Sección Nexxus */
   .nexxus-section {
@@ -150,24 +191,46 @@
   }
   
   .nexxus-column {
-    flex: 1;
+    flex: 1.5;
     text-align: center;
   }
   
   .nexxus-column.left {
-    margin-top: 3%;
+    margin-top: 0%;
   }
   
-  .nexxus-column.left p {
-    color: #999999;
+  .nexxus-column.left .nexxus-list {
+    list-style: none;
+    padding: 0;
     font-size: 16px;
+    color: #999999;
     font-family: 'Inter', sans-serif;
+    text-align: left;
+  }
+  
+  .nexxus-column.left .nexxus-list li {
+    margin: 10px 0;
+    padding-left: 60px;
+    position: relative;
+  }
+
+  .nexxus-column.left .nexxus-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/images/icon_b.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   
   .nexxus-column.center .nexxus-video {
     max-width: 300px;
     border-radius: 10px;
-  }
+  }*/
   
   .nexxus-column.right {
     margin-top: 3%;
@@ -187,6 +250,10 @@
     padding-left: 30px;
     position: relative;
   }
+
+
+
+  
   
   .nexxus-column.right .nexxus-list li::before {
     content: '';
@@ -200,6 +267,11 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
+
+  
+
+
+
   
   /* Botón de integrar */
   .nexxus-button {
@@ -240,14 +312,14 @@
   }
   
   .escuderia-title {
-    font-size: 25px;
+    font-size: 36px;
     color: #0045A7;
     font-weight: bold;
     font-family: 'Inter', sans-serif;
   }
   
   .escuderia-subtitle {
-    font-size: 25px;
+    font-size: 32px;
     color: #AFAFAF;
     font-family: 'Inter', sans-serif;
     margin-bottom: 40px;

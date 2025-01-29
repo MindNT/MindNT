@@ -8,12 +8,14 @@ import escuela from '../assets/images/escuela-icon.svg';
 import flotilla from '../assets/images/flotilla-icon.svg';
 import hospital from '../assets/images/hospital-icon.svg';
 import items from '../assets/images/items-icon.svg';
+import brillo from '../assets/images/brillo.svg';
+import lab from '../assets/images/lab.svg';
  // Ajusta la ruta según tu estructura de archivos
 import platform from '../assets/images/platform-image.png';
 import '../styles/inicio.css';  // Estilos específicos para la vista "Inicio"
 import Cubos from '../components/Cubos';  // Importa el componente de los cubos
 import Paletta from '../components/Paletta';  // Importa el componente de los cubos
-import views from '../assets/images/views.svg';
+import views from '../assets/images/views_new.svg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -55,7 +57,11 @@ const Inicio = () => {
             <br></br>
             {/*<button className="btn-visitanos" onClick={() => window.location.href='https://tu-url.com'}>Visítanos</button>*/}
             <button className="btn-visitanos" onClick={() => window.location.href='https://tu-url.com'}>Plataformas</button>
-            <button className="btn-presencia_Digital" onClick={() => window.location.href='https://tu-url.com'}>Presencia Digital</button>
+            <button className="btn-presencia_Digital" onClick={() => window.location.href='https://tu-url.com'}>
+             <img src={brillo} alt="Brillo" className="brillo-icon-digital" /> {/* Agrega la imagen aquí */}
+             Presencia Digital
+             <img src={lab} alt="lab" className="lab-icon-digital" />
+            </button>
           </div>
           <div className="gif-space">
             <Cubos />
@@ -91,7 +97,16 @@ const Inicio = () => {
 
           <div className="nexxus-content">
             <div className="nexxus-column left">
-              <Paletta />
+              
+              <div className="feature_2_1"><strong>Marketing</strong></div>
+              <ul className="nexxus-list" style={{ marginLeft: '40px' }}>
+                <li>Análisis de necesidades del cliente</li>
+                <li>Desarrollo de estrategia de marketing</li>
+                <li>Creación de contenido</li>
+                <li>Campañas de promoción</li>
+                <li>Optimización para motores de búsqueda (SEO)</li>
+                <li>Análisis y seguimiento</li>
+              </ul>
             </div>
             <div className="nexxus-column center">
               <video className="nexxus-video" autoPlay loop muted>
@@ -100,13 +115,14 @@ const Inicio = () => {
               </video>
             </div>
             <div className="nexxus-column right">
+              <div className="feature_2"><strong>Desarrollo</strong></div>
               <ul className="nexxus-list" style={{ marginLeft: '40px' }}>
-                <li>Integración en una sola línea de código</li>
-                <li>Resuelve las dudas de tus clientes en tiempo real</li>
-                <li>Proporciona precios y estimaciones</li>
-                <li>Información personalizada</li>
-                <li>Compatible con todas las tecnologías web</li>
-                <li>Soporte las 24/7</li>
+                <li>Definición de Requisitos y Planificación</li>
+                <li>Creación de la Arquitectura del Sitio Web</li>
+                <li>Diseño y Desarrollo del Frontend</li>
+                <li>Desarrollo del Backend y Base de Datos</li>
+                <li>Pruebas y Depuración del Sitio Web</li>
+                <li>Despliegue y Entrega del Sitio Web</li>
               </ul>
             </div>
           </div>
@@ -124,13 +140,13 @@ const Inicio = () => {
                 required
               />
               <button type="submit" className="btn-integrar">
-                Suscribirme
+                <strong>Cotizar servicio</strong>
               </button>
             </form>
           </div>
         </section>
 
-        {/* Duplicado de la Sección Nexxus */}
+        {/* Duplicado de la Sección Nexxus 
         <section className="nexxus-section">
           <div className="nexxus-title">
             <h2>
@@ -151,6 +167,7 @@ const Inicio = () => {
           <div className="nexxus-content">
             <div className="nexxus-column left">
               <Paletta />
+              
             </div>
             <div className="nexxus-column center">
               <video className="nexxus-video" autoPlay loop muted>
@@ -170,7 +187,7 @@ const Inicio = () => {
             </div>
           </div>
 
-          {/* Formulario de suscripción */}
+           Formulario de suscripción 
           <div className="nexxus-subscription">
             <form className="subscription-form" onSubmit={handleSubmit}>
               <input
@@ -188,11 +205,15 @@ const Inicio = () => {
             </form>
           </div>
         </section>
+        */}
 
         {/* Sección Escudería MindNT */}
         <section className="escuderia-section">
-          <h2 className="escuderia-title">Nuestra futura escudería MindNT</h2>
-          <p className="escuderia-subtitle">Vuelve más inteligente tu negocio y marca la diferencia</p>
+          <h2 className="escuderia-title">Te presentamos nuestra escuderia MindNT</h2>
+          <p className="escuderia-subtitle">Vuelve mas inteligente tu negocio y marca la diferencia con nuestra serie de plataformas creadas para ti.</p>
+            
+              
+
 
           <div className="escuderia-icons">
             <div className="icon-item">
@@ -217,12 +238,31 @@ const Inicio = () => {
             </div>
           </div>
           <button className="btn-plataforma" onClick={() => navigate('/integraciones')}> Conocer integraciones</button>
-          <p className="escuderia-footer"><strong>MindNT</strong>. Es hora de cambiar las reglas</p>
+          <p className="escuderia-footer">
+           <strong>MindNT</strong>. Es hora de cambiar las reglas
+           <img src={brillo} alt="Brillo" className="brillo-icon" /> {/* Agrega la imagen aquí */}
+          </p>
+          <div className="nexxus-subscription">
+            <form className="subscription-form" onSubmit={handleSubmit}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Ingresa tu correo electrónico"
+                className="subscription-input"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn-integrar">
+                <strong>Suscribirme</strong>
+              </button>
+            </form>
+          </div>
         </section>
 
         {/* Sección CTA */}
         <section className="cta-section">
-          <div className="cta-content">
+          <div className="cta-content"> 
             <img src={views} alt="GIF" className="cta-gif" style={{ maxWidth: '1000px', height: '600px' }} />
             <p className="cta-subtitle">Experimenta el cambio tú mismo</p>
             <button className="btn-plataforma" onClick={() => window.location.href = '/integraciones'}>Plataforma</button>
