@@ -9,7 +9,7 @@ import Blog from './views/Blog';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/MindNT">
       <Header />
       <Routes>
         <Route path="/" element={<Inicio />} />
