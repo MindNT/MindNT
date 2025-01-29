@@ -71,9 +71,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 ### `Save Changes`
-~~~
+~~~bash
 # Check that you already deleted "node_modules", "package-lock.json" & "build" folders
-sudo rm -r "folder"
+sudo rm -r "folder or file"
 
 # Check git status and add changes
 git add .
