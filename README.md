@@ -68,3 +68,56 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Development Workflow
+
+#### Getting Started
+```bash
+# Clone the repository
+git clone <repository-url>
+cd <project-folder>
+
+# Get latest changes from remote repository
+git fetch origin
+git pull origin master
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+#### Making Changes
+```bash
+# Create a new branch (optional)
+git checkout -b feature/your-feature-name
+
+# Make your changes and check status
+git status
+
+# Stage and commit changes
+git add .
+git commit -m "Description of your changes"
+
+# Push changes to remote repository
+git push origin master  # or git push origin feature/your-feature-name
+```
+
+#### Deployment
+```bash
+# Before deployment, ensure you have:
+# 1. Deleted node_modules, package-lock.json & build folders if needed
+sudo rm -r node_modules
+sudo rm package-lock.json
+sudo rm -r build
+
+# 2. Clean installation
+npm install
+
+# 3. Build and deploy to GitHub Pages
+npm run predeploy  # This will create a production build
+npm run deploy     # This will deploy to gh-pages branch
+```
+
+Note: Make sure you have the correct repository permissions and gh-pages configuration in your package.json before deploying.
