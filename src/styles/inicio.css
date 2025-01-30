@@ -169,7 +169,7 @@ button:first-of-type {
   flex: 1;
   margin: 0 0px;
   max-width: 110px;
-  margin-left: 120px; /* Mueve el botón hacia la derecha */
+  margin-left: 120px; 
 }
 
 /* Sección Nexxus */
@@ -244,7 +244,7 @@ button:first-of-type {
 .nexxus-column.center .nexxus-video {
   max-width: 300px;
   border-radius: 10px;
-}*/
+}
 
 .nexxus-column.right {
   margin-top: 3%;
