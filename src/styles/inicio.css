@@ -49,15 +49,32 @@
   }
 
 
-  .btn-presencia_Digital {
+  .btn-presencia_digital {
     background-color: #33343A;
     color: white;
     border: none;
-    padding: 8px 50px;
+    padding: 8px 20px; /* Ajusta el padding según sea necesario */
     font-size: 14px;
     font-weight: medium;
     border-radius: 15px;
     cursor: pointer;
+    display: flex; /* Usa flexbox para alinear el texto y la imagen */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    gap: 10px; /* Espacio entre el texto y la imagen */
+  }
+  
+  /* Estilos de la imagen SVG */
+  .brillo-icon-digital {
+    width: 20px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 20px;
+    margin-top: 2px; /* Ajusta la posición vertical de la imagen */
+  }
+
+  .lab-icon-digital {
+    width: 20px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 20px;
+    margin-top: 4px; /* Ajusta la posición vertical de la imagen */
   }
 
   .btn-Desarrollo {
@@ -183,6 +200,13 @@
     color: #1473FB;
     font-size: 25px;
   }
+
+  .highlight-blue {
+    font-size: 25px;
+    color: #007AFF; /* Ajusta este color según el color azul utilizado en la sección nexxus */
+  }
+
+  
   
   .nexxus-content {
     display: flex;
@@ -319,7 +343,7 @@
   }
   
   .escuderia-subtitle {
-    font-size: 32px;
+    font-size: 36px;
     color: #AFAFAF;
     font-family: 'Inter', sans-serif;
     margin-bottom: 40px;
@@ -360,6 +384,13 @@
     color: #0045A7;
   }
   
+  .brillo-icon {
+    margin-top: 5px;
+    margin-left: 5px; /* Espacio entre el texto y la imagen */
+    width: 1px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 1px;
+  }
+  /*titulo de plataforma naranja*/
   /* Sección CTA GIF */
   .cta-section {
     padding: 0% 0;
