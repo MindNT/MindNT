@@ -10,8 +10,10 @@ import hospital from '../assets/images/hospital-icon.svg';
 import items from '../assets/images/items-icon.svg';
 import brillo from '../assets/images/brillo.svg';
 import lab from '../assets/images/lab.svg';
+import brillo_1 from '../assets/images/brillo_inicio.svg';
  // Ajusta la ruta según tu estructura de archivos
 import platform from '../assets/images/platform-image.png';
+import logoRestaurantNew from '../assets/images/logo-restaurant-new.svg';
 import '../styles/inicio.css';  // Estilos específicos para la vista "Inicio"
 import Cubos from '../components/Cubos';  // Importa el componente de los cubos
 import Paletta from '../components/Paletta';  // Importa el componente de los cubos
@@ -58,7 +60,7 @@ const Inicio = () => {
             {/*<button className="btn-visitanos" onClick={() => window.location.href='https://tu-url.com'}>Visítanos</button>*/}
             <button className="btn-visitanos" onClick={() => window.location.href='https://tu-url.com'}>Plataformas</button>
             <button className="btn-presencia_Digital" onClick={() => window.location.href='https://tu-url.com'}>
-             <img src={brillo} alt="Brillo" className="brillo-icon-digital" /> {/* Agrega la imagen aquí */}
+             <img src={brillo_1} alt="Brillo" className="brillo-icon-digital-inicio" /> {/* Agrega la imagen aquí */}
              Presencia Digital
              <img src={lab} alt="lab" className="lab-icon-digital" />
             </button>
@@ -89,7 +91,7 @@ const Inicio = () => {
               
             </h2>
             <p>
-              Nuestra dualida, haceque tus clientes te conozcan de forma {' '}
+              Nuestra dualida, hace que tus clientes te conozcan de forma {' '}
               <span className="highlight">intuitiva</span> y{' '}
               <span className="highlight">fácil</span>.
             </p>
@@ -210,8 +212,12 @@ const Inicio = () => {
         {/* Sección Escudería MindNT */}
         <section className="escuderia-section">
           <h2 className="escuderia-title">Te presentamos nuestra escuderia MindNT</h2>
-          <p className="escuderia-subtitle">Vuelve mas inteligente tu negocio y marca la diferencia con nuestra serie de plataformas creadas para ti.</p>
-            
+          {/*<p className="escuderia-subtitle">Vuelve mas inteligente tu negocio y marca la diferencia con nuestra serie de plataformas creadas para ti.</p>*/}
+            <p
+              className="escuderia-subtitle">Vuelve más {' '}
+              <span className="highlight">inteligente</span> tu negocio y marca la{' '} 
+              <span className="highlight">diferencia</span> con nuestra serie de plataformas creadas para ti.
+            </p>
               
 
 
@@ -262,10 +268,31 @@ const Inicio = () => {
 
         {/* Sección CTA */}
         <section className="cta-section">
-          <div className="cta-content"> 
-            <img src={views} alt="GIF" className="cta-gif" style={{ maxWidth: '1000px', height: '600px' }} />
-            <p className="cta-subtitle">Experimenta el cambio tú mismo</p>
-            <button className="btn-plataforma" onClick={() => window.location.href = '/integraciones'}>Plataforma</button>
+          <div className="cta-content">
+            {/* Palabras a la izquierda */}
+            <div className="left-words">
+              <div className="word especial">POTENCIADO CON IA</div>
+              <div className="word simplismo">SIMPLISMO</div>
+              <div className="word especial">ANÁLISIS</div>
+            </div>
+            {/* Contenido central */}
+             <div className="center-content">
+             <div className="contenedor-titulo">
+             <h2 className="plataforma-naranja">
+             ¿Quieres dejar atrás la complejidad del <br/ >software naranja?
+             </h2>
+             </div>
+              <img src={logoRestaurantNew} alt="Logo Restaurant" className="logo-restaurant-new" />
+              <img src={views} alt="GIF" className="cta-gif" style={{ maxWidth: '1800px', height: '700px' }} />
+              {/*<p className="cta-subtitle">Experimenta el cambio tú mismo</p>}*/}
+              <button className="btn-plataforma" onClick={() => window.location.href = '/integraciones'}>Prueba gratis</button>
+            </div>
+            {/* Palabras a la derecha */}
+            <div className="right-words">
+              <div className="word special">CONTROL</div>
+              <div className="word diseño">DISEÑO</div>
+              <div className="word special">SEGURIDAD</div>
+            </div>
           </div>
         </section>
       </div>

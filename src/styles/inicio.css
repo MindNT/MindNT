@@ -61,6 +61,13 @@
 }
 
 /* Estilos de la imagen SVG */
+
+.brillo-icon-digital-inicio {
+  width: 15px; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: 15px;
+  margin-top: -100px; /* Ajusta la posición vertical de la imagen */
+}
+
 .brillo-icon-digital {
   width: 20px; /* Ajusta el tamaño de la imagen según sea necesario */
   height: 20px;
@@ -68,8 +75,8 @@
 }
 
 .lab-icon-digital {
-  width: 25px; /* Ajusta el tamaño de la imagen según sea necesario */
-  height: 25px;
+  width: 20px; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: 20px;
   margin-top: -99px; /* Ajusta la posición vertical de la imagen */
 }
 
@@ -169,7 +176,7 @@ button:first-of-type {
   flex: 1;
   margin: 0 0px;
   max-width: 110px;
-  margin-left: 120px; 
+  margin-left: 120px; /* Mueve el botón hacia la derecha */
 }
 
 /* Sección Nexxus */
@@ -224,7 +231,7 @@ button:first-of-type {
 
 .nexxus-column.left .nexxus-list li {
   margin: 10px 0;
-  padding-left: 60px;
+  padding-left: 30px;
   position: relative;
 }
 
@@ -247,7 +254,7 @@ button:first-of-type {
 }
 
 .nexxus-column.right {
-  margin-top: 3%;
+  margin-top: 0%;
 }
 
 .nexxus-column.right .nexxus-list {
@@ -332,11 +339,24 @@ iframe {
   font-family: 'Inter', sans-serif;
 }
 
+
+.plataforma-naranja {
+  font-size: 36px;
+  color: #FF9263; /* Puedes cambiar este color si deseas un color diferente */
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+}
+
 .escuderia-subtitle {
-  font-size: 32px;
+  font-size: 28px;
   color: #AFAFAF;
   font-family: 'Inter', sans-serif;
   margin-bottom: 40px;
+}
+
+.highlight {
+  color: #1473FB;
+  font-size: 25px;
 }
 
 .escuderia-icons {
@@ -374,43 +394,133 @@ iframe {
   color: #0045A7;
 }
 
-/* Sección CTA GIF */
+/* Sección CTA */
 .cta-section {
-  padding: 0% 0;
+  padding: 60px 0;
   text-align: center;
   background-color: #fff;
   max-width: 1600px;
+  margin: 0 auto;
 }
 
 .cta-content {
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.cta-gif {
-  max-width: 400px;
-  margin: 0 auto 20px;
+/* Estilos para las palabras a la izquierda y derecha */
+.left-words,
+.right-words {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 270px; /* Espacio entre las palabras */
+}
+
+.left-words {
+  align-items: flex-start; /* Alinea las palabras a la izquierda */
+  margin-right: 0px; /* Ajusta este valor según sea necesario */
+}
+
+.right-words {
+  align-items: flex-end; /* Alinea las palabras a la derecha */
+  margin-right: 1000px; /* Ajusta este valor según sea necesario */
+}
+
+.word {
+  font-size: 24px; /* Tamaño de fuente */
+  color: #999999; /* Color del texto */
+  font-family: 'bold', sans-serif; /* Fuente */
+  font-weight: bold; /* Aplica negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+/* Estilos para las palabras específicas */
+.simplismo {
+  transform: translateX(-210px); /* Mueve "simplismo" hacia la izquierda */
+}
+
+
+
+.diseño {
+  transform: translateX(310px); /* Mueve "diseño" hacia la derecha */
+}
+
+.especial {
+  transform: translateX(-100px); /* Mueve "diseño" hacia la derecha */
+}
+
+.special {
+  transform: translateX(200px); /* Mueve "diseño" hacia la derecha */
+}
+
+
+.center-content {
+  text-align: center;
+  max-width: 600px; /* Ajusta el ancho según sea necesario */
+  margin-left: 51px; /* Ajusta este valor según sea necesario */
+}
+
+.plataforma-naranja {
+  font-size: 36px; /* Tamaño de fuente */
+  color: #FF9263; /* Color naranja */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.contenedor-titulo {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 10vh; /* Ajusta la altura según sea necesario */
 }
 
 .cta-subtitle {
-  font-size: 24px;
-  color: #AFAFAF;
+  font-size: 24px; /* Tamaño de fuente */
+  color: #AFAFAF; /* Color del subtítulo */
   font-family: 'Inter', sans-serif;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Espacio debajo del subtítulo */
 }
 
 .btn-plataforma {
-  background-color: #007AFF;
-  color: white;
+  background-color: #007AFF; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
   border: none;
-  padding: 8px 50px;
-  font-size: 16px;
-  border-radius: 15px;
+  padding: 8px 50px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border-radius: 15px; /* Bordes redondeados */
   cursor: pointer;
 }
 
 .btn-plataforma:hover {
-  background-color: #005FCC;
+  background-color: #005FCC; /* Color de fondo al pasar el mouse */
 }
+
+.logo-restaurant-new {
+  display: block;
+  margin: 30px auto 10px auto; /* Ajusta el margen inferior para acercar la imagen */
+  max-width: 100%; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: auto;
+}
+
+.cta-gif {
+  max-width: 400px;
+  height: 600px;
+  margin-top: 10px;
+  margin: 0 auto 40px; /* Elimina este margen si no lo necesitas */
+  margin-top: -53px;
+  position: relative; /* Permite mover la imagen */
+  left: -300px; /* Mueve la imagen 50px hacia la izquierda */
+}
+
 
 /* Limpieza del estilo del contenedor y del iframe */
 .iframe-container {
