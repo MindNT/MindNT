@@ -39,7 +39,7 @@ export default function CountdownTimer() {
                 {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
             </span>
             <span className="ml-3 text-[#00DBFF] font-semibold animate-bounce-slow">
-                50% OFF en desarrollo web
+                30% OFF en desarrollo web
             </span>
         </div>
     );
