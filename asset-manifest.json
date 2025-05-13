@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/MindNT/static/css/main.c8dd65e4.css",
-    "main.js": "/MindNT/static/js/main.83a17393.js",
+    "main.css": "/MindNT/static/css/main.a839e963.css",
+    "main.js": "/MindNT/static/js/main.4fa88f5a.js",
     "static/js/453.8f044c48.chunk.js": "/MindNT/static/js/453.8f044c48.chunk.js",
-    "static/media/TarjetaPresentacion.svg": "/MindNT/static/media/TarjetaPresentacion.2ed0d60af974f912f1e7adf1b2d779d5.svg",
-    "static/media/computadora.svg": "/MindNT/static/media/computadora.fcb547f48fcc7330a47413c78e93a599.svg",
+    "static/media/TarjetaPresentacion.svg": "/MindNT/static/media/TarjetaPresentacion.c59d0dc5080b56b9c3a1a1e4106dd4a4.svg",
     "static/media/NexxusColors.svg": "/MindNT/static/media/NexxusColors.0a3354237ea78b5df637d67c6cf0d2e1.svg",
     "static/media/cellphone2.svg": "/MindNT/static/media/cellphone2.87c69c8d9d3873171e14897430602987.svg",
     "static/media/V360comments.svg": "/MindNT/static/media/V360comments.c4440b2f7f5b907e67b98eee82aa7886.svg",
@@ -15,16 +14,21 @@
     "static/media/logo2.svg": "/MindNT/static/media/logo2.c4094c9b7fb492e4c2a1279a74f2e22b.svg",
     "static/media/logo1.svg": "/MindNT/static/media/logo1.d88c57718eae2655dc612201d1b58f13.svg",
     "static/media/logo3.svg": "/MindNT/static/media/logo3.dbec993cc0a9d692628fd558c37e3ba1.svg",
+    "static/media/diseño1.svg": "/MindNT/static/media/diseño1.b35d7c8158e103124567806731358b83.svg",
     "static/media/v360.svg": "/MindNT/static/media/v360.81c376dde99dbcb3833c2913e36f5b3d.svg",
     "static/media/nexxus.svg": "/MindNT/static/media/nexxus.b63a3dbc51ea4a38eeb43e94d707a8a5.svg",
     "static/media/logo.svg": "/MindNT/static/media/logo.66289137ad21214c656d3809f86c4657.svg",
+    "static/media/diseño5.svg": "/MindNT/static/media/diseño5.552bd7b2516f7c549a2153f8bf6c37d6.svg",
+    "static/media/diseño3.svg": "/MindNT/static/media/diseño3.42712234e9f274ec72c5fcaf563a8782.svg",
+    "static/media/diseño4.svg": "/MindNT/static/media/diseño4.088d822f4f111f215c995017bead92b5.svg",
     "index.html": "/MindNT/index.html",
-    "main.c8dd65e4.css.map": "/MindNT/static/css/main.c8dd65e4.css.map",
-    "main.83a17393.js.map": "/MindNT/static/js/main.83a17393.js.map",
+    "static/media/diseño2.svg": "/MindNT/static/media/diseño2.c3cec96b48e3d2dc13390b9a93a3dee0.svg",
+    "main.a839e963.css.map": "/MindNT/static/css/main.a839e963.css.map",
+    "main.4fa88f5a.js.map": "/MindNT/static/js/main.4fa88f5a.js.map",
     "453.8f044c48.chunk.js.map": "/MindNT/static/js/453.8f044c48.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8dd65e4.css",
-    "static/js/main.83a17393.js"
+    "static/css/main.a839e963.css",
+    "static/js/main.4fa88f5a.js"
   ]
 }
