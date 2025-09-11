@@ -1,58 +1,25 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar';
-import NavbarMobile from './components/navbarMobile';
-import Footer from './components/Footer';
-import Home from './pages/Inicio';
-import HomeMobile from './pages/InicioMobile';
-import Nexxus from './pages/Nexxus';
-import NexxusMobile from './pages/NexxusMobile';
-import V360 from './pages/V360';
-import V360Mobile from './pages/V360Mobile';
-import Marketing from './pages/Marketing';
-import MarketingMobile from './pages/MarketingMobile';
-import { useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Header from './components/Header';
+import Inicio from './pages/Inicio';
 
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return isMobile;
-}
-
-function AppContent() {
-  const location = useLocation();
-  const isMarketing = location.pathname === '/marketing';
-  const isMobile = useIsMobile();
-
+function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      {isMobile ? <NavbarMobile /> : <Navbar />}
-      <div className="flex-grow">
-        <Routes>
-          <Route path="/" element={isMobile ? <HomeMobile /> : <Home />} />
-          <Route path="/marketing" element={isMobile ? <MarketingMobile /> : <Marketing />} />
-          <Route path="/nexxus" element={isMobile ? <NexxusMobile /> : <Nexxus />} />
-          <Route path="/v360" element={isMobile ? <V360Mobile /> : <V360 />} />
-        </Routes>
+    <div className="App min-h-screen bg-gradient-to-b from-[#020B14] to-[#071C34]/100 relative">
+      {/* Fixed Header */}
+      <div className="fixed top-0 left-0 right-0 z-40 px-4 md:px-16 pt-4">
+        <Header />
       </div>
-      <Footer section={isMarketing ? 'marketing' : 'mindnt'} />
+      
+      {/* Main content with top padding to account for fixed header */}
+      <div className="pt-24 px-4 md:px-16">
+        <Inicio />
+      </div>
+      
+      {/* Glow overlay at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-blue-400/30 via-blue-600/20 to-transparent blur-3xl pointer-events-none"></div>
     </div>
   );
 }
 
-export default function App() {
-  return (
-    <Router basename="/MindNT">
-      <AppContent />
-    </Router>
-  );
-}
+export default App;
