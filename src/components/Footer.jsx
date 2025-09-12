@@ -113,10 +113,10 @@ const Footer = ({ onOpenCallModal }) => {
             Copyright © 2024 MindNT. Todos los derechos reservados.
           </p>
           <div className="flex space-x-8">
-            <a href="#" className="text-gray-500 text-xs font-light hover:text-gray-300 transition-colors duration-300">
+            <a href="/politica" className="text-gray-500 text-xs font-light hover:text-gray-300 transition-colors duration-300">
               Política de Privacidad
             </a>
-            <a href="#" className="text-gray-500 text-xs font-light hover:text-gray-300 transition-colors duration-300">
+            <a href="/terminos" className="text-gray-500 text-xs font-light hover:text-gray-300 transition-colors duration-300">
               Términos de Servicio
             </a>
           </div>

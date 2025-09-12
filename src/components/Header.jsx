@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Button1 from '../utils/button1';
 
 // Define paths for public assets
@@ -8,6 +9,7 @@ const whatsAppIconSrc = '/icons/WhatsApp.svg';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +30,19 @@ const Header = () => {
       top: 0,
       behavior: 'smooth'
     });
+  };
+
+  const handleNavigation = (sectionId) => {
+    if (location.pathname === '/') {
+      // Si estamos en la página principal, hacer scroll a la sección
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Si estamos en otra página, ir a la página principal con el hash
+      window.location.href = `/#${sectionId}`;
+    }
   };
 
   return (
@@ -52,16 +67,43 @@ const Header = () => {
         
         {/* Logo on the left */}
         <div className="flex items-center relative z-10">
-          <img src={logoSrc} alt="Logo" className="h-8 sm:h-10 w-auto" />
+          <Link to="/" className="hover:opacity-80 transition-opacity duration-200">
+            <img src={logoSrc} alt="Logo" className="h-8 sm:h-10 w-auto" />
+          </Link>
         </div>
         
         {/* Desktop navbar - hidden on mobile */}
         <nav className="hidden lg:flex space-x-6 flex-1 justify-center relative z-10">
-          <button onClick={scrollToTop} className="hover:font-bold transition-all duration-200 cursor-pointer">Inicio</button>
-          <a href="#nosotros" className="hover:font-bold transition-all duration-200">Nosotros</a>
-          <a href="#servicios" className="hover:font-bold transition-all duration-200">Servicios</a>
-          <a href="#nexxus" className="hover:font-bold transition-all duration-200">Nexxus</a>
-          <a href="#urgente" className="hover:font-bold transition-all duration-200">¿Proyecto Urgente?</a>
+          <button 
+            onClick={() => location.pathname === '/' ? scrollToTop() : handleNavigation('inicio')} 
+            className="hover:font-bold transition-all duration-200 cursor-pointer"
+          >
+            Inicio
+          </button>
+          <button 
+            onClick={() => handleNavigation('nosotros')} 
+            className="hover:font-bold transition-all duration-200 cursor-pointer"
+          >
+            Nosotros
+          </button>
+          <button 
+            onClick={() => handleNavigation('servicios')} 
+            className="hover:font-bold transition-all duration-200 cursor-pointer"
+          >
+            Servicios
+          </button>
+          <button 
+            onClick={() => handleNavigation('nexxus')} 
+            className="hover:font-bold transition-all duration-200 cursor-pointer"
+          >
+            Nexxus
+          </button>
+          <button 
+            onClick={() => handleNavigation('urgente')} 
+            className="hover:font-bold transition-all duration-200 cursor-pointer"
+          >
+            ¿Proyecto Urgente?
+          </button>
         </nav>
         
         {/* Desktop WhatsApp button */}
@@ -105,41 +147,53 @@ const Header = () => {
             <nav className="relative z-10 p-6 space-y-1">
               <button 
                 onClick={() => {
-                  scrollToTop();
+                  if (location.pathname === '/') {
+                    scrollToTop();
+                  } else {
+                    handleNavigation('inicio');
+                  }
                   toggleMobileMenu();
                 }}
                 className="w-full text-center py-4 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
               >
                 Inicio
               </button>
-              <a 
-                href="#nosotros" 
-                onClick={toggleMobileMenu}
-                className="block w-full text-center py-4 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
+              <button 
+                onClick={() => {
+                  handleNavigation('nosotros');
+                  toggleMobileMenu();
+                }}
+                className="w-full text-center py-4 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
               >
                 Nosotros
-              </a>
-              <a 
-                href="#servicios" 
-                onClick={toggleMobileMenu}
-                className="block w-full text-center py-4 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
+              </button>
+              <button 
+                onClick={() => {
+                  handleNavigation('servicios');
+                  toggleMobileMenu();
+                }}
+                className="w-full text-center py-4 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
               >
                 Servicios
-              </a>
-              <a 
-                href="#nexxus" 
-                onClick={toggleMobileMenu}
-                className="block w-full text-center py-4 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
+              </button>
+              <button 
+                onClick={() => {
+                  handleNavigation('nexxus');
+                  toggleMobileMenu();
+                }}
+                className="w-full text-center py-4 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
               >
                 Nexxus
-              </a>
-              <a 
-                href="#urgente" 
-                onClick={toggleMobileMenu}
-                className="block w-full text-center py-4 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
+              </button>
+              <button 
+                onClick={() => {
+                  handleNavigation('urgente');
+                  toggleMobileMenu();
+                }}
+                className="w-full text-center py-4 px-4 text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200 font-medium"
               >
                 ¿Proyecto Urgente?
-              </a>
+              </button>
               
               {/* Mobile WhatsApp button */}
               <div className="pt-4 border-t border-white/10 mt-4 flex justify-center">
