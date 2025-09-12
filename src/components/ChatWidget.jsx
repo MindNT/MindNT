@@ -4,7 +4,7 @@ const ChatWidget = ({ onClick }) => {
   return (
     <div id="nexxus-widget" className="fixed bottom-6 right-6 z-40">
       {/* Message bubble */}
-      <div className="absolute bottom-full right-4 mb-4 animate-bounce">
+      <div className="absolute bottom-full right-4 mb-4 animate-bounce hidden sm:block">
         <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-2 shadow-lg">
           {/* Liquid glass overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-white/[0.04] pointer-events-none rounded-2xl"></div>

@@ -39,7 +39,7 @@ const ChatbotContainer = () => {
               </svg>
             </div>
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl rounded-bl-md p-4 max-w-xs">
-              <p className="text-white text-sm leading-relaxed text-left">¡Hola! Soy tu asistente de Nexxus AI. ¿En qué puedo ayudarte hoy?</p>
+              <p className="text-white text-sm leading-relaxed text-left">¡Hola! Soy tu asistente de Nexxus. ¿En qué puedo ayudarte hoy?</p>
               <span className="text-white/50 text-xs mt-2 block text-left">12:30</span>
             </div>
           </div>

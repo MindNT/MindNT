@@ -85,10 +85,10 @@ Me gustaría conocer más sobre:
       <div className="min-h-screen flex flex-col items-center justify-center text-white px-4 mt-10">
       {/* Hero Section */}
       <div id="inicio" className="text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-medium mb-4 tracking-tight-apple text-white">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 tracking-tight-apple text-white">
           Bienvenido a MindNT
         </h1>
-        <h2 className="text-xl md:text-2xl font-light tracking-normal-apple text-white/60">
+        <h2 className="text-lg md:text-xl lg:text-2xl font-light tracking-normal-apple text-white/60">
           Desarrollo web innovador y soluciones digitales
         </h2>
       </div>
@@ -112,10 +112,10 @@ Me gustaría conocer más sobre:
         Platicanos tu proyecto y te cotizamos en menos de 24 horas.
       </div>
       {/* New Section: How We Work */}
-      <div id="nosotros" className="mt-20 text-center max-w-7xl mx-auto">
+      <div id="nosotros" className="mt-20 text-center max-w-7xl mx-auto px-4">
         <div className="mb-16">
-          <h2 className="text-5xl md:text-6xl font-medium mb-6 text-white tracking-tight leading-tight">Cómo Trabajamos</h2>
-          <p className="text-xl font-light text-white/60 max-w-3xl mx-auto leading-relaxed tracking-normal-apple">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 text-white tracking-tight leading-tight">Cómo Trabajamos</h2>
+          <p className="text-lg md:text-xl font-light text-white/60 max-w-3xl mx-auto leading-relaxed tracking-normal-apple">
             Nuestro proceso de desarrollo web sigue un enfoque estructurado y colaborativo para garantizar resultados de alta calidad.
           </p>
         </div>
@@ -232,9 +232,9 @@ Me gustaría conocer más sobre:
       <h3 className="text-2xl font-semibold mt-16 mb-8 text-center tracking-tight-apple text-white">Clientes que Confían en Nosotros</h3>
       <LogoCarousel logos={logos} />
       {/* New Section: What Makes Us Different */}
-      <div className="mt-20 text-center">
-        <h2 className="text-5xl md:text-6xl font-medium mb-8 tracking-tight-apple text-white">Qué nos hace diferentes</h2>
-        <p className="text-xl font-light mb-12 max-w-4xl mx-auto tracking-normal-apple leading-relaxed text-white/60">
+      <div className="mt-20 text-center px-4">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-8 tracking-tight-apple text-white">Qué nos hace diferentes</h2>
+        <p className="text-lg md:text-xl font-light mb-12 max-w-4xl mx-auto tracking-normal-apple leading-relaxed text-white/60">
           En MindNT, nos distinguimos por ofrecer soluciones personalizadas y de alta calidad. A diferencia de otros, priorizamos tu satisfacción con precios competitivos, tiempos de entrega rápidos y el uso de tecnologías de vanguardia, asegurando que cada proyecto sea único y adaptado a tus necesidades específicas.
         </p>
         <Comparative 
@@ -264,9 +264,9 @@ Me gustaría conocer más sobre:
         </div>
       </div>
       {/* New Section: Services */}
-      <div id="servicios" className="mt-20 text-center">
-        <h2 className="text-5xl md:text-6xl font-medium mb-8 tracking-tight-apple text-white">Nuestros Servicios</h2>
-        <p className="text-xl font-light mb-12 max-w-4xl mx-auto tracking-normal-apple leading-relaxed text-white/60">
+      <div id="servicios" className="mt-20 text-center px-4">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-8 tracking-tight-apple text-white">Nuestros Servicios</h2>
+        <p className="text-lg md:text-xl font-light mb-12 max-w-4xl mx-auto tracking-normal-apple leading-relaxed text-white/60">
           Ofrecemos soluciones digitales completas y personalizadas para impulsar tu negocio al siguiente nivel.
         </p>
         <div className="max-w-7xl mx-auto">
@@ -305,17 +305,14 @@ Me gustaría conocer más sobre:
         </div>
       </div>
       {/* New Section: Our AI - Nexxus */}
-      <div id="nexxus" className="mt-20 text-center max-w-4xl mx-auto">
-        <h2 className="text-5xl md:text-6xl font-medium mb-8 tracking-tight-apple text-white">Conoce a nuestro agente Nexxus</h2>
-        <p className="text-xl font-light mb-12 tracking-normal-apple leading-relaxed text-white/60">
+      <div id="nexxus" className="mt-20 text-center max-w-4xl mx-auto px-4">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-8 tracking-tight-apple text-white">Conoce a nuestro agente Nexxus</h2>
+        <p className="text-lg md:text-xl font-light mb-12 tracking-normal-apple leading-relaxed text-white/60">
           Descubre Nexxus, nuestra inteligencia artificial avanzada que automatiza la prospección para tus clientes en tu sitio web. Es personalizable de contexto y mucho más, integrable en todos tus sitios web para soporte técnico y prospección eficiente. Agrega Nexxus a tu sitio por solo $350 mensuales.
         </p>
-        <div className="flex justify-center gap-4 mb-8">
+        <div className="flex justify-center mb-8">
           <button onClick={openWhatsAppDemo}>
             <Button1 text="Solicitar Demo" />
-          </button>
-          <button onClick={showNexxusWidget}>
-            <Button3 text="Probar Nexxus" />
           </button>
         </div>
         <ChatbotContainer />
@@ -325,9 +322,9 @@ Me gustaría conocer más sobre:
       </div>
       
       {/* Closing Section */}
-      <div className="mt-20 text-center">
-        <h2 className="text-5xl md:text-6xl font-medium mb-8 tracking-tight-apple text-white">¡Tu futuro digital comienza aquí!</h2>
-        <p className="text-xl font-light mb-12 max-w-4xl mx-auto tracking-normal-apple leading-relaxed text-white/60">
+      <div className="mt-20 text-center px-4">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-8 tracking-tight-apple text-white">¡Tu futuro digital comienza aquí!</h2>
+        <p className="text-lg md:text-xl font-light mb-12 max-w-4xl mx-auto tracking-normal-apple leading-relaxed text-white/60">
           En MindNT, nos comprometemos a ofrecerte soluciones innovadoras y personalizadas que impulsen tu negocio. Estamos listos para escucharte y convertir tus ideas en realidad. ¡Contáctanos hoy y da el primer paso hacia el éxito!
         </p>
       </div>
@@ -341,7 +338,7 @@ Me gustaría conocer más sobre:
       </div>
       
             
-      <Footer />
+      <Footer onOpenCallModal={openCallModal} />
       
       {/* Modales */}
       <ModalProject 

@@ -25,12 +25,12 @@ const Cotizador = ({ onOpenProjectModal }) => {
         <h3 className="text-2xl font-semibold mb-8 text-center text-white/95 tracking-wide drop-shadow-[0_2px_8px_rgba(255,255,255,0.1)]">Proyectos Populares</h3>
         
         {/* Options tabs with glass effect */}
-        <div className="flex gap-2 mb-8">
+        <div className="flex flex-col sm:flex-row gap-2 mb-8">
           {options.map((opt, index) => (
             <button
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className={`flex-1 py-3 px-4 rounded-2xl border transition-all duration-500 backdrop-blur-sm font-medium text-sm ${
+              className={`flex-1 py-3 px-2 sm:px-4 rounded-2xl border transition-all duration-500 backdrop-blur-sm font-medium text-xs sm:text-sm ${
                 selectedIndex === index
                   ? 'bg-gradient-to-r from-cyan-500/[0.25] to-teal-500/[0.25] border-cyan-400/[0.3] text-white shadow-[0_4px_16px_rgba(6,182,212,0.2)] scale-105'
                   : 'bg-white/[0.05] border-white/[0.1] text-white/75 hover:bg-white/[0.08] hover:border-white/[0.15] hover:text-white/90 hover:scale-102'
@@ -61,7 +61,7 @@ const Cotizador = ({ onOpenProjectModal }) => {
         </div>
         
         {/* Buttons section */}
-        <div className="flex justify-center gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
           <button onClick={onOpenProjectModal}>
             <Button1 text="Cotizar Proyecto" />
           </button>

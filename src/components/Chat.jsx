@@ -4,7 +4,7 @@ const Chat = ({ isOpen, onClose, apiEndpoint }) => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: '¡Hola! Soy tu asistente de Nexxus AI. ¿En qué puedo ayudarte hoy?',
+      text: '¡Hola! Soy tu asistente de Nexxus. ¿En qué puedo ayudarte hoy?',
       isBot: true,
       timestamp: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
     }
@@ -79,8 +79,8 @@ const Chat = ({ isOpen, onClose, apiEndpoint }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)]">
-      <div className="relative bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[24px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] transition-all duration-700 ease-out animate-in slide-in-from-bottom-4 slide-in-from-right-4 duration-300">
+    <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] sm:max-w-[calc(100vw-3rem)] max-h-[calc(100vh-8rem)]">
+      <div className="relative bg-white/10 backdrop-blur-3xl border border-white/20 rounded-[24px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgba(59,130,246,0.15)] transition-all duration-700 ease-out animate-in slide-in-from-bottom-4 slide-in-from-right-4 duration-300 flex flex-col max-h-[calc(100vh-8rem)]">
         {/* Liquid glass overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-white/[0.04] pointer-events-none"></div>
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white/10 via-white/5 to-transparent pointer-events-none"></div>
@@ -93,8 +93,8 @@ const Chat = ({ isOpen, onClose, apiEndpoint }) => {
                 <img src="/logonexxus.png" alt="Nexxus" className="h-8 w-auto object-contain drop-shadow-lg" />
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-white/80 text-sm font-medium">En línea</span>
+                <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+                <span className="text-white/80 text-sm font-medium">Desactivado</span>
               </div>
             </div>
             <button 
@@ -109,7 +109,7 @@ const Chat = ({ isOpen, onClose, apiEndpoint }) => {
         </div>
         
         {/* Chat Area */}
-        <div className="relative z-10 p-6">
+        <div className="relative z-10 p-4 sm:p-6 flex-1 flex flex-col min-h-0">
           {/* Messages */}
           <div className="space-y-4 mb-6 max-h-80 overflow-y-auto scrollbar-none">
             {messages.map((message) => (

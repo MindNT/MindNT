@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ onOpenCallModal }) => {
   return (
-    <footer className="mt-32">
+    <footer className="mt-20 md:mt-32">
       {/* Subtle divider */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           {/* Company Info */}
@@ -24,7 +24,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-3">
               <a 
-                href="https://facebook.com/mindnt" 
+                href="https://www.facebook.com/mindntlabs" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="group w-11 h-11 bg-white/[0.03] backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/[0.05] hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-500 hover:scale-105"
@@ -34,7 +34,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://linkedin.com/company/mindnt" 
+                href="https://www.linkedin.com/company/mindntlabs" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="group w-11 h-11 bg-white/[0.03] backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/[0.05] hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-500 hover:scale-105"
@@ -44,7 +44,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://instagram.com/mindnt" 
+                href="https://instagram.com/_mindnt" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="group w-11 h-11 bg-white/[0.03] backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/[0.05] hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-500 hover:scale-105"
@@ -74,9 +74,9 @@ const Footer = () => {
               <h3 className="text-white/90 font-medium mb-6 text-sm tracking-wide">Empresa</h3>
               <ul className="space-y-4">
                 <li><a href="#nosotros" className="text-gray-400 text-sm font-light hover:text-white transition-colors duration-300">Nosotros</a></li>
-                <li><a href="#nexxus" className="text-gray-400 text-sm font-light hover:text-white transition-colors duration-300">Nexxus IA</a></li>
-                <li><a href="#inicio" className="text-gray-400 text-sm font-light hover:text-white transition-colors duration-300">Proyectos</a></li>
-                <li><a href="#inicio" className="text-gray-400 text-sm font-light hover:text-white transition-colors duration-300">Blog</a></li>
+                <li><a href="#nexxus" className="text-gray-400 text-sm font-light hover:text-white transition-colors duration-300">Nexxus</a></li>
+                <li><a href="#urgente" className="text-gray-400 text-sm font-light hover:text-white transition-colors duration-300">Proyecto Urgente</a></li>
+                <li><a href="#servicios" className="text-gray-400 text-sm font-light hover:text-white transition-colors duration-300">Blog</a></li>
               </ul>
             </div>
             
@@ -85,19 +85,22 @@ const Footer = () => {
               <h3 className="text-white/90 font-medium mb-6 text-sm tracking-wide">Contacto</h3>
               <div className="space-y-4">
                 <p className="text-gray-400 text-sm font-light">
-                  <a href="mailto:info@mindnt.com" className="hover:text-white transition-colors duration-300">
-                    info@mindnt.com
+                  <a href="mailto:mindntlabs@gmail.com" className="hover:text-white transition-colors duration-300">
+                    mindntlabs@gmail.com
                   </a>
                 </p>
                 <p className="text-gray-400 text-sm font-light">
-                  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
+                  <a href="https://wa.me/529993661475" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">
                     WhatsApp
                   </a>
                 </p>
                 <p className="text-gray-400 text-sm font-light">
-                  <a href="#inicio" className="hover:text-white transition-colors duration-300">
+                  <button 
+                    onClick={onOpenCallModal}
+                    className="hover:text-white transition-colors duration-300 text-left"
+                  >
                     Agendar llamada
-                  </a>
+                  </button>
                 </p>
               </div>
             </div>
