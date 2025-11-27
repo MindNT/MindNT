@@ -1,0 +1,22 @@
+¡Hola, equipo!
+
+Quiero compartirles con entusiasmo que MINDNT está entrando en una nueva fase estratégica, enfocada en elevar la calidad de nuestros entregables, optimizar nuestra forma de trabajar y fortalecer las relaciones con nuestros clientes.
+
+A partir de ahora, trabajaremos con:
+
+Una metodología más estructurada, alineada a entregas por fases y revisiones constantes.
+Un enfoque de diseño renovado, basado en principios de simplicidad extrema, funcionalidad y estética refinada (inspirado en referentes como Johnny Eve), priorizando siempre la experiencia del usuario.
+Roles más definidos, para potenciar las fortalezas de cada uno y escalar con mayor claridad.
+ Esto nos permitirá abordar con mayor profesionalismo los clientes pendientes, entre los que se incluyen:
+
+Pepetoys (implementación de base de datos y catálogo de productos)
+Moka (desarrollo de eCommerce con panel de administración personalizado)
+Consultora de contadores (diseño de marca, identidad visual y web corporativa)
+Y otros en evaluación para onboarding esta semana.
+ Cada uno de ustedes tendrá responsabilidades clave en estos proyectos, y muy pronto les compartiré la asignación específica junto con los objetivos por entrega.
+
+Gracias por su compromiso hasta ahora. Esta transformación es posible gracias a su talento y disposición. ¡Vamos por una etapa aún más sólida y profesional!
+
+Saludos,
+[Tu nombre]
+MINDNT
