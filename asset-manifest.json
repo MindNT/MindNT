@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mindnt.com.mx/static/css/main.56c4056a.css",
-    "main.js": "/mindnt.com.mx/static/js/main.e8e6029c.js",
-    "static/js/453.4a75efdf.chunk.js": "/mindnt.com.mx/static/js/453.4a75efdf.chunk.js",
-    "index.html": "/mindnt.com.mx/index.html",
-    "main.56c4056a.css.map": "/mindnt.com.mx/static/css/main.56c4056a.css.map",
-    "main.e8e6029c.js.map": "/mindnt.com.mx/static/js/main.e8e6029c.js.map",
-    "453.4a75efdf.chunk.js.map": "/mindnt.com.mx/static/js/453.4a75efdf.chunk.js.map"
+    "main.css": "/static/css/main.56c4056a.css",
+    "main.js": "/static/js/main.6f62c7a3.js",
+    "static/js/453.4a75efdf.chunk.js": "/static/js/453.4a75efdf.chunk.js",
+    "index.html": "/index.html",
+    "main.56c4056a.css.map": "/static/css/main.56c4056a.css.map",
+    "main.6f62c7a3.js.map": "/static/js/main.6f62c7a3.js.map",
+    "453.4a75efdf.chunk.js.map": "/static/js/453.4a75efdf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.56c4056a.css",
-    "static/js/main.e8e6029c.js"
+    "static/js/main.6f62c7a3.js"
   ]
 }
