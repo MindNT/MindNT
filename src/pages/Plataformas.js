@@ -11,7 +11,7 @@ function Plataformas() {
     const platforms = [
         {
             name: 'GoBite',
-            icon: '/images/GoBite.png',
+            icon: `${process.env.PUBLIC_URL}/images/GoBite.png`,
             description: 'Plataforma de delivery',
             status: 'En desarrollo',
             color: 'from-blue-50 to-blue-100',

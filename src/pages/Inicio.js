@@ -23,7 +23,7 @@ function Inicio() {
                         `}
                     >
                         <img
-                            src="/images/logohorizontal.png"
+                            src={`${process.env.PUBLIC_URL}/images/logohorizontal.png`}
                             alt="MindNT Logo"
                             className="h-16 md:h-20 lg:h-24 w-auto object-contain"
                         />

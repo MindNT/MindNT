@@ -14,7 +14,7 @@ function Header() {
                     {!isHomePage && (
                         <a href="/" className="flex items-center">
                             <img
-                                src="/images/logohorizontal.png"
+                                src={`${process.env.PUBLIC_URL}/images/logohorizontal.png`}
                                 alt="MindNT"
                                 className="h-8 w-auto object-contain"
                             />
