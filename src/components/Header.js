@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import ContactButton from '../utils/ContactButton';
 
 function Header() {
@@ -12,19 +12,19 @@ function Header() {
                 <div className="flex items-center justify-between">
                     {/* Logo - Left Side (only show when NOT on homepage) */}
                     {!isHomePage && (
-                        <a href="/" className="flex items-center">
+                        <Link to="/" className="flex items-center">
                             <img
                                 src={`${process.env.PUBLIC_URL}/images/logohorizontal.png`}
                                 alt="MindNT"
                                 className="h-8 w-auto object-contain"
                             />
-                        </a>
+                        </Link>
                     )}
 
                     {/* Navigation Menu - Right Side */}
                     <nav className={`hidden md:flex items-center space-x-8 ${isHomePage ? 'ml-auto' : ''}`}>
-                        <a
-                            href="/servicios"
+                        <Link
+                            to="/servicios"
                             className="
                 text-sm font-inter font-medium text-gray-700
                 hover:text-gray-900
@@ -33,9 +33,9 @@ function Header() {
               "
                         >
                             Servicios
-                        </a>
-                        <a
-                            href="/plataformas"
+                        </Link>
+                        <Link
+                            to="/plataformas"
                             className="
                 text-sm font-inter font-medium text-gray-700
                 hover:text-gray-900
@@ -44,9 +44,9 @@ function Header() {
               "
                         >
                             Plataformas
-                        </a>
-                        <a
-                            href="/historias"
+                        </Link>
+                        <Link
+                            to="/historias"
                             className="
                 text-sm font-inter font-medium text-gray-700
                 hover:text-gray-900
@@ -55,9 +55,9 @@ function Header() {
               "
                         >
                             Historias
-                        </a>
-                        <a
-                            href="/metodologia"
+                        </Link>
+                        <Link
+                            to="/metodologia"
                             className="
                 text-sm font-inter font-medium text-gray-700
                 hover:text-gray-900
@@ -66,7 +66,7 @@ function Header() {
               "
                         >
                             Metodología
-                        </a>
+                        </Link>
 
                         {/* Contact Button */}
                         <ContactButton />
