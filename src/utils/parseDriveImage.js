@@ -19,6 +19,13 @@ export function parseDriveImage(url) {
         }
     }
 
-    // Si ya está en formato visualizable (uc?export=view) o no es de Google Drive, regresarlo tal cual
-    return url;
+    // Si es un enlace HTTP directo (no de Drive), regresarlo tal cual
+    if (url.startsWith('http')) {
+        return url;
+    }
+
+    // Si es una ruta local del JSON (ej. images/foto1.png), armamos correctamente usando PUBLIC_URL
+    // Esto asegura que cargue perfecto en Github Pages sin importar el entorno
+    const cleanUrl = url.startsWith('/') ? url.slice(1) : url;
+    return `${process.env.PUBLIC_URL}/${cleanUrl}`;
 }
