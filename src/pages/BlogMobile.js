@@ -66,7 +66,7 @@ function BlogMobile() {
                             {/* Imagen de la tarjeta */}
                             <div className="w-full h-48 overflow-hidden relative bg-gray-50">
                                 <img
-                                    src={parseDriveImage(post.coverImage)}
+                                    src={`${process.env.PUBLIC_URL}`}
                                     alt={post.title}
                                     className="w-full h-full object-cover transition-transform duration-1000 ease-out"
                                 />

@@ -32,7 +32,7 @@ function HeaderMobile() {
                         {!isHomePage && (
                             <Link to="/" className="flex items-center">
                                 <img
-                                    src={`${process.env.PUBLIC_URL}/images/logohorizontal.png`}
+                                    src={`${process.env.PUBLIC_URL}/images/Logohorizontal.png`}
                                     alt="MindNT"
                                     className="h-8 w-auto object-contain"
                                 />

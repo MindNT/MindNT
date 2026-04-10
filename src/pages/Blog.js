@@ -92,7 +92,7 @@ function Blog() {
                             <div className="w-full h-56 overflow-hidden relative bg-gray-50">
                                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500 z-10" />
                                 <img
-                                    src={parseDriveImage(post.coverImage)}
+                                    src={`${process.env.PUBLIC_URL}`}
                                     alt={post.title}
                                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                                 />

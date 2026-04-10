@@ -20,7 +20,7 @@ function InicioMobile() {
                         `}
                     >
                         <img
-                            src={`${process.env.PUBLIC_URL}/images/logohorizontal.png`}
+                            src={`${process.env.PUBLIC_URL}/images/Logohorizontal.png`}
                             alt="MindNT Logo"
                             className="h-14 w-auto object-contain"
                         />
