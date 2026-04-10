@@ -10,23 +10,27 @@ function Servicios() {
 
     const services = [
         {
-            title: 'Desarrollo web',
-            description: 'Creamos experiencias digitales excepcionales',
+            title: 'Branding e Identidad',
+            description: 'Construimos la esencia visual y estratégica que diferencia a tu marca y proyecta autoridad en el mercado.',
+            hook: 'Tu identidad, proyectada con distinción.',
             delay: 'delay-200'
         },
         {
-            title: 'Branding',
-            description: 'Construimos identidades memorables',
+            title: 'Desarrollo Web & UX',
+            description: 'Diseñamos experiencias digitales de alto rendimiento, optimizadas para convertir visitantes en clientes.',
+            hook: 'Tu presencia digital, sin límites técnicos.',
             delay: 'delay-400'
         },
         {
-            title: 'Marketing',
-            description: 'Impulsamos tu presencia digital',
+            title: 'Marketing Estratégico',
+            description: 'Campañas inteligentes basadas en datos para maximizar tu visibilidad y el retorno de tu inversión.',
+            hook: 'Resultados tangibles, crecimiento constante.',
             delay: 'delay-600'
         },
         {
-            title: 'Automatizaciones',
-            description: 'Optimizamos tus procesos',
+            title: 'Fotografía Profesional',
+            description: 'Capturamos la esencia de tu negocio con narrativa visual de alta calidad, diseñada para cautivar y generar confianza.',
+            hook: 'La imagen que tu marca merece.',
             delay: 'delay-[800ms]'
         }
     ];
@@ -60,7 +64,7 @@ function Servicios() {
               ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
             `}
                     >
-                        Transformamos ideas en soluciones
+                        Transformamos información en ventaja competitiva.
                     </p>
                 </div>
 
@@ -114,9 +118,25 @@ function Servicios() {
                   tracking-normal-apple
                   transition-colors duration-300
                   group-hover:text-gray-700
+                  mb-4
                 "
                             >
                                 {service.description}
+                            </p>
+
+                            {/* Service Hook */}
+                            <p
+                                className="
+                  text-xs md:text-sm
+                  font-inter font-medium
+                  text-gray-900
+                  tracking-wide
+                  italic
+                  transition-all duration-300
+                  group-hover:text-gray-700
+                "
+                            >
+                                {service.hook}
                             </p>
                         </div>
                     ))}

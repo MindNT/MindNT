@@ -16,14 +16,6 @@ function Plataformas() {
             status: 'En desarrollo',
             color: 'from-blue-50 to-blue-100',
             delay: 'delay-200'
-        },
-        {
-            name: 'Plataforma 2',
-            icon: '⚡', // Placeholder - se reemplazará con imagen
-            description: 'Próximamente',
-            status: 'Próximamente',
-            color: 'from-purple-50 to-purple-100',
-            delay: 'delay-400'
         }
     ];
 

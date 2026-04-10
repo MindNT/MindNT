@@ -20,35 +20,26 @@ function Historias() {
             status: 'completed' // 'completed' or 'in-development'
         },
         {
+            client: 'HP Contadores',
+            title: 'Página web de contadores',
+            description: 'Desarrollamos una página web para un despacho de contadores, integrando el diseño visual de su logo y marca para fortalecer su identidad corporativa.',
+            url: 'https://hpcontadores.com.mx/',
+            tags: ['Design', 'Branding', 'Landing Page'],
+            status: 'completed'
+        },
+        {
+            client: 'Pepetoys',
+            title: 'Tienda de artículos para aves',
+            description: 'Creamos un E-commerce para una tienda especializada en la venta de artículos y accesorios para aves.',
+            url: 'https://mindnt.github.io/Pepetoys-website/',
+            tags: ['E-commerce', 'UX/UI'],
+            status: 'completed'
+        }, {
             client: 'La Juanita',
             title: 'Restaurante de comida rápida',
             description: 'Creamos un E-commerce para la restaurante de comida rápida de La Juanita, enfocados en reducir la carga de trabajo de la empresa con formularios inteligentes para pickup y delivery.',
             url: 'https://mindnt.github.io/La-juanita-website/',
             tags: ['E-commerce', 'UX/UI', 'Formularios inteligentes', 'Display Manager'],
-            status: 'completed'
-        },
-        {
-            client: 'Pepetoys',
-            title: 'Tienda de juguetes para aves',
-            description: 'Desarrollamos una E-commerce para la tienda de juguetes para aves, enfocados en el simplismo y la atraccion visual con los productos.',
-            url: '',
-            tags: ['E-commerce', 'UX/UI', 'Simplismo', 'Display Manager'],
-            status: 'in-development'
-        },
-        {
-            client: 'Consultora de contadores',
-            title: 'Web corporativa',
-            description: 'Desarrollamos el branding de la consultora de contadores, pensando en brindar una presentación profesional y agradable para los clientes.',
-            url: '',
-            tags: ['Web Corporativa', 'UX/UI', 'Branding', 'Marketing'],
-            status: 'in-development'
-        },
-        {
-            client: 'Thermo Energy',
-            title: 'Empresa corporativa de climas para camiones',
-            description: 'Desarrollamos el sitio web corporativo de la empresa Thermo Energy, enfocados en brindar una presentación profesional y agradable para los clientes.',
-            url: 'https://thermoenergymx.com/',
-            tags: ['Web Corporativa', 'UX/UI', 'Minimalismo'],
             status: 'completed'
         }
     ];

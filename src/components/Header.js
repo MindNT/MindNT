@@ -57,7 +57,7 @@ function Header() {
                             Historias
                         </Link>
                         <Link
-                            to="/metodologia"
+                            to="/filosofia"
                             className="
                 text-sm font-inter font-medium text-gray-700
                 hover:text-gray-900
@@ -67,28 +67,21 @@ function Header() {
                         >
                             Metodología
                         </Link>
+                        <Link
+                            to="/blog"
+                            className="
+                text-sm font-inter font-medium text-gray-700
+                hover:text-gray-900
+                transition-colors duration-200
+                tracking-normal-apple
+              "
+                        >
+                            Blog
+                        </Link>
 
                         {/* Contact Button */}
                         <ContactButton />
                     </nav>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        className="md:hidden p-2 text-gray-700 hover:text-gray-900"
-                        aria-label="Menu"
-                    >
-                        <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
                 </div>
             </div>
         </header>

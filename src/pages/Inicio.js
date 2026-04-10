@@ -40,8 +40,22 @@ function Inicio() {
               ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
             `}
                     >
-                        Un millón de posibilidades
+                        Un negocio, una historia.
                     </h1>
+
+                    {/* Subtitle */}
+                    <p
+                        className={`
+              text-base md:text-lg
+              font-inter font-normal
+              text-gray-600
+              tracking-normal-apple
+              transition-all duration-1000 ease-out delay-300
+              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+            `}
+                    >
+                        Datos, Diseño, Branding y Desarrollo de alto nivel.
+                    </p>
 
                 </div>
             </div>

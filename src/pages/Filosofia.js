@@ -9,14 +9,14 @@ function Metodologia() {
     }, []);
 
     const phases = [
-        { id: 1, name: 'Contacto en frío', delay: 'delay-100' },
-        { id: 2, name: 'Llamada de entendimiento', delay: 'delay-200' },
-        { id: 3, name: 'Entrega de pre-diseño', delay: 'delay-300' },
-        { id: 4, name: 'Modificaciones', delay: 'delay-400' },
-        { id: 5, name: 'Inicio de desarrollo y seguimiento', delay: 'delay-500' },
-        { id: 6, name: 'Entrega de desarrollo', delay: 'delay-600' },
-        { id: 7, name: 'Modificaciones', delay: 'delay-700' },
-        { id: 8, name: 'Despliegue', delay: 'delay-800' }
+        { id: 1, name: 'Claridad antes que ruido', delay: 'delay-100' },
+        { id: 2, name: 'Diseño con propósito', delay: 'delay-200' },
+        { id: 3, name: 'Tecnología al servicio del negocio', delay: 'delay-300' },
+        { id: 4, name: 'Relaciones de largo plazo', delay: 'delay-400' },
+        { id: 5, name: 'Resultados medibles', delay: 'delay-500' },
+        { id: 6, name: 'Identidad con distinción', delay: 'delay-600' },
+        { id: 7, name: 'Crecimiento constante', delay: 'delay-700' },
+        { id: 8, name: 'Compromiso total', delay: 'delay-800' }
     ];
 
     return (
@@ -36,7 +36,7 @@ function Metodologia() {
               ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
             `}
                     >
-                        Metodología
+                        Filosofía
                     </h1>
                     <p
                         className={`
@@ -48,7 +48,7 @@ function Metodologia() {
               ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
             `}
                     >
-                        Nuestro proceso de trabajo paso a paso
+                        Lo que creemos define cómo trabajamos.
                     </p>
                 </div>
 
