@@ -1,11 +1,20 @@
 [
   {
     "id": 1,
-    "title": "El Arte de Vender sin Frenos",
-    "topic": "Tecnología",
+    "title": "El reto de la presencia y la elegancia",
+    "topic": "Ecommerce",
     "description": "¿Sabías que un solo segundo de retraso en la carga de tu e-commerce puede desplomar tus conversiones hasta en un 7%? // Aunque el diseño visual es lo primero que capta la atención, es la fricción invisible en la navegación la que realmente aniquila las ventas. // Según datos de Forrester, cada dólar invertido en optimizar la Experiencia de Usuario (UX) retorna en promedio 100 dólares, lo que representa un abrumador ROI del 9,900%. // A pesar de esta realidad, miles de marcas siguen sangrando capital al depender de plantillas lentas o plataformas (hazlo tú mismo) que limitan el escalamiento, ignorando que casi el 70% de los carritos se abandonan por culpa de procesos de pago engorrosos, tiempos de carga desesperantes o arquitecturas débiles. // El verdadero secreto para retener al consumidor moderno no es solo subir fotos atractivas, sino construir un ecosistema tecnológico a la medida, donde la base de datos responda en milisegundos y la interfaz fluya de manera tan intuitiva que el cliente nunca tenga tiempo para dudar de su compra. // Al final del día, tu tienda online no compite únicamente contra tu rival directo, compite contra el estándar de inmediatez absoluto de internet; por eso, dominar la experiencia de usuario y tener el control total de tu infraestructura ya no es un lujo técnico, es la diferencia entre ser una visita rebotada o una venta cerrada.",
     "date": "10 de Abril 2026",
-    "time": "14: 30 hrs",
+    "time": "10: 30 hrs",
     "coverImage": "/images/blog/blog1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "El Arte de Vender sin Frenos",
+    "topic": "Branding",
+    "description": "Tuvimos el privilegio de trabajar con H & P Contadores, un despacho que llegó a nosotros con una visión clara: necesitaban una identidad que proyectara presencia y elegancia.//En el sector contable y fiscal, la confianza lo es todo. El desafío radicaba en alejarse de los conceptos genéricos y saturados para crear algo que respirara sofisticación. El resultado fue un logotipo con líneas sólidas y una estructura arquitectónica que comunica estabilidad, pero con una finura que refleja un servicio de alto nivel.//Un logo con presencia no necesita gritar para ser escuchado; su fuerza reside en la precisión de sus trazos y en la armonía de su composición.//La coherencia digital: Del logo a la web//Un logo excepcional pierde su propósito si no vive en un entorno que lo respalde. Por ello, para H & P Contadores, la identidad visual fue solo el punto de partida. Desarrollamos una plataforma web diseñada bajo los mismos principios de limpieza y funcionalidad.//Para nosotros, una página web debe ser la extensión natural de la marca. No se trata solo de código y arquitectura de datos, sino de crear una experiencia de usuario (UX) donde el diseño y la utilidad se encuentren. Para este proyecto, el objetivo fue claro: cada sección, cada tipografía y cada espacio en blanco debe reforzar esa imagen de profesionalismo y elegancia que el cliente solicitó desde el primer día.//Conclusión//Un logo es el reflejo de tus ambiciones. Si buscas que tu empresa sea percibida como una autoridad en su nicho, tu identidad visual debe ser la primera en demostrarlo. En nuestra agencia, creemos que el diseño de alto nivel no es un lujo, sino una herramienta estratégica para conectar con el público adecuado.",
+    "date": "12 de Abril 2026",
+    "time": "8: 30 hrs",
+    "coverImage": "/images/blog/blog2.png"
   }
 ]

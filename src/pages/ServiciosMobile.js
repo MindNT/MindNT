@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import GalleryModal from '../components/GalleryModal';
 
 function ServiciosMobile() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
     useEffect(() => {
         setTimeout(() => setIsVisible(true), 100);
@@ -64,6 +66,31 @@ function ServiciosMobile() {
                     >
                         Transformamos información en ventaja competitiva.
                     </p>
+
+                    {/* Botón de Galería en Móvil - Posicionado arriba para ser lo primero que vean */}
+                    <div className={`
+                        mt-10 mb-2 flex justify-center transition-all duration-1000 ease-out delay-200
+                        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                    `}>
+                        <button
+                            onClick={() => setIsGalleryOpen(true)}
+                            className="
+                                group
+                                inline-flex items-center justify-center gap-2
+                                px-7 py-3.5
+                                bg-gray-900 text-white
+                                rounded-full
+                                font-inter font-medium tracking-wide text-sm
+                                shadow-lg active:scale-95
+                                transition-all duration-300
+                            "
+                        >
+                            <span>Ver Nuestro Trabajo</span>
+                            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
                 {/* Services List - Single column for mobile */}
@@ -98,6 +125,12 @@ function ServiciosMobile() {
                         </div>
                     ))}
                 </div>
+
+                {/* Gallery Modal */}
+                <GalleryModal 
+                    isOpen={isGalleryOpen} 
+                    onClose={() => setIsGalleryOpen(false)} 
+                />
             </div>
 
             {/* Subtle Background */}

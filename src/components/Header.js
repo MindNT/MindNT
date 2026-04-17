@@ -65,7 +65,7 @@ function Header() {
                 tracking-normal-apple
               "
                         >
-                            Metodología
+                            Filosofía
                         </Link>
                         <Link
                             to="/blog"

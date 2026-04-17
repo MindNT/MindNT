@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import GalleryModal from '../components/GalleryModal';
 
 function Servicios() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
     useEffect(() => {
         // Trigger fade-in animation after component mounts
@@ -141,6 +143,38 @@ function Servicios() {
                         </div>
                     ))}
                 </div>
+
+                {/* Gallery Button */}
+                <div className={`
+                    mt-20 flex justify-center transition-all duration-1000 ease-out delay-[1000ms]
+                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                `}>
+                    <button
+                        onClick={() => setIsGalleryOpen(true)}
+                        className="
+                            group
+                            inline-flex items-center justify-center gap-3
+                            px-8 py-4 
+                            bg-gray-900 text-white
+                            rounded-full
+                            font-inter font-medium tracking-wide text-sm md:text-base
+                            shadow-md hover:shadow-2xl
+                            hover:bg-black hover:-translate-y-1
+                            transition-all duration-300 ease-out
+                        "
+                    >
+                        <span>Ver Nuestro Trabajo</span>
+                        <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Gallery Modal */}
+                <GalleryModal 
+                    isOpen={isGalleryOpen} 
+                    onClose={() => setIsGalleryOpen(false)} 
+                />
             </div>
 
             {/* Subtle Background Elements - More minimal */}
