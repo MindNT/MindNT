@@ -1,110 +1,124 @@
 import React, { useEffect, useState } from 'react';
+import ShootingStar from '../components/ShootingStar';
 
-function Metodologia() {
+function Filosofia() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        // Trigger fade-in animation after component mounts
         setTimeout(() => setIsVisible(true), 100);
     }, []);
 
-    const phases = [
-        { id: 1, name: 'Claridad antes que ruido', delay: 'delay-100' },
-        { id: 2, name: 'Diseño con propósito', delay: 'delay-200' },
-        { id: 3, name: 'Tecnología al servicio del negocio', delay: 'delay-300' },
-        { id: 4, name: 'Relaciones de largo plazo', delay: 'delay-400' },
-        { id: 5, name: 'Resultados medibles', delay: 'delay-500' },
-        { id: 6, name: 'Identidad con distinción', delay: 'delay-600' },
-        { id: 7, name: 'Crecimiento constante', delay: 'delay-700' },
-        { id: 8, name: 'Compromiso total', delay: 'delay-800' }
+    const steps = [
+        {
+            num: '01',
+            title: 'Llamada Inicial',
+            desc: 'Entender el ADN de tu negocio, tus objetivos y retos. No asumimos, escuchamos.'
+        },
+        {
+            num: '02',
+            title: 'Planeación',
+            desc: 'Trazamos la arquitectura del proyecto, tiempos y la estrategia a seguir.'
+        },
+        {
+            num: '03',
+            title: 'Desarrollo',
+            desc: 'Nuestro equipo ejecuta el diseño visual y desarrollo construyendo a la medida.'
+        },
+        {
+            num: '04',
+            title: 'Evaluación',
+            desc: 'Presentamos avances, probamos calidad y aplicamos tus comentarios.'
+        },
+        {
+            num: '05',
+            title: 'Entrega',
+            desc: 'Lanzamiento oficial. Te entregamos el proyecto completo y funcional.'
+        }
     ];
 
     return (
-        <div className="min-h-screen h-screen bg-white flex items-center justify-center px-6 overflow-hidden">
-            {/* Main Content Container */}
-            <div className="max-w-6xl w-full">
-                {/* Page Title */}
-                <div className="text-center mb-16">
-                    <h1
+        <div className="h-screen bg-black overflow-hidden relative flex flex-col justify-center pt-16">
+            <ShootingStar />
+            <div className="max-w-7xl w-full mx-auto px-6 relative z-10 flex flex-col gap-16">
+                
+                {/* Top Section */}
+                <div className="flex flex-col lg:flex-row justify-between items-end gap-10">
+                    <div 
                         className={`
-              text-3xl md:text-4xl lg:text-5xl
-              font-inter font-light
-              tracking-wide
-              text-gray-900
-              mb-3
-              transition-all duration-1000 ease-out
-              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-            `}
+                            w-full lg:w-1/2
+                            transition-all duration-1000 ease-out
+                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+                        `}
                     >
-                        Filosofía
-                    </h1>
-                    <p
+                        <span className="inline-block border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-xs font-inter font-medium tracking-widest text-gray-400 uppercase mb-6">
+                            Filosofía y Metodología
+                        </span>
+                        
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light tracking-wide text-white leading-tight mb-4">
+                            Un proceso<br />
+                            <span className="text-gray-500">transparente.</span>
+                        </h1>
+
+                        <p className="text-base md:text-lg font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple max-w-lg">
+                            No creemos en cajas negras. Creemos en procesos claros donde tú tienes el control y la visibilidad de lo que estamos construyendo.
+                        </p>
+                    </div>
+
+                    <div 
                         className={`
-              text-base md:text-lg
-              font-inter font-normal
-              text-gray-600
-              tracking-normal-apple
-              transition-all duration-1000 ease-out delay-100
-              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-            `}
+                            w-full lg:w-5/12
+                            transition-all duration-1000 ease-out delay-200
+                            ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}
+                        `}
                     >
-                        Lo que creemos define cómo trabajamos.
-                    </p>
+                        {/* Sistema de 3 pagos card */}
+                        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors duration-300">
+                            <h3 className="text-lg font-inter font-medium text-white mb-3 flex items-center gap-3">
+                                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                Sistema de 3 Pagos
+                            </h3>
+                            <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">
+                                Hemos diseñado un esquema de tres pagos vinculados a hitos de resultados. Avanzamos juntos: pagas conforme ves el progreso de nuestro trabajo. Sin sorpresas.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Timeline Container */}
-                <div className="relative">
+                {/* Bottom Section - Timeline */}
+                <div className="relative pt-8">
                     {/* Horizontal Line */}
-                    <div
-                        className={`
-              absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 -translate-y-1/2
-              transition-all duration-1000 ease-out delay-200
-              ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}
-            `}
-                    />
+                    <div className="absolute top-[28px] left-0 right-0 h-px bg-white/10 hidden md:block"></div>
 
-                    {/* Phases Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-                        {phases.map((phase, index) => (
-                            <div
-                                key={phase.id}
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative">
+                        {steps.map((step, idx) => (
+                            <div 
+                                key={idx}
                                 className={`
-                  flex flex-col items-center
-                  transition-all duration-700 ease-out
-                  ${phase.delay}
-                  ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-                `}
+                                    relative flex flex-col gap-6
+                                    transition-all duration-1000 ease-out
+                                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+                                `}
+                                style={{ transitionDelay: `${(idx + 3) * 150}ms` }}
                             >
                                 {/* Dot */}
-                                <div className="relative z-10 mb-4">
-                                    <div className="w-4 h-4 rounded-full bg-gray-900 ring-4 ring-white"></div>
+                                <div className="hidden md:flex w-14 h-14 rounded-full bg-black border border-white/20 items-center justify-center text-sm font-inter font-medium text-gray-400 z-10 shadow-[0_0_15px_rgba(0,0,0,0.8)]">
+                                    {step.num}
                                 </div>
 
-                                {/* Phase Number */}
-                                <div
-                                    className="
-                    text-xs
-                    font-inter font-medium
-                    text-gray-400
-                    mb-2
-                  "
-                                >
-                                    {String(phase.id).padStart(2, '0')}
+                                {/* Content */}
+                                <div>
+                                    <div className="md:hidden text-xs font-inter font-medium tracking-widest text-gray-600 mb-2 uppercase">
+                                        Paso {step.num}
+                                    </div>
+                                    <h3 className="text-lg font-inter font-medium text-white mb-3">
+                                        {step.title}
+                                    </h3>
+                                    <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">
+                                        {step.desc}
+                                    </p>
                                 </div>
-
-                                {/* Phase Name */}
-                                <p
-                                    className="
-                    text-xs md:text-sm
-                    font-inter font-normal
-                    text-gray-700
-                    text-center
-                    leading-snug
-                    tracking-normal-apple
-                  "
-                                >
-                                    {phase.name}
-                                </p>
                             </div>
                         ))}
                     </div>
@@ -115,16 +129,16 @@ function Metodologia() {
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div
                     className={`
-            absolute top-1/3 left-1/4 w-[500px] h-[500px]
-            bg-gradient-to-br from-gray-50 to-transparent 
-            rounded-full blur-3xl
-            transition-opacity duration-2000 ease-out delay-500
-            ${isVisible ? 'opacity-30' : 'opacity-0'}
-          `}
+                        absolute top-1/4 left-1/4 w-[600px] h-[600px]
+                        bg-gradient-to-tr from-white/5 to-transparent
+                        rounded-full blur-3xl
+                        transition-opacity duration-2000 ease-out delay-500
+                        ${isVisible ? 'opacity-40' : 'opacity-0'}
+                    `}
                 />
             </div>
         </div>
     );
 }
 
-export default Metodologia;
+export default Filosofia;

@@ -5,6 +5,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'brand-blue': {
+          DEFAULT: '#034EA2',
+          hover:   '#023d80',
+          light:   '#0560c2',
+        },
+      },
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
         inter: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],

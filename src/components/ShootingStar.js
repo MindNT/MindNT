@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 
 /**
- * ShootingStar – constellation background + black comets.
+ * ShootingStar – constellation background + white comets.
  *
  * Constellation:
  *  - Fewer stars on mobile vs desktop
  *  - Short connection distance so lines are sparse
- *  - Stars use varied gray tones (not all the same shade)
+ *  - Stars use varied white/gray tones over black background
  *  - Lines are very subtle — only connect very close stars
  *
  * Comets:
- *  - Black, falling top-right → bottom-left
+ *  - White, falling top-right → bottom-left
  *  - HEAD bright at front, TAIL fades behind
  *  - 8-band spawn history to spread across the screen
  */
@@ -39,7 +39,7 @@ function ShootingStar() {
             const count = isMobile ? 25 : 45;
             // Shorter connection distance on mobile
             const connDist = isMobile ? 80 : 100;
-            const minStarDist = 60; // Distancia mínima para que no se encimen
+            const minStarDist = 70; // Distancia mínima para que no se encimen
 
             stars = [];
             let attempts = 0;
@@ -51,7 +51,7 @@ function ShootingStar() {
                 // Evitamos que las estrellas se encimen
                 const tooClose = stars.some(s => Math.hypot(s.x - x, s.y - y) < minStarDist);
                 if (!tooClose) {
-                    const grayLevel = Math.floor(140 + Math.random() * 80);
+                    const grayLevel = Math.floor(180 + Math.random() * 75); // Tonos blancos/grises claros
                     // Vectores de velocidad para movimiento smooth
                     const angle = Math.random() * Math.PI * 2;
                     const speed = 0.1 + Math.random() * 0.15;
@@ -61,7 +61,7 @@ function ShootingStar() {
                         vy: Math.sin(angle) * speed,
                         r: isMobile ? 1.8 + Math.random() * 1.5 : 2.4 + Math.random() * 1.8, // Ligeramente más grandes
                         grayLevel,
-                        baseOpacity: 0.20 + Math.random() * 0.15, // Ligeramente más visibles
+                        baseOpacity: 0.15 + Math.random() * 0.15, // Más tenues sobre fondo negro
                         opacity: 0,
                         twinkleSpeed: 0.002 + Math.random() * 0.004,
                         twinkleOffset: Math.random() * Math.PI * 2,
@@ -83,11 +83,11 @@ function ShootingStar() {
                     const maxDist = stars[i].connDist;
                     if (dist < maxDist) {
                         // Fade line based on distance; max alpha kept very low
-                        const alpha = (1 - dist / maxDist) * 0.12; // Ligeramente más opacas (de 0.07 a 0.12)
+                        const alpha = (1 - dist / maxDist) * 0.5;
                         ctx.beginPath();
                         ctx.moveTo(stars[i].x, stars[i].y);
                         ctx.lineTo(stars[j].x, stars[j].y);
-                        ctx.strokeStyle = `rgba(0,0,0,${alpha})`;
+                        ctx.strokeStyle = `rgba(255,255,255,${alpha})`; // Líneas blancas
                         ctx.lineWidth = stars[i].connDist === 80 ? 1.2 : 1.6; // Ligeramente más gruesas
                         ctx.stroke();
                     }
@@ -146,9 +146,9 @@ function ShootingStar() {
             const tailY = c.y - uy * c.tailLength;
 
             const grad = ctx.createLinearGradient(tailX, tailY, c.x, c.y);
-            grad.addColorStop(0, `rgba(0,0,0,0)`);
-            grad.addColorStop(0.55, `rgba(0,0,0,${c.opacity * 0.25})`);
-            grad.addColorStop(1, `rgba(0,0,0,${c.opacity})`);
+            grad.addColorStop(0, `rgba(255,255,255,0)`);
+            grad.addColorStop(0.55, `rgba(255,255,255,${c.opacity * 0.25})`);
+            grad.addColorStop(1, `rgba(255,255,255,${c.opacity})`);
 
             ctx.save();
             ctx.beginPath();

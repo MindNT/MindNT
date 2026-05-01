@@ -1,116 +1,132 @@
 import React, { useEffect, useState } from 'react';
+import ShootingStar from '../components/ShootingStar';
 
-function MetodologiaMobile() {
+function FilosofiaMobile() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         setTimeout(() => setIsVisible(true), 100);
     }, []);
 
-    const phases = [
-        { id: 1, name: 'Claridad antes que ruido', delay: 'delay-100' },
-        { id: 2, name: 'Diseño con propósito', delay: 'delay-150' },
-        { id: 3, name: 'Tecnología al servicio del negocio', delay: 'delay-200' },
-        { id: 4, name: 'Relaciones de largo plazo', delay: 'delay-250' },
-        { id: 5, name: 'Resultados medibles', delay: 'delay-300' },
-        { id: 6, name: 'Identidad con distinción', delay: 'delay-350' },
-        { id: 7, name: 'Crecimiento constante', delay: 'delay-400' },
-        { id: 8, name: 'Compromiso total', delay: 'delay-450' }
+    const steps = [
+        {
+            num: '01',
+            title: 'Llamada Inicial',
+            desc: 'Entendemos el ADN de tu negocio, tus objetivos y retos. No asumimos, escuchamos.'
+        },
+        {
+            num: '02',
+            title: 'Planeación',
+            desc: 'Trazamos la arquitectura del proyecto y establecemos la estrategia creativa.'
+        },
+        {
+            num: '03',
+            title: 'Desarrollo',
+            desc: 'Nuestro equipo ejecuta el diseño y desarrollo construyendo piezas a la medida.'
+        },
+        {
+            num: '04',
+            title: 'Evaluación',
+            desc: 'Presentamos avances, probamos calidad y pulimos cada detalle antes de lanzar.'
+        },
+        {
+            num: '05',
+            title: 'Entrega',
+            desc: 'Te entregamos el proyecto funcional, listo para generar resultados reales.'
+        }
     ];
 
     return (
-        <div className="min-h-screen bg-white px-6 py-24 overflow-y-auto">
-            <div className="max-w-md mx-auto">
-                {/* Page Title */}
-                <div className="text-center mb-12">
-                    <h1
-                        className={`
-                            text-3xl
-                            font-inter font-light
-                            tracking-wide
-                            text-gray-900
-                            mb-3
-                            transition-all duration-1000 ease-out
-                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-                        `}
-                    >
-                        Filosofía
+        <div className="min-h-[100dvh] bg-black pt-24 pb-12 overflow-x-hidden relative flex flex-col justify-center">
+            <ShootingStar />
+            <div className="px-6 relative z-10 flex-shrink-0 mb-6">
+                {/* Header Section */}
+                <div 
+                    className={`
+                        transition-all duration-1000 ease-out
+                        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                    `}
+                >
+                    <span className="inline-block border border-white/10 bg-white/5 px-3 py-1 rounded-full text-[10px] font-inter font-medium tracking-widest text-gray-400 uppercase mb-4">
+                        Filosofía y Metodología
+                    </span>
+                    
+                    <h1 className="text-3xl font-inter font-light tracking-wide text-white leading-tight mb-4">
+                        Un proceso<br />
+                        <span className="text-gray-500">transparente.</span>
                     </h1>
-                    <p
-                        className={`
-                            text-base
-                            font-inter font-normal
-                            text-gray-600
-                            tracking-normal-apple
-                            transition-all duration-1000 ease-out delay-100
-                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-                        `}
-                    >
-                        Lo que creemos define cómo trabajamos.
-                    </p>
-                </div>
 
-                {/* Vertical Timeline for mobile */}
-                <div className="relative pl-8">
-                    {/* Vertical Line */}
-                    <div
-                        className={`
-                            absolute left-2 top-0 bottom-0 w-0.5 bg-gray-200
-                            transition-all duration-1000 ease-out delay-200
-                            ${isVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}
-                        `}
-                        style={{ transformOrigin: 'top' }}
-                    />
-
-                    {/* Phases */}
-                    <div className="space-y-8">
-                        {phases.map((phase) => (
-                            <div
-                                key={phase.id}
-                                className={`
-                                    relative
-                                    transition-all duration-700 ease-out
-                                    ${phase.delay}
-                                    ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}
-                                `}
-                            >
-                                {/* Dot */}
-                                <div className="absolute -left-[30px] top-1">
-                                    <div className="w-4 h-4 rounded-full bg-gray-900 ring-4 ring-white"></div>
-                                </div>
-
-                                {/* Content */}
-                                <div>
-                                    {/* Phase Number */}
-                                    <div className="text-xs font-inter font-medium text-gray-400 mb-1">
-                                        {String(phase.id).padStart(2, '0')}
-                                    </div>
-
-                                    {/* Phase Name */}
-                                    <p className="text-sm font-inter font-normal text-gray-700 leading-snug tracking-normal-apple">
-                                        {phase.name}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
+                    {/* Sistema de 3 pagos card */}
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
+                        <h3 className="text-sm font-inter font-medium text-white mb-2 flex items-center gap-2">
+                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            Sistema de 3 Pagos
+                        </h3>
+                        <p className="text-xs font-inter font-normal text-gray-400 leading-relaxed">
+                            Esquema de tres pagos vinculados a hitos de resultados. Avanzamos juntos: pagas conforme ves el progreso.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            {/* Subtle Background */}
+            {/* Vertical Timeline */}
+            <div 
+                className={`
+                    w-full relative z-10 mt-2
+                    transition-all duration-1000 ease-out delay-300
+                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                `}
+            >
+                <div className="flex flex-col gap-4 px-6 pb-12 w-full">
+                    {steps.map((step, idx) => (
+                        <div 
+                            key={idx}
+                            className="w-full bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col justify-center relative"
+                        >
+                            <div className="absolute top-6 left-6 text-5xl font-inter font-bold text-white/5 tracking-tighter pointer-events-none">
+                                {step.num}
+                            </div>
+                            <div className="relative z-10 pl-2">
+                                <div className="text-[10px] font-inter font-medium tracking-widest text-gray-500 mb-2 uppercase">
+                                    Paso {step.num}
+                                </div>
+                                <h3 className="text-lg font-inter font-medium text-white mb-2">
+                                    {step.title}
+                                </h3>
+                                <p className="text-xs font-inter font-normal text-gray-400 leading-relaxed">
+                                    {step.desc}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Subtle Background Elements */}
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div
                     className={`
-                        absolute top-1/3 left-1/4 w-80 h-80
-                        bg-gradient-to-br from-gray-50 to-transparent 
+                        absolute top-1/2 -right-1/4 w-96 h-96
+                        bg-gradient-to-br from-white/5 to-transparent
                         rounded-full blur-3xl
                         transition-opacity duration-2000 ease-out delay-500
-                        ${isVisible ? 'opacity-30' : 'opacity-0'}
+                        ${isVisible ? 'opacity-40' : 'opacity-0'}
                     `}
                 />
             </div>
+            <style>{`
+                .no-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                .no-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            `}</style>
         </div>
     );
 }
 
-export default MetodologiaMobile;
+export default FilosofiaMobile;

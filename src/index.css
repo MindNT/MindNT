@@ -20,6 +20,12 @@
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     letter-spacing: -0.01em;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  html {
+    background-color: #000000;
   }
 
   /* Enhanced typography hierarchy */

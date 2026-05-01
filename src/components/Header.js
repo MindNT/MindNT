@@ -7,14 +7,14 @@ function Header() {
     const isHomePage = location.pathname === '/';
 
     return (
-        <header className="w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <header className="w-full bg-black/60 backdrop-blur-md border-b border-white/10">
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
                     {/* Logo - Left Side (only show when NOT on homepage) */}
                     {!isHomePage && (
                         <Link to="/" className="flex items-center">
                             <img
-                                src={`${process.env.PUBLIC_URL}/images/Logohorizontal.png`}
+                                src={`${process.env.PUBLIC_URL}/images/Logowhitefonts.png`}
                                 alt="MindNT"
                                 className="h-8 w-auto object-contain"
                             />
@@ -26,8 +26,8 @@ function Header() {
                         <Link
                             to="/servicios"
                             className="
-                text-sm font-inter font-medium text-gray-700
-                hover:text-gray-900
+                text-sm font-inter font-medium text-gray-300
+                hover:text-white
                 transition-colors duration-200
                 tracking-normal-apple
               "
@@ -35,48 +35,26 @@ function Header() {
                             Servicios
                         </Link>
                         <Link
-                            to="/plataformas"
-                            className="
-                text-sm font-inter font-medium text-gray-700
-                hover:text-gray-900
-                transition-colors duration-200
-                tracking-normal-apple
-              "
-                        >
-                            Plataformas
-                        </Link>
-                        <Link
                             to="/historias"
                             className="
-                text-sm font-inter font-medium text-gray-700
-                hover:text-gray-900
+                text-sm font-inter font-medium text-gray-300
+                hover:text-white
                 transition-colors duration-200
                 tracking-normal-apple
               "
                         >
-                            Historias
+                            Historia
                         </Link>
                         <Link
                             to="/filosofia"
                             className="
-                text-sm font-inter font-medium text-gray-700
-                hover:text-gray-900
+                text-sm font-inter font-medium text-gray-300
+                hover:text-white
                 transition-colors duration-200
                 tracking-normal-apple
               "
                         >
-                            Filosofía
-                        </Link>
-                        <Link
-                            to="/blog"
-                            className="
-                text-sm font-inter font-medium text-gray-700
-                hover:text-gray-900
-                transition-colors duration-200
-                tracking-normal-apple
-              "
-                        >
-                            Blog
+                            Metodología
                         </Link>
 
                         {/* Contact Button */}

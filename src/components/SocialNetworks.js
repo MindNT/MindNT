@@ -41,12 +41,14 @@ function SocialNetworks() {
                     rel="noopener noreferrer"
                     className="
             w-16 h-16
-            bg-black
+            bg-white/10
+            backdrop-blur-sm
+            border border-white/10
             rounded-2xl
             flex items-center justify-center
             text-white
             transition-all duration-300 ease-out
-            hover:bg-gray-900
+            hover:bg-white/20
             hover:scale-110
             hover:rounded-[1.25rem]
             shadow-lg

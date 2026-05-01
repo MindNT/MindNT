@@ -17,22 +17,20 @@ function HeaderMobile() {
 
     const menuItems = [
         { name: 'Servicios', path: '/servicios' },
-        { name: 'Plataformas', path: '/plataformas' },
-        { name: 'Historias', path: '/historias' },
-        { name: 'Filosofia', path: '/filosofia' },
-        { name: 'Blog', path: '/blog' }
+        { name: 'Historia', path: '/historias' },
+        { name: 'Metodología', path: '/filosofia' }
     ];
 
     return (
         <>
-            <header className="w-full bg-white border-b border-gray-200">
+            <header className="w-full bg-black/60 backdrop-blur-md border-b border-white/10">
                 <div className="max-w-7xl mx-auto px-6 py-4">
                     <div className="flex items-center justify-between">
                         {/* Logo - Left Side (only show when NOT on homepage) */}
                         {!isHomePage && (
                             <Link to="/" className="flex items-center">
                                 <img
-                                    src={`${process.env.PUBLIC_URL}/images/Logohorizontal.png`}
+                                    src={`${process.env.PUBLIC_URL}/images/Logowhitefonts.png`}
                                     alt="MindNT"
                                     className="h-8 w-auto object-contain"
                                 />
@@ -47,7 +45,7 @@ function HeaderMobile() {
                             {/* Hamburger Menu Button */}
                             <button
                                 onClick={toggleMenu}
-                                className="p-2 text-gray-700 hover:text-gray-900 transition-colors duration-200"
+                                className="p-2 text-gray-300 hover:text-white transition-colors duration-200"
                                 aria-label="Menu"
                             >
                                 {isMenuOpen ? (
@@ -87,8 +85,9 @@ function HeaderMobile() {
             <div
                 className={`
                     fixed top-[65px] left-0 right-0 z-30
-                    bg-white
-                    border-b border-gray-200
+                    bg-black/80
+                    backdrop-blur-md
+                    border-b border-white/10
                     transition-all duration-300 ease-out
                     ${isMenuOpen
                         ? 'opacity-100 translate-y-0 pointer-events-auto'
@@ -104,12 +103,12 @@ function HeaderMobile() {
                                 to={item.path}
                                 onClick={closeMenu}
                                 className={`
-                                    text-base font-inter font-normal text-gray-700
-                                    hover:text-gray-900
+                                    text-base font-inter font-normal text-gray-300
+                                    hover:text-white
                                     px-4 py-3
                                     transition-colors duration-200
-                                    border-b border-gray-100 last:border-b-0
-                                    ${location.pathname === item.path ? 'text-gray-900 font-medium' : ''}
+                                    border-b border-white/10 last:border-b-0
+                                    ${location.pathname === item.path ? 'text-white font-medium' : ''}
                                 `}
                             >
                                 {item.name}

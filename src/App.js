@@ -49,7 +49,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen h-screen bg-white overflow-hidden relative">
+      <div className="min-h-screen h-screen bg-black overflow-hidden relative">
         {/* Global shooting star effect */}
         <ShootingStar />
 

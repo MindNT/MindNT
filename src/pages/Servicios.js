@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import GalleryModal from '../components/GalleryModal';
+import BrandingModal from '../components/BrandingModal';
+import DesarrolloModal from '../components/DesarrolloModal';
+import MarketingModal from '../components/MarketingModal';
+import ShootingStar from '../components/ShootingStar';
+import ButtonBlue from '../utils/ButtonBlue';
 
 function Servicios() {
     const [isVisible, setIsVisible] = useState(false);
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+    const [isBrandingOpen, setIsBrandingOpen] = useState(false);
+    const [isDesarrolloOpen, setIsDesarrolloOpen] = useState(false);
+    const [isMarketingOpen, setIsMarketingOpen] = useState(false);
 
     useEffect(() => {
         // Trigger fade-in animation after component mounts
@@ -13,180 +21,116 @@ function Servicios() {
     const services = [
         {
             title: 'Branding e Identidad',
-            description: 'Construimos la esencia visual y estratégica que diferencia a tu marca y proyecta autoridad en el mercado.',
-            hook: 'Tu identidad, proyectada con distinción.',
-            delay: 'delay-200'
+            description: 'Diseñamos marcas con propósito. Desde la concepción del logo hasta el manual de identidad visual completo.',
+            hook: 'Tu marca, lista para dejar huella.',
+            delay: 'delay-200',
+            openBranding: true
         },
         {
             title: 'Desarrollo Web & UX',
             description: 'Diseñamos experiencias digitales de alto rendimiento, optimizadas para convertir visitantes en clientes.',
             hook: 'Tu presencia digital, sin límites técnicos.',
-            delay: 'delay-400'
+            delay: 'delay-400',
+            openDesarrollo: true
         },
         {
             title: 'Marketing Estratégico',
             description: 'Campañas inteligentes basadas en datos para maximizar tu visibilidad y el retorno de tu inversión.',
             hook: 'Resultados tangibles, crecimiento constante.',
-            delay: 'delay-600'
+            delay: 'delay-600',
+            openMarketing: true
         },
         {
             title: 'Fotografía Profesional',
-            description: 'Capturamos la esencia de tu negocio con narrativa visual de alta calidad, diseñada para cautivar y generar confianza.',
-            hook: 'La imagen que tu marca merece.',
-            delay: 'delay-[800ms]'
+            description: 'Capturamos la esencia de tu negocio con imágenes de alta calidad que comunican profesionalismo.',
+            hook: 'Una imagen vale más que mil palabras.',
+            delay: 'delay-800',
+            openGallery: true
         }
     ];
 
     return (
-        <div className="min-h-screen h-screen bg-white flex items-center justify-center px-6 overflow-hidden">
-            {/* Main Content Container */}
-            <div className="max-w-6xl w-full">
-                {/* Page Title */}
-                <div className="text-center mb-16">
-                    <h1
+        <div className="h-screen bg-black overflow-hidden relative flex flex-col justify-center pt-16">
+            <ShootingStar />
+            <div className="max-w-7xl w-full mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                {/* Left Column - Header Section */}
+                <div className="w-full lg:w-5/12 text-left">
+                    <div
                         className={`
-              text-3xl md:text-4xl lg:text-5xl
-              font-inter font-light
-              tracking-wide
-              text-gray-900
-              mb-4
-              transition-all duration-1000 ease-out
-              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-            `}
+                            transition-all duration-1000 ease-out flex flex-col items-start
+                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                        `}
                     >
-                        Servicios
-                    </h1>
-                    <p
-                        className={`
-              text-base md:text-lg
-              font-inter font-normal
-              text-gray-600
-              tracking-normal-apple
-              transition-all duration-1000 ease-out delay-100
-              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-            `}
-                    >
-                        Transformamos información en ventaja competitiva.
-                    </p>
+                        <span className="inline-block border border-white/10 bg-white/5 px-6 py-2 rounded-full text-xs font-inter font-medium tracking-widest text-gray-400 uppercase mb-8">
+                            Nuestros Servicios
+                        </span>
+                        
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light tracking-wide text-white mb-6 leading-tight">
+                            Soluciones diseñadas<br />
+                            <span className="text-gray-500">para escalar.</span>
+                        </h1>
+                        <p className="text-base md:text-lg font-inter font-normal text-gray-400 tracking-normal-apple">
+                            Transformamos información en ventaja competitiva, construyendo herramientas sólidas para el crecimiento de tu marca.
+                        </p>
+                    </div>
                 </div>
 
-                {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
+                {/* Right Column - Services Grid 2x2 */}
+                <div 
+                    className={`
+                        w-full lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 rounded-3xl overflow-hidden
+                        transition-all duration-1000 ease-out delay-200
+                        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+                    `}
+                >
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className={`
-                group
-                text-center
-                transition-all duration-700 ease-out
-                ${service.delay}
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-              `}
+                            className="bg-black px-8 py-10 lg:px-10 lg:py-12 text-left group hover:bg-white/5 transition-colors duration-300 relative flex flex-col"
                         >
-                            {/* Subtle line above */}
-                            <div
-                                className="
-                  w-12 h-px
-                  bg-gray-300
-                  mx-auto
-                  mb-6
-                  group-hover:w-16
-                  group-hover:bg-gray-900
-                  transition-all duration-500
-                "
-                            />
-
-                            {/* Service Title */}
-                            <h2
-                                className="
-                  text-xl md:text-2xl
-                  font-inter font-medium
-                  tracking-tight-apple
-                  text-gray-900
-                  mb-3
-                  transition-all duration-300
-                  group-hover:tracking-wide
-                "
-                            >
+                            <h2 className="text-xl lg:text-2xl font-inter font-medium text-white mb-3 group-hover:tracking-wide transition-all duration-300">
                                 {service.title}
                             </h2>
-
-                            {/* Service Description */}
-                            <p
-                                className="
-                  text-sm md:text-base
-                  font-inter font-normal
-                  text-gray-500
-                  tracking-normal-apple
-                  transition-colors duration-300
-                  group-hover:text-gray-700
-                  mb-4
-                "
-                            >
+                            <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed mb-4 flex-1">
                                 {service.description}
                             </p>
-
-                            {/* Service Hook */}
-                            <p
-                                className="
-                  text-xs md:text-sm
-                  font-inter font-medium
-                  text-gray-900
-                  tracking-wide
-                  italic
-                  transition-all duration-300
-                  group-hover:text-gray-700
-                "
-                            >
+                            <p className="text-xs font-inter font-normal text-gray-500 italic mb-6">
                                 {service.hook}
                             </p>
+
+                            <ButtonBlue
+                                onClick={
+                                    service.openGallery ? () => setIsGalleryOpen(true)
+                                    : service.openBranding ? () => setIsBrandingOpen(true)
+                                    : service.openDesarrollo ? () => setIsDesarrolloOpen(true)
+                                    : service.openMarketing ? () => setIsMarketingOpen(true)
+                                    : undefined
+                                }
+                            >
+                                Conocer más
+                            </ButtonBlue>
                         </div>
                     ))}
                 </div>
 
-                {/* Gallery Button */}
-                <div className={`
-                    mt-20 flex justify-center transition-all duration-1000 ease-out delay-[1000ms]
-                    ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-                `}>
-                    <button
-                        onClick={() => setIsGalleryOpen(true)}
-                        className="
-                            group
-                            inline-flex items-center justify-center gap-3
-                            px-8 py-4 
-                            bg-gray-900 text-white
-                            rounded-full
-                            font-inter font-medium tracking-wide text-sm md:text-base
-                            shadow-md hover:shadow-2xl
-                            hover:bg-black hover:-translate-y-1
-                            transition-all duration-300 ease-out
-                        "
-                    >
-                        <span>Ver Nuestro Trabajo</span>
-                        <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </button>
-                </div>
-
-                {/* Gallery Modal */}
-                <GalleryModal 
-                    isOpen={isGalleryOpen} 
-                    onClose={() => setIsGalleryOpen(false)} 
-                />
+                {/* Modals */}
+                <GalleryModal isOpen={isGalleryOpen} onClose={() => setIsGalleryOpen(false)} />
+                <BrandingModal isOpen={isBrandingOpen} onClose={() => setIsBrandingOpen(false)} />
+                <DesarrolloModal isOpen={isDesarrolloOpen} onClose={() => setIsDesarrolloOpen(false)} />
+                <MarketingModal isOpen={isMarketingOpen} onClose={() => setIsMarketingOpen(false)} />
             </div>
 
-            {/* Subtle Background Elements - More minimal */}
+            {/* Subtle Background Elements */}
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div
                     className={`
-            absolute top-1/3 left-1/4 w-[500px] h-[500px]
-            bg-gradient-to-br from-gray-50 to-transparent
-            rounded-full blur-3xl
-            transition-opacity duration-2000 ease-out delay-500
-            ${isVisible ? 'opacity-30' : 'opacity-0'}
-          `}
+                        absolute top-1/3 left-1/4 w-[800px] h-[800px]
+                        bg-gradient-to-br from-white/5 to-transparent
+                        rounded-full blur-3xl
+                        transition-opacity duration-2000 ease-out delay-500
+                        ${isVisible ? 'opacity-30' : 'opacity-0'}
+                    `}
                 />
             </div>
         </div>
