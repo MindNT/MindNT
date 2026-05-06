@@ -10,13 +10,13 @@ function Historias() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-black pt-24 pb-32 overflow-x-hidden relative">
+        <div className="min-h-screen bg-black py-20 flex items-center overflow-x-hidden relative">
             <ShootingStar />
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-start gap-16 md:gap-24">
+            <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-16">
                     
-                    {/* Left Column - Sticky Heading */}
-                    <div className="w-full md:w-5/12 md:sticky md:top-32 shrink-0">
+                    {/* Left Column */}
+                    <div className="w-full md:w-5/12 shrink-0">
                         <div
                             className={`
                                 transition-all duration-1000 ease-out
@@ -33,13 +33,13 @@ function Historias() {
                             </h1>
 
                             <p className="text-lg md:text-xl font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple">
-                                Nacimos de la necesidad de romper los esquemas corporativos tradicionales. Valoramos la lealtad, la pasión y el coraje de quienes deciden emprender.
+                                Todo gran proyecto empieza con un primer paso. Nuestra historia se construye gracias a quienes confiaron en nosotros desde el primer día.
                             </p>
                         </div>
                     </div>
 
-                    {/* Right Column - Scrolling Content */}
-                    <div className="w-full md:w-7/12 flex flex-col gap-24 pt-4 md:pt-32 pb-32">
+                    {/* Right Column */}
+                    <div className="w-full md:w-7/12 flex flex-col gap-10 md:gap-12">
                         
                         {/* Section 1 */}
                         <div 
@@ -49,14 +49,11 @@ function Historias() {
                             `}
                         >
                             <h2 className="text-2xl md:text-3xl font-inter font-light tracking-wide text-white mb-6">
-                                El inicio: Pasantes con visión
+                                El inicio
                             </h2>
                             <p className="text-base md:text-lg font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple space-y-6">
-                                <span className="block mb-4">
-                                    MindNT no nació en una sala de juntas. Nos fundamos uniendo a una serie de pasantes que, en el mundo laboral corporativo, se sentían incómodos y limitados.
-                                </span>
                                 <span className="block">
-                                    Las agencias tradicionales priorizaban procesos rígidos sobre la creatividad real. Nosotros sabíamos que podíamos ofrecer más si nos daban la libertad de crear sin ataduras. Así decidimos crear nuestro propio espacio.
+                                    Comenzamos colaborando en pequeños proyectos, impulsados por el deseo de hacer las cosas diferente. Cada detalle importaba, y volcamos toda nuestra creatividad para demostrar que nuestra visión no tenía fronteras.
                                 </span>
                             </p>
                         </div>
@@ -70,14 +67,11 @@ function Historias() {
                             `}
                         >
                             <h2 className="text-2xl md:text-3xl font-inter font-light tracking-wide text-white mb-6">
-                                Lealtad y Pasión
+                                La Confianza
                             </h2>
                             <p className="text-base md:text-lg font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple space-y-6">
-                                <span className="block mb-4">
-                                    Valoramos profundamente la lealtad y la pasión que las personas le ponen a sus emprendimientos y negocios. Sabemos lo que cuesta construir algo desde cero.
-                                </span>
                                 <span className="block">
-                                    Es por eso que no ofrecemos plantillas genéricas ni soluciones rápidas. Cada diseño, cada plataforma y cada estrategia que desarrollamos es única, pensada específicamente para reflejar el alma del negocio de nuestros clientes.
+                                    Crecimos cuando nuestros primeros clientes apostaron por nosotros. Al superar cada reto, no solo construimos marcas, sino lazos de lealtad. Esa confianza nos convirtió en el estudio que somos hoy.
                                 </span>
                             </p>
                         </div>
@@ -86,19 +80,19 @@ function Historias() {
                         <div 
                             className={`
                                 transition-all duration-1000 ease-out delay-600
-                                bg-white/5 rounded-3xl p-8 md:p-12 border border-white/5
+                                bg-white/5 rounded-3xl p-6 md:p-10 border border-white/5
                                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
                             `}
                         >
                             <h2 className="text-xl md:text-2xl font-inter font-medium tracking-wide text-white mb-4">
-                                Nuestro compromiso
+                                Nuestro Compromiso
                             </h2>
                             <p className="text-base font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple italic">
-                                "En MindNT, tu marca no es un número más en nuestro portafolio. Es una historia en la que creemos, y nuestra misión es darle las herramientas visuales y tecnológicas para que el mundo la escuche fuerte y claro."
+                                "Nunca olvidamos nuestras raíces. Sabemos lo que cuesta construir algo desde cero. Tu marca no es un número más; es una historia en la que creemos, y nuestra misión es llevarla a su máximo potencial."
                             </p>
                             <div className="mt-8 pt-6 border-t border-white/10">
                                 <span className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase">
-                                    — El equipo fundador de MindNT
+                                    — El equipo fundador
                                 </span>
                             </div>
                         </div>

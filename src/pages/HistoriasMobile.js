@@ -9,13 +9,13 @@ function HistoriasMobile() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-black px-6 py-24 overflow-x-hidden relative">
+        <div className="min-h-screen bg-black px-6 py-20 flex flex-col justify-center overflow-x-hidden relative">
             <ShootingStar />
-            <div className="max-w-md mx-auto relative z-10">
+            <div className="max-w-md mx-auto relative z-10 w-full">
                 {/* Header Section */}
                 <div 
                     className={`
-                        mb-16
+                        mb-10
                         transition-all duration-1000 ease-out
                         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
                     `}
@@ -30,12 +30,12 @@ function HistoriasMobile() {
                     </h1>
 
                     <p className="text-base font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple">
-                        Nacimos de la necesidad de romper los esquemas corporativos. Valoramos la lealtad, la pasión y el coraje de quienes deciden emprender.
+                        Todo gran proyecto empieza con un primer paso. Nuestra historia se construye gracias a quienes confiaron en nosotros desde el primer día.
                     </p>
                 </div>
 
                 {/* Content Sections */}
-                <div className="space-y-16">
+                <div className="space-y-10">
                     {/* Section 1 */}
                     <div 
                         className={`
@@ -44,14 +44,11 @@ function HistoriasMobile() {
                         `}
                     >
                         <h2 className="text-xl font-inter font-light tracking-wide text-white mb-4">
-                            Pasantes con visión
+                            El inicio
                         </h2>
                         <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple space-y-4">
-                            <span className="block mb-4">
-                                MindNT no nació en una sala de juntas. Nos fundamos uniendo a una serie de pasantes que, en el mundo laboral, se sentían incómodos y limitados.
-                            </span>
                             <span className="block">
-                                Sabíamos que podíamos ofrecer más si nos daban la libertad de crear sin ataduras. Así decidimos crear nuestro propio espacio.
+                                Comenzamos colaborando en pequeños proyectos, impulsados por el deseo de hacer las cosas diferente. Volcamos nuestra creatividad en cada detalle.
                             </span>
                         </p>
                     </div>
@@ -65,14 +62,11 @@ function HistoriasMobile() {
                         `}
                     >
                         <h2 className="text-xl font-inter font-light tracking-wide text-white mb-4">
-                            Lealtad y Pasión
+                            La Confianza
                         </h2>
                         <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple space-y-4">
-                            <span className="block mb-4">
-                                Valoramos profundamente la pasión que las personas le ponen a sus negocios. Sabemos lo que cuesta construir algo desde cero.
-                            </span>
                             <span className="block">
-                                Por eso no usamos plantillas genéricas. Cada diseño y plataforma es única, pensada específicamente para reflejar el alma del negocio de nuestros clientes.
+                                Crecimos cuando nuestros primeros clientes apostaron por nosotros. Esa confianza inicial nos convirtió en el estudio que somos hoy.
                             </span>
                         </p>
                     </div>
@@ -86,10 +80,10 @@ function HistoriasMobile() {
                         `}
                     >
                         <h2 className="text-lg font-inter font-medium tracking-wide text-white mb-3">
-                            Nuestro compromiso
+                            Nuestro Compromiso
                         </h2>
                         <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple italic">
-                            "Tu marca no es un número más. Es una historia en la que creemos, y nuestra misión es darle las herramientas para que el mundo la escuche fuerte y claro."
+                            "Nunca olvidamos nuestras raíces. Tu marca es una historia en la que creemos, y nuestra misión es llevarla a su máximo potencial."
                         </p>
                         <div className="mt-6 pt-4 border-t border-white/10">
                             <span className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase">
