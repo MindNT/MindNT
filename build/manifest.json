@@ -1,15 +1,15 @@
 {
   "short_name": "MindNT",
-  "name": "MindNT - Soluciones Digitales",
-  "description": "Desarrollo web, branding, marketing y automatizaciones. Transformamos ideas en soluciones digitales excepcionales.",
+  "name": "MindNT - Ingeniería de Datos",
+  "description": "Inteligencia de negocio impulsada por tus datos. Servicios de Análisis Histórico, Extracción, Visualización y Análisis de Sentimientos.",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "images/MindNT_Logo_Square.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "images/logohorizontal.png",
+      "src": "images/MindNT_Logo_Square.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
@@ -17,12 +17,12 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "orientation": "portrait-primary",
   "categories": [
     "business",
     "productivity",
-    "design"
+    "technology"
   ]
 }
