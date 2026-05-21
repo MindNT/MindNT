@@ -62,7 +62,7 @@ const services = [
         pricePrefix: 'Desde',
         priceAmount: '$4,900',
         priceSuffix: 'MXN / proyecto',
-        description: 'Sabe exactamente qué dice el mundo de tu marca.',
+        description: 'Identifica qué dice el mundo de tu marca.',
         features: [
             'Monitoreo de menciones multiplataforma',
             'Clasificación de sentimiento automática',
@@ -100,8 +100,8 @@ const services = [
         features: [
             'Dashboards interactivos personalizados',
             'Filtros en tiempo real y drill-down',
-            'Acceso multiusuario con roles',
-            'Exportación a PDF y Excel',
+            'Acceso multiusuario',
+            'Exportación especifica',
         ],
         bestseller: false,
         delay: 300,

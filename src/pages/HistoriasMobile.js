@@ -11,11 +11,11 @@ function HistoriasMobile() {
     return (
         <div className="min-h-screen bg-black overflow-x-hidden relative flex flex-col px-6 pt-36 pb-16">
             <ShootingStar />
-            
+
             <div className="max-w-md mx-auto relative z-10 w-full flex flex-col items-center">
-                
+
                 {/* 1. Hero Section */}
-                <div 
+                <div
                     className={`
                         text-center mb-12
                         transition-all duration-1000 ease-out
@@ -25,7 +25,7 @@ function HistoriasMobile() {
                     <span className="inline-block border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-[10px] font-inter font-medium tracking-widest text-gray-400 uppercase mb-6">
                         Conoce al Equipo
                     </span>
-                    
+
                     <h1 className="text-3xl font-inter font-semibold tracking-tight text-white leading-tight mb-4">
                         Talento global.<br />
                         <span className="text-gray-500">
@@ -34,12 +34,12 @@ function HistoriasMobile() {
                     </h1>
 
                     <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">
-                        Unimos a los mejores Ingenieros de Datos y Desarrolladores Web de Argentina y México para construir la infraestructura digital del mañana.
+                        Trabajamos con Ingenieros de Datos y Desarrolladores Web de Argentina y México.
                     </p>
                 </div>
 
                 {/* 2. Core Pillars - Stacked */}
-                <div 
+                <div
                     className={`
                         w-full flex flex-col gap-6 mb-10
                         transition-all duration-1000 ease-out delay-200
@@ -68,7 +68,7 @@ function HistoriasMobile() {
                             </svg>
                         </div>
                         <h3 className="text-xl font-inter font-semibold text-white mb-2 tracking-tight">Nuevas Tecnologías</h3>
-                        <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">Incorporamos herramientas de última generación e IA para garantizar reportes muchísimo más precisos y certeros.</p>
+                        <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">Incorporamos herramientas de última generación para garantizar reportes muchísimo más precisos y certeros.</p>
                     </div>
 
                     {/* Pillar 3 */}
@@ -87,7 +87,7 @@ function HistoriasMobile() {
                 </div>
 
                 {/* 3. Bento Grid - Stacked for mobile */}
-                <div 
+                <div
                     className={`
                         w-full flex flex-col gap-6
                         transition-all duration-1000 ease-out delay-400

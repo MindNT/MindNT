@@ -11,11 +11,11 @@ function Historias() {
     return (
         <div className="min-h-screen bg-black overflow-hidden relative flex flex-col justify-center pt-24 pb-16">
             <ShootingStar />
-            
+
             <div className="max-w-[75rem] mx-auto px-6 relative z-10 w-full flex flex-col gap-16">
-                
+
                 {/* 1. Hero Section - Centered, Google style */}
-                <div 
+                <div
                     className={`
                         text-center max-w-3xl mx-auto
                         transition-all duration-1000 ease-out
@@ -25,7 +25,7 @@ function Historias() {
                     <span className="inline-block border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-[10px] font-inter font-medium tracking-widest text-gray-400 uppercase mb-6">
                         Conoce al Equipo
                     </span>
-                    
+
                     <h1 className="text-4xl md:text-5xl lg:text-5xl font-inter font-semibold tracking-tight text-white leading-tight mb-4">
                         Talento global.<br />
                         <span className="text-gray-500">
@@ -34,12 +34,12 @@ function Historias() {
                     </h1>
 
                     <p className="text-sm md:text-base font-inter font-normal text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                        Unimos a los mejores Ingenieros de Datos y Desarrolladores Web de Argentina y México para construir la infraestructura digital del mañana.
+                        Trabajamos con Ingenieros de Datos y Desarrolladores Web de Argentina y México.
                     </p>
                 </div>
 
                 {/* Grid Layout Container */}
-                <div 
+                <div
                     className={`
                         w-full grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8
                         transition-all duration-1000 ease-out delay-200
@@ -67,7 +67,7 @@ function Historias() {
                             </svg>
                         </div>
                         <h3 className="text-xl font-inter font-semibold text-white mb-2">Nuevas Tecnologías</h3>
-                        <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">Incorporamos herramientas de última generación e IA para garantizar reportes muchísimo más precisos y certeros.</p>
+                        <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">Incorporamos herramientas de última generación para garantizar reportes muchísimo más precisos y certeros.</p>
                     </div>
 
                     <div className="flex flex-col p-6 rounded-3xl bg-[#0f0f0f] border border-white/10 hover:bg-white/[0.02] transition-colors duration-300">
