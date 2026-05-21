@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ButtonBlue from '../utils/ButtonBlue';
 import ShootingStar from '../components/ShootingStar';
 
 function InicioMobile() {
@@ -19,47 +18,37 @@ function InicioMobile() {
             <div className="max-w-md w-full relative z-10">
                 <div className="text-center flex flex-col items-center">
                     
-                    {/* Badge */}
+                    {/* Logo (Replacing Announcement Badge) */}
                     <div 
                         className={`
-                            transition-all duration-1000 ease-out
-                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-                        `}
-                    >
-                        <span className="inline-block border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-[10px] font-inter font-medium tracking-widest text-gray-400 uppercase mb-8">
-                            Agencia Creativa & Tecnológica
-                        </span>
-                    </div>
-
-                    {/* Logo */}
-                    <div
-                        className={`
-                            flex justify-center mb-8
-                            transition-all duration-1000 ease-out delay-100
-                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                            transition-all duration-1000 ease-out flex justify-center
+                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
                         `}
                     >
                         <img
-                            src={`${process.env.PUBLIC_URL}/images/Logohorizontal.png`}
-                            alt="MindNT Logo"
-                            className="h-10 w-auto object-contain opacity-90"
+                            src={`${process.env.PUBLIC_URL}/images/Logowhitefonts.png`}
+                            alt="MindNT"
+                            className="h-10 w-auto object-contain mb-8"
                         />
                     </div>
 
-                    {/* Main Slogan */}
+                    {/* Main Slogan (Google Product Style) */}
                     <h1
                         className={`
                             text-4xl
-                            font-inter font-light
-                            tracking-wide
+                            font-inter font-semibold
+                            tracking-tight
                             text-white
-                            leading-tight
+                            leading-[1.1]
                             mb-5
-                            transition-all duration-1000 ease-out delay-200
-                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                            transition-all duration-1000 ease-out delay-100
+                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
                         `}
                     >
-                        Un negocio, <span className="text-gray-500">una historia.</span>
+                        Inteligencia de negocio.<br />
+                        <span className="text-gray-500">
+                            Impulsada por tus datos.
+                        </span>
                     </h1>
 
                     {/* Subtitle */}
@@ -68,26 +57,31 @@ function InicioMobile() {
                             text-sm
                             font-inter font-normal
                             text-gray-400
-                            tracking-normal-apple
                             mb-10
-                            transition-all duration-1000 ease-out delay-300
-                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                            transition-all duration-1000 ease-out delay-200
+                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
                         `}
                     >
-                        Datos, Diseño, Branding y Desarrollo de alto nivel.
+                        Toma decisiones estratégicas con nuestra plataforma integral de extracción, análisis predictivo y visualización en tiempo real.
                     </p>
 
                     {/* CTA Button */}
                     <div
                         className={`
                             flex justify-center
-                            transition-all duration-1000 ease-out delay-500
-                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                            transition-all duration-1000 ease-out delay-300
+                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
                         `}
                     >
-                        <ButtonBlue onClick={() => navigate('/servicios')}>
-                            Iniciar viaje
-                        </ButtonBlue>
+                        <button 
+                            onClick={() => navigate('/servicios')}
+                            className="bg-white text-black px-6 py-3 rounded-full font-inter font-medium text-sm flex items-center gap-2 hover:bg-gray-200 transition-colors duration-300"
+                        >
+                            Descubrir servicios
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
                     </div>
 
                 </div>
@@ -98,10 +92,10 @@ function InicioMobile() {
                 <div
                     className={`
                         absolute top-1/4 -left-1/3 w-64 h-64 
-                        bg-gradient-to-br from-white/5 to-transparent 
+                        bg-gradient-to-br from-[#034EA2]/20 to-transparent 
                         rounded-full blur-3xl
                         transition-opacity duration-2000 ease-out delay-300
-                        ${isVisible ? 'opacity-30' : 'opacity-0'}
+                        ${isVisible ? 'opacity-50' : 'opacity-0'}
                     `}
                 />
                 <div
@@ -110,7 +104,7 @@ function InicioMobile() {
                         bg-gradient-to-tl from-white/5 to-transparent 
                         rounded-full blur-3xl
                         transition-opacity duration-2000 ease-out delay-500
-                        ${isVisible ? 'opacity-30' : 'opacity-0'}
+                        ${isVisible ? 'opacity-50' : 'opacity-0'}
                     `}
                 />
             </div>

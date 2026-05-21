@@ -25,36 +25,27 @@ function Header() {
                     <nav className={`hidden md:flex items-center space-x-8 ${isHomePage ? 'ml-auto' : ''}`}>
                         <Link
                             to="/servicios"
-                            className="
-                text-sm font-inter font-medium text-gray-300
-                hover:text-white
-                transition-colors duration-200
-                tracking-normal-apple
-              "
+                            className="text-sm font-inter font-medium text-gray-300 hover:text-white transition-colors duration-200 tracking-normal-apple"
                         >
-                            Servicios
-                        </Link>
-                        <Link
-                            to="/historias"
-                            className="
-                text-sm font-inter font-medium text-gray-300
-                hover:text-white
-                transition-colors duration-200
-                tracking-normal-apple
-              "
-                        >
-                            Historia
+                            Precio
                         </Link>
                         <Link
                             to="/filosofia"
-                            className="
-                text-sm font-inter font-medium text-gray-300
-                hover:text-white
-                transition-colors duration-200
-                tracking-normal-apple
-              "
+                            className="text-sm font-inter font-medium text-gray-300 hover:text-white transition-colors duration-200 tracking-normal-apple"
                         >
                             Metodología
+                        </Link>
+                        <Link
+                            to="/historias"
+                            className="text-sm font-inter font-medium text-gray-300 hover:text-white transition-colors duration-200 tracking-normal-apple"
+                        >
+                            Nosotros
+                        </Link>
+                        <Link
+                            to="/conceptos"
+                            className="text-sm font-inter font-medium text-gray-300 hover:text-white transition-colors duration-200 tracking-normal-apple"
+                        >
+                            Glosario
                         </Link>
 
                         {/* Contact Button */}

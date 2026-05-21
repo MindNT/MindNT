@@ -5,99 +5,108 @@ function Historias() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        // Trigger fade-in animation after component mounts
         setTimeout(() => setIsVisible(true), 100);
     }, []);
 
     return (
-        <div className="min-h-screen bg-black py-20 flex items-center overflow-x-hidden relative">
+        <div className="min-h-screen bg-black overflow-hidden relative flex flex-col justify-center pt-24 pb-16">
             <ShootingStar />
-            <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-16">
+            
+            <div className="max-w-[75rem] mx-auto px-6 relative z-10 w-full flex flex-col gap-16">
+                
+                {/* 1. Hero Section - Centered, Google style */}
+                <div 
+                    className={`
+                        text-center max-w-3xl mx-auto
+                        transition-all duration-1000 ease-out
+                        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                    `}
+                >
+                    <span className="inline-block border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-[10px] font-inter font-medium tracking-widest text-gray-400 uppercase mb-6">
+                        Conoce al Equipo
+                    </span>
                     
-                    {/* Left Column */}
-                    <div className="w-full md:w-5/12 shrink-0">
-                        <div
-                            className={`
-                                transition-all duration-1000 ease-out
-                                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-                            `}
-                        >
-                            <span className="inline-block border border-white/10 bg-white/5 px-5 py-1.5 rounded-full text-xs font-inter font-medium tracking-widest text-gray-400 uppercase mb-8">
-                                Nuestra Historia
-                            </span>
-                            
-                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-inter font-light tracking-wide text-white leading-tight mb-6">
-                                Diseñamos<br />
-                                <span className="text-gray-500">sin límites.</span>
-                            </h1>
+                    <h1 className="text-4xl md:text-5xl lg:text-5xl font-inter font-semibold tracking-tight text-white leading-tight mb-4">
+                        Talento global.<br />
+                        <span className="text-gray-500">
+                            Ingeniería sin fronteras.
+                        </span>
+                    </h1>
 
-                            <p className="text-lg md:text-xl font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple">
-                                Todo gran proyecto empieza con un primer paso. Nuestra historia se construye gracias a quienes confiaron en nosotros desde el primer día.
+                    <p className="text-sm md:text-base font-inter font-normal text-gray-400 leading-relaxed max-w-2xl mx-auto">
+                        Unimos a los mejores Ingenieros de Datos y Desarrolladores Web de Argentina y México para construir la infraestructura digital del mañana.
+                    </p>
+                </div>
+
+                {/* Grid Layout Container */}
+                <div 
+                    className={`
+                        w-full grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8
+                        transition-all duration-1000 ease-out delay-200
+                        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+                    `}
+                >
+                    {/* Top Row: 3 Core Pillars */}
+                    <div className="flex flex-col p-6 rounded-3xl bg-[#0f0f0f] border border-white/10 hover:bg-white/[0.02] transition-colors duration-300">
+                        <div className="w-10 h-10 rounded-xl bg-white/5 text-gray-300 flex items-center justify-center mb-4">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="12" cy="7" r="4"></circle>
+                                <path d="M5.5 21v-2a6.5 6.5 0 0 1 13 0v2"></path>
+                            </svg>
+                        </div>
+                        <h3 className="text-xl font-inter font-semibold text-white mb-2">Talento Humano</h3>
+                        <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">Apasionados por los datos. Nuestro equipo aporta pensamiento crítico y creatividad analítica a cada proyecto.</p>
+                    </div>
+
+                    <div className="flex flex-col p-6 rounded-3xl bg-[#0f0f0f] border border-white/10 hover:bg-white/[0.02] transition-colors duration-300">
+                        <div className="w-10 h-10 rounded-xl bg-white/5 text-gray-300 flex items-center justify-center mb-4">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 className="text-xl font-inter font-semibold text-white mb-2">Nuevas Tecnologías</h3>
+                        <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">Incorporamos herramientas de última generación e IA para garantizar reportes muchísimo más precisos y certeros.</p>
+                    </div>
+
+                    <div className="flex flex-col p-6 rounded-3xl bg-[#0f0f0f] border border-white/10 hover:bg-white/[0.02] transition-colors duration-300">
+                        <div className="w-10 h-10 rounded-xl bg-white/5 text-gray-300 flex items-center justify-center mb-4">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 className="text-xl font-inter font-semibold text-white mb-2">Colaboración Activa</h3>
+                        <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">Trabajamos hombro a hombro contigo. Entendemos tu negocio a fondo para que cada métrica resuelva un problema real.</p>
+                    </div>
+
+                    {/* Bottom Row: Bento Grid Narrative (Spans multiple columns) */}
+                    <div className="md:col-span-2 flex flex-col justify-center p-8 lg:p-10 rounded-3xl bg-[#0f0f0f] border border-white/10 relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#034EA2] rounded-full blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity duration-700"></div>
+                        <div className="relative z-10 flex flex-col justify-center h-full">
+                            <h2 className="text-3xl font-inter font-semibold tracking-tight text-white mb-4">Un equipo híbrido.</h2>
+                            <p className="text-sm md:text-base font-inter font-normal text-gray-400 leading-relaxed max-w-xl">
+                                No somos una agencia tradicional. Operamos como un escuadrón técnico de alto rendimiento. Nuestra capacidad de integrar bases de datos complejas directamente con aplicaciones web nos permite entregar productos digitales de extremo a extremo sin intermediarios, fusionando el rigor de la ingeniería de software en <strong>Argentina</strong> con la agilidad y escala de <strong>México</strong>.
                             </p>
                         </div>
                     </div>
 
-                    {/* Right Column */}
-                    <div className="w-full md:w-7/12 flex flex-col gap-10 md:gap-12">
-                        
-                        {/* Section 1 */}
-                        <div 
-                            className={`
-                                transition-all duration-1000 ease-out delay-200
-                                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-                            `}
-                        >
-                            <h2 className="text-2xl md:text-3xl font-inter font-light tracking-wide text-white mb-6">
-                                El inicio
-                            </h2>
-                            <p className="text-base md:text-lg font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple space-y-6">
-                                <span className="block">
-                                    Comenzamos colaborando en pequeños proyectos, impulsados por el deseo de hacer las cosas diferente. Cada detalle importaba, y volcamos toda nuestra creatividad para demostrar que nuestra visión no tenía fronteras.
-                                </span>
+                    <div className="md:col-span-1 flex flex-col justify-center p-8 rounded-3xl bg-[#0f0f0f] border border-white/10 relative overflow-hidden">
+                        <div className="relative z-10">
+                            <h3 className="text-[10px] font-inter font-semibold tracking-widest text-[#034EA2] uppercase mb-3">Nuestra Filosofía</h3>
+                            <p className="text-sm font-inter font-normal text-gray-300 leading-relaxed italic">
+                                "Creemos que el código limpio y los datos precisos transforman industrias. Nuestra obsesión no es entregar rápido, es construir con excelencia técnica e impacto medible."
                             </p>
-                        </div>
-
-                        {/* Section 2 */}
-                        <div 
-                            className={`
-                                transition-all duration-1000 ease-out delay-400
-                                border-l border-white/10 pl-8 md:pl-12
-                                ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}
-                            `}
-                        >
-                            <h2 className="text-2xl md:text-3xl font-inter font-light tracking-wide text-white mb-6">
-                                La Confianza
-                            </h2>
-                            <p className="text-base md:text-lg font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple space-y-6">
-                                <span className="block">
-                                    Crecimos cuando nuestros primeros clientes apostaron por nosotros. Al superar cada reto, no solo construimos marcas, sino lazos de lealtad. Esa confianza nos convirtió en el estudio que somos hoy.
-                                </span>
-                            </p>
-                        </div>
-
-                        {/* Section 3 */}
-                        <div 
-                            className={`
-                                transition-all duration-1000 ease-out delay-600
-                                bg-white/5 rounded-3xl p-6 md:p-10 border border-white/5
-                                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-                            `}
-                        >
-                            <h2 className="text-xl md:text-2xl font-inter font-medium tracking-wide text-white mb-4">
-                                Nuestro Compromiso
-                            </h2>
-                            <p className="text-base font-inter font-normal text-gray-400 leading-relaxed tracking-normal-apple italic">
-                                "Nunca olvidamos nuestras raíces. Sabemos lo que cuesta construir algo desde cero. Tu marca no es un número más; es una historia en la que creemos, y nuestra misión es llevarla a su máximo potencial."
-                            </p>
-                            <div className="mt-8 pt-6 border-t border-white/10">
-                                <span className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase">
-                                    — El equipo fundador
-                                </span>
+                            <div className="mt-6 flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
+                                <span className="text-[10px] font-inter font-medium text-gray-500">MindNT Eng</span>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
             </div>
 
@@ -105,11 +114,11 @@ function Historias() {
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div
                     className={`
-                        absolute top-1/4 -right-1/4 w-[800px] h-[800px]
-                        bg-gradient-to-br from-white/5 to-transparent
+                        absolute top-1/2 left-1/4 -translate-y-1/2 w-[800px] h-[800px]
+                        bg-gradient-to-tr from-[#034EA2]/10 via-white/5 to-transparent
                         rounded-full blur-3xl
                         transition-opacity duration-2000 ease-out delay-500
-                        ${isVisible ? 'opacity-50' : 'opacity-0'}
+                        ${isVisible ? 'opacity-40' : 'opacity-0'}
                     `}
                 />
             </div>

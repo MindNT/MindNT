@@ -7,8 +7,11 @@ function ContactButton() {
 
     return (
         <>
-            <ButtonBlue onClick={() => setIsModalOpen(true)}>
-                Iniciar Proyecto
+            <ButtonBlue 
+                onClick={() => setIsModalOpen(true)}
+                className="whitespace-nowrap text-[11px] px-3 py-1.5 sm:text-sm sm:px-4 sm:py-2"
+            >
+                Estudio especializado
             </ButtonBlue>
 
             <BookingModal 

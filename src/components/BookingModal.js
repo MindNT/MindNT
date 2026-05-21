@@ -1,215 +1,249 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import ButtonBlue from '../utils/ButtonBlue';
 import ShootingStar from './ShootingStar';
 
-function BookingModal({ isOpen, onClose }) {
+function BookingModal({ isOpen, onClose, initialService = '' }) {
     const [formData, setFormData] = useState({
         nombre: '',
-        servicio: '',
-        proyecto: '',
-        descripcion: '',
+        empresa: '',
+        industria: '',
+        servicio: initialService,
+        fuenteDatos: '',
+        objetivo: '',
         horario: '',
-        estado: '',
-        pais: ''
     });
+
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            setFormData(prev => ({ ...prev, servicio: initialService }));
+            setTimeout(() => setIsVisible(true), 50);
+        } else {
+            setIsVisible(false);
+        }
+    }, [isOpen, initialService]);
 
     if (!isOpen) return null;
 
     const servicios = [
-        'Branding',
-        'Desarrollo Web & UX',
-        'Marketing',
-        'Fotografía',
-        'Otro'
+        'Análisis Histórico de Ventas',
+        'Sentimientos en Redes',
+        'Extracción de Datos',
+        'Visualización de Datos',
+        'Estudio personalizado',
+    ];
+
+    const fuentes = [
+        'Excel / CSV',
+        'Base de datos',
+        'Redes sociales',
+        'ERP / CRM',
+        'No tengo datos',
     ];
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleServiceSelect = (servicio) => {
-        setFormData({ ...formData, servicio });
+    const handleSelect = (field, value) => {
+        setFormData({ ...formData, [field]: value });
     };
 
     const handleWhatsApp = () => {
-        const { nombre, servicio, proyecto, descripcion, horario, estado, pais } = formData;
-        
-        // Formatear el mensaje para WhatsApp
-        const text = `Hola MindNT! Me gustaría iniciar un proyecto con ustedes.%0A%0A*Nombre / Empresa:* ${nombre || 'No especificado'}%0A*Ubicación:* ${estado || 'Estado no especificado'}, ${pais || 'País no especificado'}%0A*Horario de llamada:* ${horario || 'No especificado'}%0A*Servicio de interés:* ${servicio || 'No especificado'}%0A*Nombre del proyecto:* ${proyecto || 'No especificado'}%0A*Requerimientos:* ${descripcion || 'No especificados'}`;
-        
+        const { nombre, empresa, industria, servicio, fuenteDatos, objetivo, horario } = formData;
+
+        const text =
+            `Hola MindNT! Me interesa realizar un estudio de análisis de datos.%0A%0A` +
+            `*Nombre:* ${nombre || 'No especificado'}%0A` +
+            `*Empresa / Marca:* ${empresa || 'No especificada'}%0A` +
+            `*Industria:* ${industria || 'No especificada'}%0A` +
+            `*Tipo de análisis:* ${servicio || 'No especificado'}%0A` +
+            `*Fuente de datos:* ${fuenteDatos || 'No especificada'}%0A` +
+            `*Objetivo del estudio:* ${objetivo || 'No especificado'}%0A` +
+            `*Horario preferido:* ${horario || 'No especificado'}`;
+
         window.open(`https://wa.me/529991778325?text=${text}`, '_blank');
     };
 
+    // Estilos alineados a Google (Inputs compactos para evitar scroll)
+    const inputClass =
+        'w-full bg-white/10 border border-white/10 rounded-full px-5 py-3 text-white placeholder-gray-400 font-inter text-sm focus:outline-none focus:border-[#034EA2] focus:bg-white/20 transition-colors duration-300';
+    
+    const labelClass =
+        'text-xs font-inter font-medium text-gray-400 mb-2 ml-2 block uppercase tracking-wider';
+
     return ReactDOM.createPortal(
-        <div className="fixed inset-0 z-[9999] flex items-start lg:items-center justify-center p-6 pt-24 lg:pt-6 overflow-y-auto overflow-x-hidden">
-            {/* Fondo negro base */}
-            <div className="fixed inset-0 bg-black transition-opacity"></div>
+        <div className={`fixed inset-0 z-[9999] flex justify-center items-center overflow-hidden transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             
-            {/* Estrellas Fugaces de Fondo */}
-            <div className="fixed inset-0 pointer-events-none opacity-50">
+            {/* Fondo negro puro (Takeover completo, no parece un modal superpuesto) */}
+            <div className="fixed inset-0 bg-black" />
+
+            <div className="fixed inset-0 pointer-events-none opacity-40">
                 <ShootingStar />
             </div>
 
-            {/* Botón de regresar */}
-            <button
-                onClick={onClose}
-                className="
-                    fixed top-6 left-6 md:top-10 md:left-10
-                    flex items-center gap-2.5
-                    text-gray-400 hover:text-white 
-                    font-inter font-medium tracking-normal-apple text-sm md:text-base
-                    transition-all duration-300 ease-out
-                    hover:-translate-x-2 focus:outline-none z-50
-                "
-                aria-label="Regresar"
-            >
-                <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-                </svg>
-                Regresar
-            </button>
+            {/* Glowing background muy sutil */}
+            <div className="fixed inset-0 pointer-events-none flex justify-end items-start overflow-hidden">
+                <div className="w-[800px] h-[800px] bg-gradient-to-bl from-[#034EA2]/20 to-transparent rounded-full blur-[120px] opacity-30 translate-x-1/3 -translate-y-1/3" />
+            </div>
 
-            {/* Contenedor Principal (Más horizontal en PC, Vertical en móvil) */}
-            <div className="relative w-full max-w-6xl bg-transparent animate-fadeInUp flex flex-col xl:flex-row items-start xl:items-center justify-between gap-12 pb-24 lg:py-10 z-10">
+            {/* Contenedor principal ajustado para no requerir scroll */}
+            <div className="relative w-full max-w-[90rem] mx-auto px-6 h-screen flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 z-10 pt-20 lg:pt-0">
                 
-                {/* Columna Izquierda: Encabezado */}
-                <div className="w-full xl:w-5/12 text-left relative z-0 px-2 md:px-0">
-                    <span className="inline-block border border-white/10 bg-white/5 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-inter font-medium tracking-widest text-gray-400 uppercase mb-6">
-                        Inicia tu proyecto
-                    </span>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light tracking-wide text-white mb-6 leading-tight">
-                        Cuéntanos sobre<br className="hidden md:block"/>
-                        <span className="text-gray-500">tu visión.</span>
-                    </h2>
-                    <p className="text-sm md:text-base lg:text-lg font-inter font-normal tracking-normal-apple text-gray-400 leading-relaxed max-w-xl">
-                        Completa este breve formulario con los detalles de tu proyecto. Nos comunicaremos contigo a la brevedad para agendar la llamada en tu horario preferido.
-                    </p>
+                {/* Botón de Regresar (Alineado al grid de contenido) */}
+                <div className="absolute top-6 left-6 lg:top-8 lg:left-6 z-50">
+                    <button
+                        onClick={onClose}
+                        className="flex items-center gap-2 text-black hover:bg-gray-200 font-inter font-medium text-xs transition-colors duration-200 bg-white px-4 py-2 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                    >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Regresar
+                    </button>
                 </div>
+                
+                {/* Columna Izquierda: Mensaje tipo Google Hero */}
+                <div className="w-full lg:w-5/12 text-left">
+                    <span className="inline-block border border-white/10 bg-white/5 px-3 py-1 rounded-full text-[10px] font-inter font-medium tracking-widest text-gray-400 uppercase mb-4">
+                        Solicitud de Estudio
+                    </span>
+                    <h2 className="text-4xl md:text-5xl lg:text-5xl font-inter font-semibold tracking-tight text-white mb-5 leading-[1.1]">
+                        Construyamos tu<br />
+                        <span className="text-gray-400">estrategia.</span>
+                    </h2>
+                    <p className="text-sm md:text-base font-inter font-normal text-gray-400 leading-relaxed max-w-lg mb-8">
+                        Completa este formulario. Un ingeniero revisará tus requerimientos y fuentes de datos para contactarte con una solución técnica inicial, sin compromisos.
+                    </p>
 
-                {/* Columna Derecha: Formulario (Grid horizontal) */}
-                <div className="w-full xl:w-7/12 flex flex-col gap-8 relative z-10 px-2 md:px-0">
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {/* Columna Interna 1 */}
-                        <div className="flex flex-col gap-8">
-                            <div className="flex flex-col group">
-                                <label className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase mb-2">Nombre / Empresa</label>
-                                <input 
-                                    type="text"
-                                    name="nombre"
-                                    value={formData.nombre}
-                                    onChange={handleChange}
-                                    placeholder="Escribe tu nombre o marca"
-                                    className="bg-transparent border-b border-white/20 text-white placeholder-white/20 font-inter text-sm md:text-base py-3 focus:outline-none focus:border-white transition-colors w-full"
-                                />
+                    <div className="hidden lg:block space-y-4">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-[#0f0f0f] border border-white/10 flex items-center justify-center text-white">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                             </div>
-
-                            <div className="flex gap-4">
-                                <div className="flex-1 flex flex-col group">
-                                    <label className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase mb-2">Estado</label>
-                                    <input 
-                                        type="text"
-                                        name="estado"
-                                        value={formData.estado}
-                                        onChange={handleChange}
-                                        placeholder="Ej. Yucatán"
-                                        className="bg-transparent border-b border-white/20 text-white placeholder-white/20 font-inter text-sm md:text-base py-3 focus:outline-none focus:border-white transition-colors w-full"
-                                    />
-                                </div>
-                                <div className="flex-1 flex flex-col group">
-                                    <label className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase mb-2">País</label>
-                                    <input 
-                                        type="text"
-                                        name="pais"
-                                        value={formData.pais}
-                                        onChange={handleChange}
-                                        placeholder="Ej. México"
-                                        className="bg-transparent border-b border-white/20 text-white placeholder-white/20 font-inter text-sm md:text-base py-3 focus:outline-none focus:border-white transition-colors w-full"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col group">
-                                <label className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase mb-2">Horario de preferencia</label>
-                                <input 
-                                    type="text"
-                                    name="horario"
-                                    value={formData.horario}
-                                    onChange={handleChange}
-                                    placeholder="Ej. Lunes por la tarde (4pm - 6pm)"
-                                    className="bg-transparent border-b border-white/20 text-white placeholder-white/20 font-inter text-sm md:text-base py-3 focus:outline-none focus:border-white transition-colors w-full"
-                                />
-                            </div>
-
-                            <div className="flex flex-col group">
-                                <label className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase mb-2">Nombre del Proyecto</label>
-                                <input 
-                                    type="text"
-                                    name="proyecto"
-                                    value={formData.proyecto}
-                                    onChange={handleChange}
-                                    placeholder="Ej. Tienda online minimalista"
-                                    className="bg-transparent border-b border-white/20 text-white placeholder-white/20 font-inter text-sm md:text-base py-3 focus:outline-none focus:border-white transition-colors w-full"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Columna Interna 2 */}
-                        <div className="flex flex-col gap-8">
-                            <div className="flex flex-col group">
-                                <label className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase mb-4">Servicio principal</label>
-                                <div className="flex flex-wrap gap-2">
-                                    {servicios.map((srv) => (
-                                        <button
-                                            key={srv}
-                                            type="button"
-                                            onClick={() => handleServiceSelect(srv)}
-                                            className={`
-                                                px-4 py-2 rounded-full text-[10px] md:text-xs font-inter font-medium tracking-widest uppercase transition-all duration-300
-                                                ${formData.servicio === srv 
-                                                    ? 'bg-white text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]' 
-                                                    : 'bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10'
-                                                }
-                                            `}
-                                        >
-                                            {srv}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col group h-full">
-                                <label className="text-xs font-inter font-medium tracking-widest text-gray-500 uppercase mb-2">Descripción y Requerimientos</label>
-                                <textarea 
-                                    name="descripcion"
-                                    value={formData.descripcion}
-                                    onChange={handleChange}
-                                    placeholder="Cuéntanos sobre tu visión..."
-                                    className="bg-transparent border-b border-white/20 text-white placeholder-white/20 font-inter text-sm md:text-base py-3 focus:outline-none focus:border-white transition-colors w-full resize-none leading-relaxed flex-1 min-h-[100px]"
-                                ></textarea>
+                            <div>
+                                <h4 className="text-xs font-inter font-semibold text-white">Información segura</h4>
+                                <p className="text-[10px] font-inter text-gray-500">Tus datos nunca son compartidos.</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    {/* Submit Button */}
-                    <div className="mt-4 flex justify-start md:justify-end">
-                        <ButtonBlue onClick={handleWhatsApp}>
-                            Enviar mensaje
-                        </ButtonBlue>
+                {/* Columna Derecha: El Formulario */}
+                <div className="w-full lg:w-7/12">
+                    <div className="bg-[#0f0f0f]/40 border border-white/10 p-8 rounded-[2rem] flex flex-col gap-6 backdrop-blur-sm">
+                        
+                        {/* Fila 1 */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label className={labelClass}>Nombre completo</label>
+                                <input type="text" name="nombre" value={formData.nombre} onChange={handleChange} placeholder="Ana Pérez" className={inputClass} />
+                            </div>
+                            <div>
+                                <label className={labelClass}>Empresa o Marca</label>
+                                <input type="text" name="empresa" value={formData.empresa} onChange={handleChange} placeholder="Acme Corp" className={inputClass} />
+                            </div>
+                        </div>
+
+                        {/* Fila 2 */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label className={labelClass}>Industria</label>
+                                <input type="text" name="industria" value={formData.industria} onChange={handleChange} placeholder="Retail, Finanzas..." className={inputClass} />
+                            </div>
+                            <div>
+                                <label className={labelClass}>Horario de contacto</label>
+                                <input type="text" name="horario" value={formData.horario} onChange={handleChange} placeholder="Martes 10:00 AM" className={inputClass} />
+                            </div>
+                        </div>       
+
+                        {/* Tipo de análisis (Chips redondos Google) */}
+                        <div>
+                            <label className={labelClass}>Servicio de interés</label>
+                            <div className="flex flex-wrap gap-2">
+                                {servicios.map((s) => (
+                                    <button
+                                        key={s}
+                                        type="button"
+                                        onClick={() => handleSelect('servicio', s)}
+                                        className={`
+                                            px-4 py-1.5 rounded-full text-xs font-inter font-medium transition-all duration-300 border
+                                            ${formData.servicio === s
+                                                ? 'bg-[#034EA2] border-[#034EA2] text-white shadow-[0_0_15px_rgba(3,78,162,0.4)]'
+                                                : 'bg-white/10 border-white/10 text-gray-200 hover:bg-white/20'
+                                            }
+                                        `}
+                                    >
+                                        {formData.servicio === s && (
+                                            <svg className="inline-block w-3 h-3 mr-1.5 -mt-0.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        )}
+                                        {s}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Fuentes de datos (Chips redondos Google) */}
+                        <div>
+                            <label className={labelClass}>Origen de los datos</label>
+                            <div className="flex flex-wrap gap-2">
+                                {fuentes.map((f) => (
+                                    <button
+                                        key={f}
+                                        type="button"
+                                        onClick={() => handleSelect('fuenteDatos', f)}
+                                        className={`
+                                            px-4 py-1.5 rounded-full text-xs font-inter font-medium transition-all duration-300 border
+                                            ${formData.fuenteDatos === f
+                                                ? 'bg-[#034EA2] border-[#034EA2] text-white shadow-[0_0_15px_rgba(3,78,162,0.4)]'
+                                                : 'bg-white/10 border-white/10 text-gray-200 hover:bg-white/20'
+                                            }
+                                        `}
+                                    >
+                                        {formData.fuenteDatos === f && (
+                                            <svg className="inline-block w-3 h-3 mr-1.5 -mt-0.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        )}
+                                        {f}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Objetivo */}
+                        <div>
+                            <label className={labelClass}>Contexto del proyecto</label>
+                            <textarea
+                                name="objetivo"
+                                value={formData.objetivo}
+                                onChange={handleChange}
+                                placeholder="Describe brevemente el problema que buscas resolver..."
+                                className="w-full bg-white/10 border border-white/10 rounded-[2rem] px-5 py-3.5 text-white placeholder-gray-400 font-inter text-sm focus:outline-none focus:border-[#034EA2] focus:bg-white/20 transition-colors duration-300 resize-none min-h-[90px]"
+                            />
+                        </div>
+
+                        {/* Submit CTA */}
+                        <div className="pt-4 flex flex-col md:flex-row items-center justify-between gap-5">
+                            <p className="text-[10px] font-inter text-gray-500 max-w-[280px] leading-relaxed">
+                                Serás redirigido a WhatsApp de forma segura para confirmar tu solicitud.
+                            </p>
+                            <button 
+                                onClick={handleWhatsApp}
+                                className="w-full md:w-auto bg-[#034EA2] hover:bg-[#023B7A] text-white px-8 py-3 rounded-full font-inter font-semibold text-sm transition-all duration-300 shadow-[0_0_20px_rgba(3,78,162,0.3)] hover:shadow-[0_0_30px_rgba(3,78,162,0.5)] flex items-center justify-center gap-2"
+                            >
+                                Enviar y continuar
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <style>{`
-                @keyframes fadeInUp {
-                    from { opacity: 0; transform: translateY(40px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                .animate-fadeInUp {
-                    animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-                }
-            `}</style>
         </div>,
         document.body
     );

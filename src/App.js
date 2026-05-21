@@ -12,6 +12,9 @@ import Plataformas from './pages/Plataformas';
 import Historias from './pages/Historias';
 import Filosofia from './pages/Filosofia';
 import Blog from './pages/Blog';
+import Conceptos from './pages/Conceptos';
+import DataPrivacy from './pages/DataPrivacy';
+import Terms from './pages/Terms';
 
 // Mobile Pages
 import InicioMobile from './pages/InicioMobile';
@@ -20,6 +23,9 @@ import PlataformasMobile from './pages/PlataformasMobile';
 import HistoriasMobile from './pages/HistoriasMobile';
 import FilosofiaMobile from './pages/FilosofiaMobile';
 import BlogMobile from './pages/BlogMobile';
+import ConceptosMobile from './pages/ConceptosMobile';
+import DataPrivacyMobile from './pages/DataPrivacyMobile';
+import TermsMobile from './pages/TermsMobile';
 
 // Custom hook to detect screen size
 function useIsMobile() {
@@ -66,6 +72,9 @@ function App() {
             <Route path="/historias" element={isMobile ? <HistoriasMobile /> : <Historias />} />
             <Route path="/filosofia" element={isMobile ? <FilosofiaMobile /> : <Filosofia />} />
             <Route path="/blog" element={isMobile ? <BlogMobile /> : <Blog />} />
+            <Route path="/conceptos" element={isMobile ? <ConceptosMobile /> : <Conceptos />} />
+            <Route path="/privacidad" element={isMobile ? <DataPrivacyMobile /> : <DataPrivacy />} />
+            <Route path="/terminos" element={isMobile ? <TermsMobile /> : <Terms />} />
           </Routes>
         </div>
 

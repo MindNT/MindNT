@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import ContactButton from '../utils/ContactButton';
+import ButtonBlue from '../utils/ButtonBlue';
+import BookingModalMobile from './BookingModalMobile';
 
 function HeaderMobile() {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isBookingOpen, setIsBookingOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -16,9 +18,10 @@ function HeaderMobile() {
     };
 
     const menuItems = [
-        { name: 'Servicios', path: '/servicios' },
-        { name: 'Historia', path: '/historias' },
-        { name: 'Metodología', path: '/filosofia' }
+        { name: 'Precio', path: '/servicios' },
+        { name: 'Metodología', path: '/filosofia' },
+        { name: 'Nosotros', path: '/historias' },
+        { name: 'Glosario', path: '/conceptos' }
     ];
 
     return (
@@ -40,7 +43,12 @@ function HeaderMobile() {
                         {/* Right Side: Contact Button + Menu Button */}
                         <div className={`flex items-center gap-3 ${isHomePage ? 'ml-auto' : ''}`}>
                             {/* Contact Button */}
-                            <ContactButton />
+                            <ButtonBlue 
+                                onClick={() => setIsBookingOpen(true)}
+                                className="whitespace-nowrap text-[11px] px-3 py-1.5 sm:text-sm sm:px-4 sm:py-2"
+                            >
+                                Estudio especializado
+                            </ButtonBlue>
 
                             {/* Hamburger Menu Button */}
                             <button
@@ -49,29 +57,11 @@ function HeaderMobile() {
                                 aria-label="Menu"
                             >
                                 {isMenuOpen ? (
-                                    // Close Icon (X)
-                                    <svg
-                                        className="w-6 h-6"
-                                        fill="none"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
+                                    <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                                         <path d="M6 18L18 6M6 6l12 12"></path>
                                     </svg>
                                 ) : (
-                                    // Hamburger Icon
-                                    <svg
-                                        className="w-6 h-6"
-                                        fill="none"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
+                                    <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                                         <path d="M4 6h16M4 12h16M4 18h16"></path>
                                     </svg>
                                 )}
@@ -97,7 +87,7 @@ function HeaderMobile() {
             >
                 <nav className="max-w-7xl mx-auto px-6 py-2">
                     <div className="flex flex-col">
-                        {menuItems.map((item, index) => (
+                        {menuItems.map((item) => (
                             <Link
                                 key={item.path}
                                 to={item.path}
@@ -118,13 +108,15 @@ function HeaderMobile() {
                 </nav>
             </div>
 
-            {/* Overlay - Minimal */}
+            {/* Overlay */}
             {isMenuOpen && (
                 <div
                     className="fixed inset-0 bg-black/10 z-20 top-[65px] transition-opacity duration-300"
                     onClick={closeMenu}
                 />
             )}
+
+            <BookingModalMobile isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
         </>
     );
 }

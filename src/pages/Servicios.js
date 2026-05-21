@@ -1,135 +1,196 @@
 import React, { useEffect, useState } from 'react';
-import GalleryModal from '../components/GalleryModal';
-import BrandingModal from '../components/BrandingModal';
-import DesarrolloModal from '../components/DesarrolloModal';
-import MarketingModal from '../components/MarketingModal';
 import ShootingStar from '../components/ShootingStar';
-import ButtonBlue from '../utils/ButtonBlue';
+import ServiceCard from '../components/ServiceCard';
+import BookingModal from '../components/BookingModal';
 
+/* ─────────────── SVG Icons ─────────────── */
+const IconChart = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+    </svg>
+);
+
+const IconSentiment = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+        <line x1="9" y1="9" x2="9.01" y2="9" />
+        <line x1="15" y1="9" x2="15.01" y2="9" />
+    </svg>
+);
+
+const IconExtract = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3" />
+        <path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12" />
+        <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+    </svg>
+);
+
+const IconDashboard = () => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+    </svg>
+);
+
+/* ─────────────── Service Data ─────────────── */
+const services = [
+    {
+        id: 'historico-ventas',
+        icon: <IconChart />,
+        title: 'Análisis Histórico de Ventas',
+        pricePrefix: 'Desde',
+        priceAmount: '$2,900',
+        priceSuffix: 'MXN / proyecto',
+        description: 'Descubre patrones ocultos en tus ventas pasadas.',
+        features: [
+            'Limpieza y normalización de datos',
+            'Detección de tendencias y estacionalidades',
+            'Segmentación de clientes y productos',
+            'Reportes ejecutivos',
+        ],
+        bestseller: true,
+        delay: 0,
+    },
+    {
+        id: 'sentimientos-redes',
+        icon: <IconSentiment />,
+        title: 'Sentimientos en Redes',
+        pricePrefix: 'Desde',
+        priceAmount: '$4,900',
+        priceSuffix: 'MXN / proyecto',
+        description: 'Sabe exactamente qué dice el mundo de tu marca.',
+        features: [
+            'Monitoreo de menciones multiplataforma',
+            'Clasificación de sentimiento automática',
+            'Detección de crisis y temas virales',
+            'Dashboard de reputación en vivo',
+        ],
+        bestseller: false,
+        delay: 100,
+    },
+    {
+        id: 'extraccion-datos',
+        icon: <IconExtract />,
+        title: 'Extracción de Datos',
+        pricePrefix: 'Desde',
+        priceAmount: '$7,900',
+        priceSuffix: 'MXN / proyecto',
+        description: 'Recolecta datos a gran escala desde cualquier fuente.',
+        features: [
+            'Web scraping a gran escala',
+            'Integración con APIs y ERP',
+            'ETL automatizado y calendarizado',
+            'Almacenamiento en la nube',
+        ],
+        bestseller: false,
+        delay: 200,
+    },
+    {
+        id: 'visualizacion',
+        icon: <IconDashboard />,
+        title: 'Visualización de Datos',
+        pricePrefix: 'Desde',
+        priceAmount: '$5,900',
+        priceSuffix: 'MXN / proyecto',
+        description: 'Dashboards que convierten números en decisiones.',
+        features: [
+            'Dashboards interactivos personalizados',
+            'Filtros en tiempo real y drill-down',
+            'Acceso multiusuario con roles',
+            'Exportación a PDF y Excel',
+        ],
+        bestseller: false,
+        delay: 300,
+    },
+];
+
+/* ─────────────── Page ─────────────── */
 function Servicios() {
     const [isVisible, setIsVisible] = useState(false);
-    const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-    const [isBrandingOpen, setIsBrandingOpen] = useState(false);
-    const [isDesarrolloOpen, setIsDesarrolloOpen] = useState(false);
-    const [isMarketingOpen, setIsMarketingOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedService, setSelectedService] = useState('');
 
     useEffect(() => {
-        // Trigger fade-in animation after component mounts
         setTimeout(() => setIsVisible(true), 100);
     }, []);
 
-    const services = [
-        {
-            title: 'Branding e Identidad',
-            description: 'Diseñamos marcas con propósito. Desde la concepción del logo hasta el manual de identidad visual completo.',
-            hook: 'Tu marca, lista para dejar huella.',
-            delay: 'delay-200',
-            openBranding: true
-        },
-        {
-            title: 'Desarrollo Web & UX',
-            description: 'Diseñamos experiencias digitales de alto rendimiento, optimizadas para convertir visitantes en clientes.',
-            hook: 'Tu presencia digital, sin límites técnicos.',
-            delay: 'delay-400',
-            openDesarrollo: true
-        },
-        {
-            title: 'Marketing Estratégico',
-            description: 'Campañas inteligentes basadas en datos para maximizar tu visibilidad y el retorno de tu inversión.',
-            hook: 'Resultados tangibles, crecimiento constante.',
-            delay: 'delay-600',
-            openMarketing: true
-        },
-        {
-            title: 'Fotografía Profesional',
-            description: 'Capturamos la esencia de tu negocio con imágenes de alta calidad que comunican profesionalismo.',
-            hook: 'Una imagen vale más que mil palabras.',
-            delay: 'delay-800',
-            openGallery: true
-        }
-    ];
-
     return (
-        <div className="h-screen bg-black overflow-hidden relative flex flex-col justify-center pt-16">
+        <div className="h-screen bg-black overflow-hidden relative flex flex-col items-center justify-center">
             <ShootingStar />
-            <div className="max-w-7xl w-full mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                
-                {/* Left Column - Header Section */}
-                <div className="w-full lg:w-5/12 text-left">
-                    <div
-                        className={`
-                            transition-all duration-1000 ease-out flex flex-col items-start
-                            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-                        `}
-                    >
-                        <span className="inline-block border border-white/10 bg-white/5 px-6 py-2 rounded-full text-xs font-inter font-medium tracking-widest text-gray-400 uppercase mb-8">
-                            Nuestros Servicios
-                        </span>
-                        
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-inter font-light tracking-wide text-white mb-6 leading-tight">
-                            Soluciones diseñadas<br />
-                            <span className="text-gray-500">para escalar.</span>
-                        </h1>
-                        <p className="text-base md:text-lg font-inter font-normal text-gray-400 tracking-normal-apple">
-                            Transformamos información en ventaja competitiva, construyendo herramientas sólidas para el crecimiento de tu marca.
-                        </p>
-                    </div>
-                </div>
 
-                {/* Right Column - Services Grid 2x2 */}
-                <div 
+            <div className="max-w-[90rem] w-full mx-auto px-6 relative z-10 flex flex-col items-center">
+
+                {/* ── Header ── */}
+                <div
                     className={`
-                        w-full lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 rounded-3xl overflow-hidden
-                        transition-all duration-1000 ease-out delay-200
-                        ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+                        text-center mb-8
+                        transition-opacity duration-1000 ease-out
+                        ${isVisible ? 'opacity-100' : 'opacity-0'}
                     `}
                 >
-                    {services.map((service, index) => (
-                        <div
-                            key={index}
-                            className="bg-black px-8 py-10 lg:px-10 lg:py-12 text-left group hover:bg-white/5 transition-colors duration-300 relative flex flex-col"
-                        >
-                            <h2 className="text-xl lg:text-2xl font-inter font-medium text-white mb-3 group-hover:tracking-wide transition-all duration-300">
-                                {service.title}
-                            </h2>
-                            <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed mb-4 flex-1">
-                                {service.description}
-                            </p>
-                            <p className="text-xs font-inter font-normal text-gray-500 italic mb-6">
-                                {service.hook}
-                            </p>
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-inter font-semibold tracking-tight text-white leading-tight mb-2">
+                        Elige el plan perfecto para ti.
+                    </h1>
+                    <p className="text-sm md:text-base font-inter font-normal text-gray-400 mb-6 max-w-lg mx-auto">
+                        Transforma tus datos en ventajas competitivas. Solicita un estudio hoy y comienza a escalar.
+                    </p>
 
-                            <ButtonBlue
-                                onClick={
-                                    service.openGallery ? () => setIsGalleryOpen(true)
-                                    : service.openBranding ? () => setIsBrandingOpen(true)
-                                    : service.openDesarrollo ? () => setIsDesarrolloOpen(true)
-                                    : service.openMarketing ? () => setIsMarketingOpen(true)
-                                    : undefined
-                                }
-                            >
-                                Conocer más
-                            </ButtonBlue>
-                        </div>
-                    ))}
+                    <button
+                        onClick={() => { setSelectedService('Estudio personalizado'); setIsModalOpen(true); }}
+                        className="inline-flex items-center gap-2 mx-auto px-6 py-3 bg-white text-black text-sm font-inter font-semibold rounded-full shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:scale-105 transition-all duration-300"
+                    >
+                        Estudio más especializado
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
 
-                {/* Modals */}
-                <GalleryModal isOpen={isGalleryOpen} onClose={() => setIsGalleryOpen(false)} />
-                <BrandingModal isOpen={isBrandingOpen} onClose={() => setIsBrandingOpen(false)} />
-                <DesarrolloModal isOpen={isDesarrolloOpen} onClose={() => setIsDesarrolloOpen(false)} />
-                <MarketingModal isOpen={isMarketingOpen} onClose={() => setIsMarketingOpen(false)} />
+                {/* ── Cards Grid ── */}
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
+                    {services.map((svc) => (
+                        <ServiceCard
+                            key={svc.id}
+                            icon={svc.icon}
+                            title={svc.title}
+                            pricePrefix={svc.pricePrefix}
+                            priceAmount={svc.priceAmount}
+                            priceSuffix={svc.priceSuffix}
+                            description={svc.description}
+                            features={svc.features}
+                            bestseller={svc.bestseller}
+                            delay={svc.delay}
+                            isVisible={isVisible}
+                            onGetPlan={() => { setSelectedService(svc.title); setIsModalOpen(true); }}
+                        />
+                    ))}
+                </div>
             </div>
 
-            {/* Subtle Background Elements */}
+            <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} initialService={selectedService} />
+
+            {/* Background glows */}
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div
                     className={`
-                        absolute top-1/3 left-1/4 w-[800px] h-[800px]
+                        absolute top-1/3 left-1/4 w-[900px] h-[900px]
                         bg-gradient-to-br from-white/5 to-transparent
                         rounded-full blur-3xl
-                        transition-opacity duration-2000 ease-out delay-500
+                        transition-opacity duration-1000 ease-out delay-500
                         ${isVisible ? 'opacity-30' : 'opacity-0'}
+                    `}
+                />
+                <div
+                    className={`
+                        absolute bottom-0 right-0 w-[600px] h-[600px]
+                        bg-gradient-to-tl from-[#034EA2]/10 to-transparent
+                        rounded-full blur-3xl
+                        transition-opacity duration-1000 ease-out delay-700
+                        ${isVisible ? 'opacity-40' : 'opacity-0'}
                     `}
                 />
             </div>
