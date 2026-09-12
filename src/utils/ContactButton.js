@@ -7,17 +7,14 @@ function ContactButton() {
 
     return (
         <>
-            <ButtonBlue 
+            <ButtonBlue
                 onClick={() => setIsModalOpen(true)}
                 className="whitespace-nowrap text-[11px] px-3 py-1.5 sm:text-sm sm:px-4 sm:py-2"
             >
-                Estudio especializado
+                Quiero cotizar
             </ButtonBlue>
 
-            <BookingModal 
-                isOpen={isModalOpen} 
-                onClose={() => setIsModalOpen(false)} 
-            />
+            <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </>
     );
 }

@@ -1,54 +1,69 @@
-import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import ContactButton from '../utils/ContactButton';
 
 function Header() {
+    const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
-    const isHomePage = location.pathname === '/';
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 10);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    const isActive = (path) => location.pathname === path;
+
+    const navLink = (path, label) => (
+        <Link
+            to={path}
+            className={[
+                'relative text-[14px] font-inter font-medium transition-colors duration-300 tracking-normal-apple',
+                'group px-0.5 py-1',
+                isActive(path) ? 'text-white' : 'text-gray-300 hover:text-white',
+            ].join(' ')}
+        >
+            {label}
+            {/* Underscore animado al hover (estilo Apple) */}
+            <span
+                className={[
+                    'absolute left-0 right-0 -bottom-0.5 h-px origin-center scale-x-0 transition-transform duration-300 ease-out',
+                    'bg-white/60 group-hover:scale-x-100',
+                    isActive(path) ? 'scale-x-100' : '',
+                ].join(' ')}
+            />
+        </Link>
+    );
 
     return (
-        <header className="w-full bg-black/60 backdrop-blur-md border-b border-white/10">
+        <header
+            className={[
+                'w-full transition-all duration-500 ease-out',
+                'bg-black/60 backdrop-blur-md border-b border-white/10',
+            ].join(' ')}
+            style={scrolled ? {
+                background: 'rgba(10,10,10,0.82)',
+                boxShadow: '0 8px 32px -12px rgba(0,0,0,0.8)',
+            } : {}}
+        >
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
-                    {/* Logo - Left Side (only show when NOT on homepage) */}
-                    {!isHomePage && (
-                        <Link to="/" className="flex items-center">
-                            <img
-                                src={`${process.env.PUBLIC_URL}/images/Logowhitefonts.png`}
-                                alt="MindNT"
-                                className="h-8 w-auto object-contain"
-                            />
-                        </Link>
-                    )}
+                    {/* Logo - Left Side */}
+                    <Link to="/" className="flex items-center opacity-90 hover:opacity-100 transition-opacity duration-300">
+                        <img
+                            src={`${process.env.PUBLIC_URL}/images/MINDNT_Logo_Horizontal.png`}
+                            alt="MindNT"
+                            className="h-7 w-auto object-contain"
+                        />
+                    </Link>
 
                     {/* Navigation Menu - Right Side */}
-                    <nav className={`hidden md:flex items-center space-x-8 ${isHomePage ? 'ml-auto' : ''}`}>
-                        <Link
-                            to="/servicios"
-                            className="text-sm font-inter font-medium text-gray-300 hover:text-white transition-colors duration-200 tracking-normal-apple"
-                        >
-                            Precio
-                        </Link>
-                        <Link
-                            to="/filosofia"
-                            className="text-sm font-inter font-medium text-gray-300 hover:text-white transition-colors duration-200 tracking-normal-apple"
-                        >
-                            Metodología
-                        </Link>
-                        <Link
-                            to="/historias"
-                            className="text-sm font-inter font-medium text-gray-300 hover:text-white transition-colors duration-200 tracking-normal-apple"
-                        >
-                            Nosotros
-                        </Link>
-                        <Link
-                            to="/conceptos"
-                            className="text-sm font-inter font-medium text-gray-300 hover:text-white transition-colors duration-200 tracking-normal-apple"
-                        >
-                            Glosario
-                        </Link>
-
-                        {/* Contact Button */}
+                    <nav className="hidden md:flex items-center gap-7">
+                        {navLink('/servicios', 'Servicios')}
+                        {navLink('/filosofia', 'Metodología')}
+                        {navLink('/proyectos', 'Proyectos')}
+                        {navLink('/productos', 'Productos')}
                         <ContactButton />
                     </nav>
                 </div>

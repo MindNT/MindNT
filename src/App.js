@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import HeaderMobile from './components/HeaderMobile';
-import SocialNetworks from './components/SocialNetworks';
-import ShootingStar from './components/ShootingStar';
+import Footer from './components/Footer';
+import FooterMobile from './components/FooterMobile';
+import BackgroundNet from './components/BackgroundNet';
 
 // Desktop Pages
 import Inicio from './pages/Inicio';
 import Servicios from './pages/Servicios';
+import CasosDeUso from './pages/CasosDeUso';
+import Productos from './pages/Productos';
 import Plataformas from './pages/Plataformas';
-import Historias from './pages/Historias';
 import Filosofia from './pages/Filosofia';
 import Blog from './pages/Blog';
 import Conceptos from './pages/Conceptos';
@@ -19,8 +21,9 @@ import Terms from './pages/Terms';
 // Mobile Pages
 import InicioMobile from './pages/InicioMobile';
 import ServiciosMobile from './pages/ServiciosMobile';
+import CasosDeUsoMobile from './pages/CasosDeUsoMobile';
+import ProductosMobile from './pages/ProductosMobile';
 import PlataformasMobile from './pages/PlataformasMobile';
-import HistoriasMobile from './pages/HistoriasMobile';
 import FilosofiaMobile from './pages/FilosofiaMobile';
 import BlogMobile from './pages/BlogMobile';
 import ConceptosMobile from './pages/ConceptosMobile';
@@ -55,30 +58,32 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen h-screen bg-black overflow-hidden relative">
-        {/* Global shooting star effect */}
-        <ShootingStar />
+      <div className="min-h-screen bg-black relative">
+        {/* Unified background waves: anchored to the bottom of the viewport */}
+        <BackgroundNet fixed />
 
-        <div className="absolute top-0 left-0 right-0 z-40">
+        <div className="fixed top-0 left-0 right-0 z-40">
           {isMobile ? <HeaderMobile /> : <Header />}
         </div>
 
-        {/* Different overflow behavior for mobile vs desktop */}
-        <div className={isMobile ? "h-screen overflow-y-auto" : "h-screen overflow-hidden"}>
+        {/* Page content (scrolls naturally with the document, footer at the end) */}
+        <div className="relative">
           <Routes>
             <Route path="/" element={isMobile ? <InicioMobile /> : <Inicio />} />
             <Route path="/servicios" element={isMobile ? <ServiciosMobile /> : <Servicios />} />
+            <Route path="/casos-de-uso" element={isMobile ? <CasosDeUsoMobile /> : <CasosDeUso />} />
+            <Route path="/proyectos" element={isMobile ? <CasosDeUsoMobile /> : <CasosDeUso />} />
+            <Route path="/productos" element={isMobile ? <ProductosMobile /> : <Productos />} />
             <Route path="/plataformas" element={isMobile ? <PlataformasMobile /> : <Plataformas />} />
-            <Route path="/historias" element={isMobile ? <HistoriasMobile /> : <Historias />} />
             <Route path="/filosofia" element={isMobile ? <FilosofiaMobile /> : <Filosofia />} />
             <Route path="/blog" element={isMobile ? <BlogMobile /> : <Blog />} />
             <Route path="/conceptos" element={isMobile ? <ConceptosMobile /> : <Conceptos />} />
             <Route path="/privacidad" element={isMobile ? <DataPrivacyMobile /> : <DataPrivacy />} />
             <Route path="/terminos" element={isMobile ? <TermsMobile /> : <Terms />} />
           </Routes>
-        </div>
 
-        <SocialNetworks />
+          {isMobile ? <FooterMobile /> : <Footer />}
+        </div>
       </div>
     </Router>
   );

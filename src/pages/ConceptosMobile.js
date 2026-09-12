@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ShootingStar from '../components/ShootingStar';
 
 const concepts = [
     {
@@ -107,9 +106,7 @@ function ConceptosMobile() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-black relative flex flex-col items-center pt-24 pb-12">
-            <ShootingStar />
-
+        <div className="min-h-screen relative flex flex-col items-center pt-24 pb-12">
             <div className="w-full px-6 relative z-10 flex flex-col">
                 
                 {/* Header Tipográfico */}

@@ -26,8 +26,11 @@ function ButtonBlue({ children, onClick, type = 'button', disabled = false, clas
                 font-inter font-medium
                 rounded-full
                 hover:bg-[#023d80]
-                transition-all duration-200
+                transition-all duration-300 ease-out
                 tracking-normal-apple
+                shadow-[0_8px_30px_-10px_rgba(3,78,162,0.6)]
+                hover:shadow-[0_12px_40px_-10px_rgba(3,78,162,0.8)]
+                active:scale-[0.97]
                 disabled:opacity-50 disabled:cursor-not-allowed
                 ${className}
             `}

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import ShootingStar from './ShootingStar';
+import BackgroundNet from './BackgroundNet';
 
 function BookingModal({ isOpen, onClose, initialService = '' }) {
     const [formData, setFormData] = useState({
         nombre: '',
         empresa: '',
-        industria: '',
         servicio: initialService,
-        fuenteDatos: '',
         objetivo: '',
         horario: '',
     });
@@ -27,19 +25,11 @@ function BookingModal({ isOpen, onClose, initialService = '' }) {
     if (!isOpen) return null;
 
     const servicios = [
-        'Análisis Histórico de Ventas',
-        'Sentimientos en Redes',
-        'Extracción de Datos',
-        'Visualización de Datos',
-        'Estudio personalizado',
-    ];
-
-    const fuentes = [
-        'Excel / CSV',
-        'Base de datos',
-        'Redes sociales',
-        'ERP / CRM',
-        'No tengo datos',
+        'Desarrollo Web',
+        'Automatizaciones',
+        'eCommerce',
+        'Plataformas',
+        'Otro',
     ];
 
     const handleChange = (e) => {
@@ -51,16 +41,14 @@ function BookingModal({ isOpen, onClose, initialService = '' }) {
     };
 
     const handleWhatsApp = () => {
-        const { nombre, empresa, industria, servicio, fuenteDatos, objetivo, horario } = formData;
+        const { nombre, empresa, servicio, objetivo, horario } = formData;
 
         const text =
-            `Hola MindNT! Me interesa realizar un estudio de análisis de datos.%0A%0A` +
+            `Hola MindNT! Quiero cotizar el servicio de *${servicio || 'no especificado'}*.%0A%0A` +
             `*Nombre:* ${nombre || 'No especificado'}%0A` +
             `*Empresa / Marca:* ${empresa || 'No especificada'}%0A` +
-            `*Industria:* ${industria || 'No especificada'}%0A` +
-            `*Tipo de análisis:* ${servicio || 'No especificado'}%0A` +
-            `*Fuente de datos:* ${fuenteDatos || 'No especificada'}%0A` +
-            `*Objetivo del estudio:* ${objetivo || 'No especificado'}%0A` +
+            `*Servicio:* ${servicio || 'No especificado'}%0A` +
+            `*Qué necesito:* ${objetivo || 'No especificado'}%0A` +
             `*Horario preferido:* ${horario || 'No especificado'}`;
 
         window.open(`https://wa.me/529991778325?text=${text}`, '_blank');
@@ -68,7 +56,7 @@ function BookingModal({ isOpen, onClose, initialService = '' }) {
 
     // Estilos alineados a Google (Inputs compactos para evitar scroll)
     const inputClass =
-        'w-full bg-white/10 border border-white/10 rounded-full px-5 py-3 text-white placeholder-gray-400 font-inter text-sm focus:outline-none focus:border-[#034EA2] focus:bg-white/20 transition-colors duration-300';
+        'w-full bg-white/10 border border-white/10 rounded-full px-5 py-3 text-white placeholder-gray-400 font-inter text-sm focus:outline-none focus:border-logo-blue focus:bg-white/20 transition-colors duration-300';
     
     const labelClass =
         'text-xs font-inter font-medium text-gray-400 mb-2 ml-2 block uppercase tracking-wider';
@@ -80,7 +68,7 @@ function BookingModal({ isOpen, onClose, initialService = '' }) {
             <div className="fixed inset-0 bg-black" />
 
             <div className="fixed inset-0 pointer-events-none opacity-40">
-                <ShootingStar />
+                <BackgroundNet />
             </div>
 
             {/* Glowing background muy sutil */}
@@ -107,14 +95,14 @@ function BookingModal({ isOpen, onClose, initialService = '' }) {
                 {/* Columna Izquierda: Mensaje tipo Google Hero */}
                 <div className="w-full lg:w-5/12 text-left">
                     <span className="inline-block border border-white/10 bg-white/5 px-3 py-1 rounded-full text-[10px] font-inter font-medium tracking-widest text-gray-400 uppercase mb-4">
-                        Solicitud de Estudio
+                        Cotización
                     </span>
                     <h2 className="text-4xl md:text-5xl lg:text-5xl font-inter font-semibold tracking-tight text-white mb-5 leading-[1.1]">
-                        Construyamos tu<br />
-                        <span className="text-gray-400">estrategia.</span>
+                        Hablemos de tu<br />
+                        <span className="text-gray-400">proyecto.</span>
                     </h2>
                     <p className="text-sm md:text-base font-inter font-normal text-gray-400 leading-relaxed max-w-lg mb-8">
-                        Completa este formulario. Un ingeniero revisará tus requerimientos y fuentes de datos para contactarte con una solución técnica inicial, sin compromisos.
+                        Cuéntanos qué servicio necesitas: desarrollo web, automatizaciones, ecommerce o plataformas. Un asesor te contactará con una propuesta inicial, sin compromisos.
                     </p>
 
                     <div className="hidden lg:block space-y-4">
@@ -149,10 +137,6 @@ function BookingModal({ isOpen, onClose, initialService = '' }) {
                         {/* Fila 2 */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
-                                <label className={labelClass}>Industria</label>
-                                <input type="text" name="industria" value={formData.industria} onChange={handleChange} placeholder="Retail, Finanzas..." className={inputClass} />
-                            </div>
-                            <div>
                                 <label className={labelClass}>Horario de contacto</label>
                                 <input type="text" name="horario" value={formData.horario} onChange={handleChange} placeholder="Martes 10:00 AM" className={inputClass} />
                             </div>
@@ -170,7 +154,7 @@ function BookingModal({ isOpen, onClose, initialService = '' }) {
                                         className={`
                                             px-4 py-1.5 rounded-full text-xs font-inter font-medium transition-all duration-300 border
                                             ${formData.servicio === s
-                                                ? 'bg-[#034EA2] border-[#034EA2] text-white shadow-[0_0_15px_rgba(3,78,162,0.4)]'
+                                                ? 'bg-logo-blue border-logo-blue text-white shadow-[0_0_15px_rgba(0,76,160,0.4)]'
                                                 : 'bg-white/10 border-white/10 text-gray-200 hover:bg-white/20'
                                             }
                                         `}
@@ -186,42 +170,14 @@ function BookingModal({ isOpen, onClose, initialService = '' }) {
                             </div>
                         </div>
 
-                        {/* Fuentes de datos (Chips redondos Google) */}
-                        <div>
-                            <label className={labelClass}>Origen de los datos</label>
-                            <div className="flex flex-wrap gap-2">
-                                {fuentes.map((f) => (
-                                    <button
-                                        key={f}
-                                        type="button"
-                                        onClick={() => handleSelect('fuenteDatos', f)}
-                                        className={`
-                                            px-4 py-1.5 rounded-full text-xs font-inter font-medium transition-all duration-300 border
-                                            ${formData.fuenteDatos === f
-                                                ? 'bg-[#034EA2] border-[#034EA2] text-white shadow-[0_0_15px_rgba(3,78,162,0.4)]'
-                                                : 'bg-white/10 border-white/10 text-gray-200 hover:bg-white/20'
-                                            }
-                                        `}
-                                    >
-                                        {formData.fuenteDatos === f && (
-                                            <svg className="inline-block w-3 h-3 mr-1.5 -mt-0.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        )}
-                                        {f}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-
                         {/* Objetivo */}
                         <div>
-                            <label className={labelClass}>Contexto del proyecto</label>
+                            <label className={labelClass}>Cuéntanos de tu proyecto</label>
                             <textarea
                                 name="objetivo"
                                 value={formData.objetivo}
                                 onChange={handleChange}
-                                placeholder="Describe brevemente el problema que buscas resolver..."
+                                placeholder="Describe brevemente qué necesitas y para qué..."
                                 className="w-full bg-white/10 border border-white/10 rounded-[2rem] px-5 py-3.5 text-white placeholder-gray-400 font-inter text-sm focus:outline-none focus:border-[#034EA2] focus:bg-white/20 transition-colors duration-300 resize-none min-h-[90px]"
                             />
                         </div>
@@ -233,7 +189,7 @@ function BookingModal({ isOpen, onClose, initialService = '' }) {
                             </p>
                             <button 
                                 onClick={handleWhatsApp}
-                                className="w-full md:w-auto bg-[#034EA2] hover:bg-[#023B7A] text-white px-8 py-3 rounded-full font-inter font-semibold text-sm transition-all duration-300 shadow-[0_0_20px_rgba(3,78,162,0.3)] hover:shadow-[0_0_30px_rgba(3,78,162,0.5)] flex items-center justify-center gap-2"
+                                className="w-full md:w-auto bg-logo-blue hover:bg-[#003a80] text-white px-8 py-3 rounded-full font-inter font-semibold text-sm transition-all duration-300 shadow-[0_0_20px_rgba(0,76,160,0.3)] hover:shadow-[0_0_30px_rgba(0,76,160,0.5)] flex items-center justify-center gap-2"
                             >
                                 Enviar y continuar
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

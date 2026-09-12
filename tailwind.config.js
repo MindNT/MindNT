@@ -11,6 +11,8 @@ module.exports = {
           hover:   '#023d80',
           light:   '#0560c2',
         },
+        'logo-blue': '#004CA0',
+        'logo-sky': '#ACD3FF',
       },
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],

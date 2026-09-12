@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import ShootingStar from './ShootingStar';
+import BackgroundNet from './BackgroundNet';
 
 function BookingModalMobile({ isOpen, onClose, initialService = '' }) {
     const [formData, setFormData] = useState({
         nombre: '',
         empresa: '',
-        industria: '',
         servicio: initialService,
-        fuenteDatos: '',
         objetivo: '',
         horario: '',
     });
@@ -30,19 +28,11 @@ function BookingModalMobile({ isOpen, onClose, initialService = '' }) {
     if (!isOpen) return null;
 
     const servicios = [
-        'Análisis Histórico de Ventas',
-        'Sentimientos en Redes',
-        'Extracción de Datos',
-        'Visualización de Datos',
-        'Estudio personalizado',
-    ];
-
-    const fuentes = [
-        'Excel / CSV',
-        'Base de datos',
-        'Redes sociales',
-        'ERP / CRM',
-        'No tengo datos',
+        'Desarrollo Web',
+        'Automatizaciones',
+        'eCommerce',
+        'Plataformas',
+        'Otro',
     ];
 
     const handleChange = (e) => {
@@ -54,16 +44,14 @@ function BookingModalMobile({ isOpen, onClose, initialService = '' }) {
     };
 
     const handleWhatsApp = () => {
-        const { nombre, empresa, industria, servicio, fuenteDatos, objetivo, horario } = formData;
+        const { nombre, empresa, servicio, objetivo, horario } = formData;
 
         const text =
-            `Hola MindNT! Me interesa realizar un estudio de análisis de datos.%0A%0A` +
+            `Hola MindNT! Quiero cotizar el servicio de *${servicio || 'no especificado'}*.%0A%0A` +
             `*Nombre:* ${nombre || 'No especificado'}%0A` +
             `*Empresa / Marca:* ${empresa || 'No especificada'}%0A` +
-            `*Industria:* ${industria || 'No especificada'}%0A` +
-            `*Tipo de análisis:* ${servicio || 'No especificado'}%0A` +
-            `*Fuente de datos:* ${fuenteDatos || 'No especificada'}%0A` +
-            `*Objetivo del estudio:* ${objetivo || 'No especificado'}%0A` +
+            `*Servicio:* ${servicio || 'No especificado'}%0A` +
+            `*Qué necesito:* ${objetivo || 'No especificado'}%0A` +
             `*Horario preferido:* ${horario || 'No especificado'}`;
 
         window.open(`https://wa.me/529991778325?text=${text}`, '_blank');
@@ -79,7 +67,7 @@ function BookingModalMobile({ isOpen, onClose, initialService = '' }) {
         <div className={`fixed inset-0 z-[9999] overflow-y-auto overflow-x-hidden bg-black transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             
             <div className="fixed inset-0 pointer-events-none opacity-30">
-                <ShootingStar />
+                <BackgroundNet />
             </div>
 
             <div className="fixed top-0 right-0 pointer-events-none">
@@ -104,14 +92,14 @@ function BookingModalMobile({ isOpen, onClose, initialService = '' }) {
                 
                 <div className="text-left">
                     <span className="inline-block border border-white/10 bg-white/5 px-3 py-1 rounded-full text-[10px] font-inter font-medium tracking-widest text-gray-400 uppercase mb-4">
-                        Solicitud de Estudio
+                        Cotización
                     </span>
                     <h2 className="text-4xl font-inter font-semibold tracking-tight text-white mb-4 leading-tight">
-                        Construyamos tu<br />
-                        <span className="text-gray-400">estrategia.</span>
+                        Hablemos de tu<br />
+                        <span className="text-gray-400">proyecto.</span>
                     </h2>
                     <p className="text-sm font-inter font-normal text-gray-400 leading-relaxed">
-                        Completa este formulario y un ingeniero de datos revisará tus requerimientos para contactarte con una propuesta.
+                        Cuéntanos qué servicio necesitas: desarrollo web, automatizaciones, ecommerce o plataformas. Un asesor te contactará con una propuesta inicial, sin compromisos.
                     </p>
                 </div>
 
@@ -125,10 +113,6 @@ function BookingModalMobile({ isOpen, onClose, initialService = '' }) {
                         <div>
                             <label className={labelClass}>Empresa o Marca</label>
                             <input type="text" name="empresa" value={formData.empresa} onChange={handleChange} placeholder="Ej. Acme Corp" className={inputClass} />
-                        </div>
-                        <div>
-                            <label className={labelClass}>Industria</label>
-                            <input type="text" name="industria" value={formData.industria} onChange={handleChange} placeholder="Ej. Retail, Finanzas..." className={inputClass} />
                         </div>
                         <div>
                             <label className={labelClass}>Horario de contacto</label>
@@ -147,7 +131,7 @@ function BookingModalMobile({ isOpen, onClose, initialService = '' }) {
                                     className={`
                                         px-3 py-2 rounded-xl text-xs font-inter font-medium transition-all duration-300 border
                                         ${formData.servicio === s
-                                            ? 'bg-[#034EA2] border-[#034EA2] text-white shadow-[0_0_15px_rgba(3,78,162,0.4)]'
+                                            ? 'bg-logo-blue border-logo-blue text-white shadow-[0_0_15px_rgba(0,76,160,0.4)]'
                                             : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10'
                                         }
                                     `}
@@ -159,42 +143,20 @@ function BookingModalMobile({ isOpen, onClose, initialService = '' }) {
                     </div>
 
                     <div>
-                        <label className={labelClass}>Origen de los datos</label>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                            {fuentes.map((f) => (
-                                <button
-                                    key={f}
-                                    type="button"
-                                    onClick={() => handleSelect('fuenteDatos', f)}
-                                    className={`
-                                        px-3 py-2 rounded-xl text-xs font-inter font-medium transition-all duration-300 border
-                                        ${formData.fuenteDatos === f
-                                            ? 'bg-[#034EA2] border-[#034EA2] text-white shadow-[0_0_15px_rgba(3,78,162,0.4)]'
-                                            : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10'
-                                        }
-                                    `}
-                                >
-                                    {f}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div>
-                        <label className={labelClass}>Contexto del proyecto</label>
+                        <label className={labelClass}>Cuéntanos tu proyecto</label>
                         <textarea
                             name="objetivo"
                             value={formData.objetivo}
                             onChange={handleChange}
-                            placeholder="Describe brevemente el problema que buscas resolver..."
-                            className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white placeholder-gray-500 font-inter text-sm focus:outline-none focus:border-[#034EA2] focus:bg-white/10 transition-colors duration-300 resize-none min-h-[100px]"
+                            placeholder="Describe brevemente qué necesitas y para qué..."
+                            className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white placeholder-gray-500 font-inter text-sm focus:outline-none focus:border-logo-blue focus:bg-white/10 transition-colors duration-300 resize-none min-h-[100px]"
                         />
                     </div>
 
                     <div className="pt-6 border-t border-white/10 mt-2 flex flex-col gap-4 items-center">
                         <button 
                             onClick={handleWhatsApp}
-                            className="w-full bg-[#034EA2] text-white px-6 py-4 rounded-full font-inter font-semibold text-sm transition-all shadow-[0_0_20px_rgba(3,78,162,0.3)] active:scale-95 flex items-center justify-center gap-2"
+                            className="w-full bg-logo-blue text-white px-6 py-4 rounded-full font-inter font-semibold text-sm transition-all shadow-[0_0_20px_rgba(0,76,160,0.3)] active:scale-95 flex items-center justify-center gap-2"
                         >
                             Enviar por WhatsApp
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -202,7 +164,7 @@ function BookingModalMobile({ isOpen, onClose, initialService = '' }) {
                             </svg>
                         </button>
                         <p className="text-[10px] font-inter text-gray-500 text-center px-4 leading-relaxed">
-                            Al enviar serás redirigido a WhatsApp. Tus datos no son guardados en bases públicas.
+                            Así platicaremos el proyecto y te enviaremos la cotización por WhatsApp.
                         </p>
                     </div>
                 </div>

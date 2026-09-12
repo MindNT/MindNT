@@ -1,29 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import ShootingStar from '../components/ShootingStar';
 import ServiceCard from '../components/ServiceCard';
 import BookingModalMobile from '../components/BookingModalMobile';
 
 /* ─────────────── SVG Icons ─────────────── */
-const IconChart = () => (
+const IconCode = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
     </svg>
 );
 
-const IconSentiment = () => (
+const IconZap = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-        <line x1="9" y1="9" x2="9.01" y2="9" />
-        <line x1="15" y1="9" x2="15.01" y2="9" />
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
     </svg>
 );
 
-const IconExtract = () => (
+const IconStore = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <ellipse cx="12" cy="5" rx="9" ry="3" />
-        <path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12" />
-        <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+        <path d="M3 9l1-4h16l1 4" />
+        <path d="M3 9v10a1 1 0 001 1h16a1 1 0 001-1V9" />
+        <path d="M9 21V13h6v8" />
     </svg>
 );
 
@@ -39,71 +36,59 @@ const IconDashboard = () => (
 /* ─────────────── Service Data ─────────────── */
 const services = [
     {
-        id: 'historico-ventas',
-        icon: <IconChart />,
-        title: 'Análisis Histórico de Ventas',
-        pricePrefix: 'Desde',
-        priceAmount: '$2,900',
-        priceSuffix: 'MXN / proyecto',
-        description: 'Descubre patrones ocultos en tus ventas pasadas.',
+        id: 'desarrollo-web',
+        icon: <IconCode />,
+        badge: 'Sitios y aplicaciones',
+        title: 'Desarrollo Web',
+        description: 'Diseñamos y construimos sitios y aplicaciones web a la medida de tu operación, desde una página corporativa hasta sistemas completos con panel de administración.',
         features: [
-            'Limpieza y normalización de datos',
-            'Detección de tendencias y estacionalidades',
-            'Segmentación de clientes y productos',
-            'Reportes ejecutivos',
+            'Landing pages y sitios corporativos rápidos y optimizados',
+            'Aplicaciones web con panel de administración propio',
+            'Diseño responsivo que se adapta a cualquier dispositivo',
+            'Optimización de SEO técnico y velocidad de carga',
         ],
-        bestseller: true,
         delay: 0,
     },
     {
-        id: 'sentimientos-redes',
-        icon: <IconSentiment />,
-        title: 'Sentimientos en Redes',
-        pricePrefix: 'Desde',
-        priceAmount: '$4,900',
-        priceSuffix: 'MXN / proyecto',
-        description: 'Identifica qué dice el mundo de tu marca.',
+        id: 'automatizaciones',
+        icon: <IconZap />,
+        badge: 'Procesos que trabajan solos',
+        title: 'Automatizaciones',
+        description: 'Identificamos tareas repetitivas dentro de tu operación y las convertimos en flujos automáticos, para que tu equipo deje de hacer lo que una máquina hace mejor.',
         features: [
-            'Monitoreo de menciones multiplataforma',
-            'Clasificación de sentimiento automática',
-            'Detección de crisis y temas virales',
-            'Dashboard de reputación en vivo',
+            'Flujos de trabajo automáticos entre tus herramientas',
+            'Sincronización de datos entre sistemas que hoy no se hablan',
+            'Envios de notificaciones y correos automáticos',
+            'Reportes generados sin intervención manual',
         ],
-        bestseller: false,
         delay: 100,
     },
     {
-        id: 'extraccion-datos',
-        icon: <IconExtract />,
-        title: 'Extracción de Datos',
-        pricePrefix: 'Desde',
-        priceAmount: '$7,900',
-        priceSuffix: 'MXN / proyecto',
-        description: 'Recolecta datos a gran escala desde cualquier fuente.',
+        id: 'ecommerce',
+        icon: <IconStore />,
+        badge: 'Tiendas en línea',
+        title: 'eCommerce',
+        description: 'Construimos tiendas en línea completas: catálogo, carrito, pagos y envíos integrados en una sola plataforma que se adapta a tu marca y a cómo vendes.',
         features: [
-            'Web scraping a gran escala',
-            'Integración con APIs y ERP',
-            'ETL automatizado y calendarizado',
-            'Almacenamiento en la nube',
+            'Catálogo de productos administrable desde un panel',
+            'Carrito de compras con pasarela de pagos segura',
+            'Seguimiento de pedidos y gestión de envíos',
+            'Integración con inventario y facturación',
         ],
-        bestseller: false,
         delay: 200,
     },
     {
-        id: 'visualizacion',
+        id: 'plataformas',
         icon: <IconDashboard />,
-        title: 'Visualización de Datos',
-        pricePrefix: 'Desde',
-        priceAmount: '$5,900',
-        priceSuffix: 'MXN / proyecto',
-        description: 'Dashboards que convierten números en decisiones.',
+        badge: 'Software a la medida',
+        title: 'Plataformas',
+        description: 'Desarrollamos plataformas digitales a medida: sistemas internos de gestión, portales para clientes y software que estructura toda tu operación en un solo lugar.',
         features: [
-            'Dashboards interactivos personalizados',
-            'Filtros en tiempo real y drill-down',
-            'Acceso multiusuario',
-            'Exportación especifica',
+            'Sistemas internos de gestión y control de operación',
+            'Portales para clientes, proveedores y usuarios finales',
+            'Roles, permisos y registro de actividad por usuario',
+            'Arquitectura escalable, documentada y segura',
         ],
-        bestseller: false,
         delay: 300,
     },
 ];
@@ -118,32 +103,48 @@ function ServiciosMobile() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-black overflow-x-hidden relative flex flex-col px-6 pt-36 pb-16">
-            <ShootingStar />
-
+        <div className="min-h-screen overflow-x-hidden relative flex flex-col px-6 pt-36 pb-16">
             <div className="max-w-md mx-auto w-full relative z-10 flex flex-col">
 
                 {/* ── Header ── */}
-                <div
-                    className={`
-                        text-center mb-12
-                        transition-opacity duration-1000 ease-out
-                        ${isVisible ? 'opacity-100' : 'opacity-0'}
-                    `}
-                >
-                    <h1 className="text-3xl font-inter font-semibold tracking-tight text-white leading-tight mb-3">
-                        Elige el plan perfecto para ti.
+                <div className="text-center mb-12">
+                    {/* Eyebrow */}
+                    <span
+                        className={`
+                            inline-flex items-center border px-3 py-1 rounded-full mb-4
+                            bg-logo-sky/10 border-logo-sky/30 text-logo-sky
+                            text-[10px] font-inter font-medium uppercase tracking-widest
+                            transition-all duration-1000 ease-out
+                            ${isVisible ? 'opacity-100' : 'opacity-0'}
+                        `}
+                    >
+                        Nuestros servicios
+                    </span>
+
+                    <h1 className="text-3xl font-inter font-semibold tracking-tight-apple text-white leading-tight mb-3 transition-all duration-1000 ease-out delay-100">
+                        <span className={isVisible ? 'opacity-100' : 'opacity-0'}>
+                            ¿Qué podemos hacer por ti?
+                        </span>
                     </h1>
-                    <p className="text-sm font-inter font-normal text-gray-400 mb-6">
-                        Transforma tus datos en ventajas competitivas. Solicita un estudio hoy y comienza a escalar.
+                    <p className="text-sm font-inter font-normal text-gray-400 mb-7 transition-all duration-1000 ease-out delay-200">
+                        <span className={isVisible ? 'opacity-100' : 'opacity-0'}>
+                            Conoce a detalle en qué consiste cada servicio y cómo puede aplicarse a la operación de tu negocio.
+                        </span>
                     </p>
 
                     <button
-                        onClick={() => { setSelectedService('Estudio personalizado'); setIsModalOpen(true); }}
-                        className="inline-flex items-center gap-2 mx-auto px-5 py-2.5 bg-white text-black text-[13px] font-inter font-semibold rounded-full shadow-[0_0_24px_rgba(255,255,255,0.15)] hover:scale-105 transition-all duration-300"
+                        onClick={() => { setSelectedService('Otro'); setIsModalOpen(true); }}
+                        className="
+                            group inline-flex items-center gap-2 mx-auto px-6 py-2.5 bg-logo-blue text-white
+                            text-[13px] font-inter font-semibold rounded-full
+                            hover:bg-[#003a80]
+                            shadow-[0_12px_40px_-10px_rgba(0,76,160,0.7)]
+                            active:scale-[0.97]
+                            transition-all duration-300 ease-out
+                        "
                     >
-                        Estudio más especializado
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        Cuéntanos de tu proyecto
+                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </button>
@@ -155,16 +156,12 @@ function ServiciosMobile() {
                         <ServiceCard
                             key={svc.id}
                             icon={svc.icon}
+                            badge={svc.badge}
                             title={svc.title}
-                            pricePrefix={svc.pricePrefix}
-                            priceAmount={svc.priceAmount}
-                            priceSuffix={svc.priceSuffix}
                             description={svc.description}
                             features={svc.features}
-                            bestseller={svc.bestseller}
                             delay={svc.delay}
                             isVisible={isVisible}
-                            onGetPlan={() => { setSelectedService(svc.title); setIsModalOpen(true); }}
                         />
                     ))}
                 </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ShootingStar from '../components/ShootingStar';
 
 const concepts = [
     {
@@ -111,9 +110,7 @@ function Conceptos() {
     };
 
     return (
-        <div className="h-screen bg-black overflow-hidden relative flex flex-col justify-center">
-            <ShootingStar />
-
+        <div className="h-screen overflow-hidden relative flex flex-col justify-center">
             <div className="max-w-[85rem] w-full mx-auto px-6 relative z-10">
                 
                 {/* Minimalist Google-Style Header */}

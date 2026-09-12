@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import ButtonBlue from '../utils/ButtonBlue';
 import BookingModalMobile from './BookingModalMobile';
 
 function HeaderMobile() {
     const location = useLocation();
-    const isHomePage = location.pathname === '/';
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isBookingOpen, setIsBookingOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 10);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    // Cierra el menú si cambia la ruta (navegación por el menú)
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [location.pathname]);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -18,53 +30,77 @@ function HeaderMobile() {
     };
 
     const menuItems = [
-        { name: 'Precio', path: '/servicios' },
+        { name: 'Servicios', path: '/servicios' },
         { name: 'Metodología', path: '/filosofia' },
-        { name: 'Nosotros', path: '/historias' },
-        { name: 'Glosario', path: '/conceptos' }
+        { name: 'Proyectos', path: '/proyectos' },
+        { name: 'Productos', path: '/productos' }
     ];
 
     return (
         <>
-            <header className="w-full bg-black/60 backdrop-blur-md border-b border-white/10">
+            <header
+                className={[
+                    'w-full bg-black/60 backdrop-blur-md border-b border-white/10',
+                    'transition-all duration-500 ease-out',
+                ].join(' ')}
+                style={scrolled ? {
+                    background: 'rgba(10,10,10,0.82)',
+                    boxShadow: '0 8px 32px -12px rgba(0,0,0,0.8)',
+                } : {}}
+            >
                 <div className="max-w-7xl mx-auto px-6 py-4">
                     <div className="flex items-center justify-between">
-                        {/* Logo - Left Side (only show when NOT on homepage) */}
-                        {!isHomePage && (
-                            <Link to="/" className="flex items-center">
-                                <img
-                                    src={`${process.env.PUBLIC_URL}/images/Logowhitefonts.png`}
-                                    alt="MindNT"
+                        {/* Logo - Left Side */}
+                        <Link to="/" className="flex items-center">
+                            <img
+                                    src={`${process.env.PUBLIC_URL}/images/MINDNT_Logo_Horizontal.png`}
+                                alt="MindNT"
                                     className="h-8 w-auto object-contain"
-                                />
-                            </Link>
-                        )}
+                            />
+                        </Link>
 
                         {/* Right Side: Contact Button + Menu Button */}
-                        <div className={`flex items-center gap-3 ${isHomePage ? 'ml-auto' : ''}`}>
+                        <div className="flex items-center gap-3">
                             {/* Contact Button */}
-                            <ButtonBlue 
+                            <ButtonBlue
                                 onClick={() => setIsBookingOpen(true)}
                                 className="whitespace-nowrap text-[11px] px-3 py-1.5 sm:text-sm sm:px-4 sm:py-2"
                             >
-                                Estudio especializado
+                                Quiero cotizar
                             </ButtonBlue>
 
                             {/* Hamburger Menu Button */}
                             <button
                                 onClick={toggleMenu}
-                                className="p-2 text-gray-300 hover:text-white transition-colors duration-200"
+                                className="
+                                    p-2 text-gray-300 hover:text-white transition-all duration-300
+                                    active:scale-90
+                                "
                                 aria-label="Menu"
                             >
-                                {isMenuOpen ? (
-                                    <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path d="M6 18L18 6M6 6l12 12"></path>
-                                    </svg>
-                                ) : (
-                                    <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path d="M4 6h16M4 12h16M4 18h16"></path>
-                                    </svg>
-                                )}
+                                <span className="relative block w-6 h-6">
+                                    <span
+                                        className={[
+                                            'absolute left-0 top-[5px] h-[1.5px] w-6 bg-current',
+                                            'transition-all duration-300 ease-out',
+                                            isMenuOpen ? 'top-[11px] rotate-45' : '',
+                                        ].join(' ')}
+                                    />
+                                    <span
+                                        className={[
+                                            'absolute left-0 top-[11px] h-[1.5px] w-6 bg-current',
+                                            'transition-all duration-300 ease-out',
+                                            isMenuOpen ? 'opacity-0' : '',
+                                        ].join(' ')}
+                                    />
+                                    <span
+                                        className={[
+                                            'absolute left-0 top-[17px] h-[1.5px] w-6 bg-current',
+                                            'transition-all duration-300 ease-out',
+                                            isMenuOpen ? 'top-[11px] -rotate-45' : '',
+                                        ].join(' ')}
+                                    />
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -87,7 +123,7 @@ function HeaderMobile() {
             >
                 <nav className="max-w-7xl mx-auto px-6 py-2">
                     <div className="flex flex-col">
-                        {menuItems.map((item) => (
+                        {menuItems.map((item, i) => (
                             <Link
                                 key={item.path}
                                 to={item.path}
@@ -96,10 +132,15 @@ function HeaderMobile() {
                                     text-base font-inter font-normal text-gray-300
                                     hover:text-white
                                     px-4 py-3
-                                    transition-colors duration-200
+                                    transition-all duration-300 ease-out
                                     border-b border-white/10 last:border-b-0
                                     ${location.pathname === item.path ? 'text-white font-medium' : ''}
                                 `}
+                                style={{
+                                    transitionDelay: isMenuOpen ? `${80 + i * 45}ms` : '0ms',
+                                    opacity: isMenuOpen ? 1 : 0,
+                                    transform: isMenuOpen ? 'translateY(0)' : 'translateY(-6px)',
+                                }}
                             >
                                 {item.name}
                             </Link>
@@ -109,17 +150,17 @@ function HeaderMobile() {
             </div>
 
             {/* Overlay */}
-            {isMenuOpen && (
-                <div
-                    className="fixed inset-0 bg-black/10 z-20 top-[65px] transition-opacity duration-300"
-                    onClick={closeMenu}
-                />
-            )}
-
+            <div
+                className={`
+                    fixed inset-0 bg-black/20 z-20 top-[65px]
+                    transition-opacity duration-300 ease-out
+                    ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+                `}
+                onClick={closeMenu}
+            />
             <BookingModalMobile isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
         </>
     );
 }
 
 export default HeaderMobile;
-
